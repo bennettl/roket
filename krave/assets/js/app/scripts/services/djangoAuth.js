@@ -15,7 +15,6 @@ angular.module('angularDjangoRegistrationAuthApp')
         'authenticated': null,
         'authPromise': null,
         'request': function(args) {
-            console.log($cookies);
             // Let's retrieve the token from the cookie, if available
             if($cookies.token){
                 $http.defaults.headers.common.Authorization = 'Token ' + $cookies.token;

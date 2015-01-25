@@ -146,7 +146,9 @@
     });
 
     app.controller('HeaderCtrl', function($scope, djangoAuth, $modal, PostFactory, Restangular) {
+        console.log('fired');
         djangoAuth.profile().then(function(data) {
+            console.log(data);
             $scope.user = data;
         });
         $scope.open = function () {
