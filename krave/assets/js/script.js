@@ -146,7 +146,6 @@
     });
 
     app.controller('HeaderCtrl', function($scope, djangoAuth, $modal, PostFactory, Restangular) {
-        console.log('fired');
         djangoAuth.profile().then(function(data) {
             console.log(data);
             $scope.user = data;
@@ -208,7 +207,7 @@
                                     post: newPost.id
                                 };
                                 category_assignment.post(new_category_assignment, '', {'X-CSRFToken': window.CSRF}, {'X-CSRFToken': window.CSRF}).then(function(){
-                                    console.log('success');
+                                    window.location.href='/';
                                 })
 
                             });
