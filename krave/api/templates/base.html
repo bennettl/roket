@@ -1,0 +1,113 @@
+{% load staticfiles %}
+{% load socialaccount %}
+
+<html ng-app="krave.app.static">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{% static "custom/style.css" %}">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500italic,400italic,500' rel='stylesheet' type='text/css'>
+<base href="/">
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1515697715348428&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="container" ng-cloak>
+    <div id="header" ng-controller="HeaderCtrl">
+        <div class="logo">
+            <a href="/">
+                <img src="/static/js/images/logo.png" alt="Roket">
+            </a><br />
+            <div style="text-align: right;margin-top:-5px;margin-right:4px;">Videos Worth Watching</div>
+        </div>
+        <div class="links">
+            <div class="link">
+                <a href="/about">About</a>
+            </div>
+            <div ng-show="user.id" style="display:inline-block;">
+                <div class="link">
+                    <a href="#" ng-click="open()"><img src="http://www.zacktanner.me/clients/krave/plus.png"></a>
+                </div>
+
+                <div class="link" ng-controller="DropdownCtrl">
+                    <!-- Single button -->
+                    <div class="btn-group" dropdown is-open="status.isopen">
+                        <a dropdown-toggle ng-disabled="disabled">
+                            <div class="avatar avatar-circle avatar-hide-initials">
+                                <img class="avatar-image" src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;f=y" width="50" height="50">
+                                <span class="avatar-initials">Z</span>
+                            </div>
+                            <div class="user-name"><span class="caret"></span></div>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            {% verbatim %}
+                            <li><a href="/profile/{{ user.id }}">Profile</a></li>
+                            <li><a href="/editProfile">Edit Account</a></li>
+                            <li><a href="/logout">Sign Out</a></li>
+                            {% endverbatim %}
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div ng-hide="user.id" style="display:inline-block;margin-top:10px;" ng-controller="AuthModalCtrl">
+                <div class="link">
+                    <a href="#" ng-click="signIn()">Sign In</a>
+                </div>
+                <div class="link">
+                    <a href="#" ng-click="signUp()">Sign Up</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <ng-view></ng-view>
+</div>
+</body>
+<script src="{% static "underscore/underscore.js" %}"></script>
+<script src="{% static "angular/angular.js" %}"></script>
+<script src="{% static "restangular/dist/restangular.min.js" %}"></script>
+<script src="{% static "angular-resource/angular-resource.js" %}"></script>
+<script src="{% static 'angular-route/angular-route.min.js' %}"></script>
+<script src="{% static 'angular-cookies/angular-cookies.min.js' %}"></script>
+<script src="{% static 'angular-sanitize/angular-sanitize.min.js' %}"></script>
+<script src="{% static "js/script.js" %}"></script>
+<script src="{% static "oauth-js/dist/oauth.min.js" %}"></script>
+
+
+<script src="{% static "js/app/scripts/app.js" %} "></script>
+<script src="{% static "js/app/scripts/controllers/main.js" %} "></script>
+<script src="{% static "js/app/scripts/controllers/register.js" %} "></script>
+<script src="{% static "js/app/scripts/controllers/passwordreset.js" %} "></script>
+<script src="{% static "js/app/scripts/controllers/passwordresetconfirm.js" %} "></script>
+<script src="{% static "js/app/scripts/controllers/login.js" %} "></script>
+<script src="{% static "js/app/scripts/controllers/verifyemail.js" %} "></script>
+<script src="{% static "js/app/scripts/controllers/logout.js" %} "></script>
+<script src="{% static "js/app/scripts/controllers/userprofile.js" %} "></script>
+<script src="{% static "js/app/scripts/controllers/passwordchange.js" %} "></script>
+<script src="{% static "js/app/scripts/services/djangoAuth.js" %} "></script>
+<script src="{% static "js/app/scripts/services/validate.js" %} "></script>
+<script src="{% static "js/app/scripts/controllers/master.js" %} "></script>
+<script src="{% static "js/app/scripts/controllers/restricted.js" %} "></script>
+<script src="{% static "js/app/scripts/controllers/authrequired.js" %} "></script>
+<script src="{% static "js/angular-checkbox.js" %} "></script>
+
+<script src="{% static "angular-bootstrap/ui-bootstrap-tpls.min.js" %}"></script>
+<script src="{% static "angular-local-storage/dist/angular-local-storage.min.js" %}"></script>
+<script src="{% static "angular-filter/dist/angular-filter.min.js" %}"></script>
+<script src="{% static "angular-moment/angular-moment.min.js" %}"></script>
+<script>
+    window.CSRF = '{{ csrf_token }}';
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+    "name": "krave",
+    "devDependencies": {
+        "coffee-script": "",
+        "grunt": "",
+        "grunt-contrib-coffee": ""
+    }
+}
