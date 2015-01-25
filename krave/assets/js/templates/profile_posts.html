@@ -1,0 +1,44 @@
+<sidebar></sidebar>
+<div class="content ng-cloak">
+    <div class="day">
+        <h2>{{  profile_user }}'s posts</h2>
+        <div class="post" ng-repeat="p in posts | orderBy:'get_num_votes':true">
+            <div class="video-thumbnail" ng-click="viewVideo(p.url)">
+                <img src="/static/js/images/play.svg" class="play" />
+                <img ng-src="{{ p.thumbnail }}" /><br />
+            </div>
+            <div class="post-title">
+                <h3><a href="#" ng-click="viewVideo(p.url)">{{ p.post_title }}</a></h3>
+                <div class="categories" style="margin-bottom:10px;">
+                    <div ng-repeat="category in p.categories" class="category">
+                        <a href='/category/{{ category.id }}/{{ category.name }}'>{{ category.name }}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="avatar avatar-circle" style="float:left;margin-right:10px;">
+                <img class="avatar-image" src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&f=y" width="50" height="50">
+            </div>
+            <div class="author">
+                Uploaded by
+                <a href="/profile/{{ p.author.id }}">{{ p.author.username }}</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><img src="http://zacktanner.me/clients/krave/facebook.svg" /></a>
+                <a href="#"><img src="http://zacktanner.me/clients/krave/twitter.svg" /></a>
+            </div>
+            <div class="votes" ng-click="vote(p)" ng-class="{ 'voted': hasVoted(p) || p.hasVoted }">
+                <span ng-hide="hasVoted(p) || p.hasVoted" style="margin-left: 3px;">&#x25B2;</span>
+                <span ng-show="hasVoted(p) || p.hasVoted" style="margin-left: 3px;"><i class="fa fa-check"></i></span>
+                <br />
+                <div class="vote" ng-bind="p.get_num_votes">0</div>
+            </div>
+            <div class="comments">
+                <a href="/comments/{{ p.id }}">
+                    <i class="fa fa-comment-o"></i>
+                    {{ p.get_num_replies }}
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

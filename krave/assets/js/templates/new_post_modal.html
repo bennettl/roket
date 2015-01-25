@@ -1,0 +1,24 @@
+<div class='modal-header'>
+    <h2>Upload a Video</h2>
+</div>
+<div class='modal-body'>
+    <label>URL</label><br />
+    <input type="text" ng-model="newPost.url" ng-change="parseVideoUrl(newPost.url)" />
+    <br /><br />
+    <label>Title</label><br />
+    <input type="text" ng-model="newPost.title" />
+    <br /><br />
+    <div ng-hide="editing">
+
+    <label>Category</label>
+
+        <ul ng-repeat="category in categories | orderBy: ordering_index">
+            <li><input name="category" type="checkbox" checklist-value="category" checklist-model="newPost.category" /> {{ category.name }}</li>
+        </ul>
+    </div>
+    <div style="text-align:center">
+        <button ng-hide="editing" ng-click="submitNewPost()">Submit</button>
+        <button ng-show="editing" ng-click="editPost()">Edit</button>
+    </div>
+
+</div>

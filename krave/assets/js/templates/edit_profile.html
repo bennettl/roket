@@ -1,0 +1,19 @@
+<sidebar></sidebar>
+<div class="content ng-cloak">
+    <h1>Edit Your Account</h1>
+    <div class="edit-profile">
+        <div ng-show="success">Your profile has been updated!</div>
+        <label>Username</label>
+        <input type="text" disabled ng-model="user.username" /><br />
+        <label>Email</label>
+        <input type="text" ng-model="user.email" /> <br />
+
+        <h2>Change password</h2>
+        <label>Old password</label>
+        <input type="password" ng-model="user.old_password" /><br />
+        <label>New password</label>
+        <input type="password" ng-model="user.password" /><br /><br />
+
+        <button ng-click="editProfile()">Update</button>
+    </div>
+</div>

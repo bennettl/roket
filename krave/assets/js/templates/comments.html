@@ -1,0 +1,73 @@
+<sidebar></sidebar>
+<div class="content ng-cloak clearfix">
+    <div class="post">
+        <div class="video-thumbnail" ng-click="viewVideo(post.url)">
+            <img src="/static/js/images/play.svg" class="play" />
+            <img ng-src="{{ post.thumbnail }}" />
+        </div>
+        <div class="post-title">
+            <h3><a href="#" ng-click="viewVideo(post.url)">{{ post.post_title }}</a></h3>
+        </div>
+        <div class="avatar avatar-circle avatar-hide-image" style="float:left;margin-right:10px;">
+            <img class="avatar-image" src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;f=y" width="50" height="50">
+            <span class="avatar-initials">EG</span>
+        </div>
+        <div class="author">
+            Uploaded by
+            <a href="/profile/{{ post.author.id }}">{{ post.author.username }}</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><img src="http://zacktanner.me/clients/krave/facebook.svg" /></a>
+            <a href="#"><img src="http://zacktanner.me/clients/krave/twitter.svg" /></a>
+        </div>
+        <div class="votes" ng-click="vote(post)" ng-class="{ 'voted': hasVoted(post) }">
+            <span ng-hide="hasVoted(post)" style="margin-left: 3px;">&#x25B2;</span>
+            <span ng-show="hasVoted(post)" style="margin-left: 3px;"><i class="fa fa-check"></i></span>
+            <br />
+            <div class="vote" ng-bind="post.get_num_votes">0</div>
+        </div>
+        <div class="comments">
+            <a href="/comments/{{ post.id }}">
+                <i class="fa fa-comment-o"></i>
+                {{ post.get_num_replies }}
+            </a>
+        </div>
+
+    </div>
+    <div class="comment-section" ng-cloak>
+        <textarea ng-model="comment" ng-show="user"></textarea>
+        <button ng-click="submitComment()" ng-show="user">Add Comment</button>
+        <div ng-hide="user" ng-controller="AuthModalCtrl"><h4>Please <a href="#" ng-click="signIn()">login</a> to comment.</h4></div>
+        <br /><br />
+        <div class="comment clearfix" ng-repeat="comment in post.comments">
+            <div class="user-image">
+                <div class="avatar avatar-circle avatar-hide-initials">
+                    <img class="avatar-image" src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;f=y" width="50" height="50">
+                </div>
+            </div>
+            <div class="comment-info">
+                <strong><a href="/profile/{{ comment.user.id }}">{{ comment.user.username }}</a></strong> <span style="color:#666">{{ comment.date_posted | date: 'short' }}</span><br />
+                {{ comment.comment }}
+                <div class="actions">
+                    <a href="#" ng-click="replyToComment(comment)" ng-show="user">Reply</a>
+                </div>
+                <div class="reply-box" ng-show="replyTo == comment.id">
+                    <textarea ng-model="comment.reply"></textarea>
+                    <button ng-click="submitReply(comment)" ng-disabled="!comment.reply">Submit</button>
+                </div>
+            </div>
+            <div class="comment-replies clearfix" ng-repeat="reply in comment.replies">
+                <div class="user-image">
+                    <div class="avatar avatar-circle avatar-hide-initials">
+                        <img class="avatar-image" src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;f=y" width="50" height="50">
+                    </div>
+                </div>
+                <div class="comment-info reply">
+                    <strong><a href="/profile/{{ reply.user }}">{{ reply.author }}</a></strong> <span style="color:#666">{{ reply.date_posted | date: 'short' }}</span><br />
+                    {{ reply.comment }}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

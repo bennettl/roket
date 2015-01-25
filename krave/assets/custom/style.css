@@ -1,0 +1,402 @@
+body {
+	background-color: #343434;
+	font-family: 'Roboto', sans-serif
+}
+a, h1 {
+	color: #e74c50;
+}
+a:hover {
+	color: #e74c50;
+}
+h1 {
+	padding: 10px;
+}
+input {
+	color: #000;
+}
+input:disabled {
+	background-color: #ccc;
+	border-color: #ccc;
+}
+.avatar {
+	height: 50px;
+	width: 50px;
+}
+
+.avatar .avatar-image,
+.avatar .avatar-initials {
+	height: 100%;
+	width: 100%;
+}
+
+.avatar .avatar-initials {
+	display: block;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	background-size: 100% 100%;
+	background-color: #aaa;
+	color: #fff;
+	font-size: 25px;
+	line-height: 50px;
+	font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+	text-align: center;
+}
+
+.avatar-large {
+	height: 80px;
+	width: 80px;
+}
+
+.avatar-large .avatar-initials {
+	font-size: 40px;
+	line-height: 80px;
+}
+
+.avatar-small {
+	height: 30px;
+	width: 30px;
+}
+
+.avatar-small .avatar-initials {
+	font-size: 15px;
+	line-height: 30px;
+}
+
+.avatar-extra-small {
+	height: 20px;
+	width: 20px;
+}
+
+.avatar-extra-small .avatar-initials {
+	font-size: 10px;
+	line-height: 20px;
+}
+
+.avatar-rounded .avatar-image,
+.avatar-rounded .avatar-initials {
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.avatar-circle .avatar-image,
+.avatar-circle .avatar-initials {
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.avatar-hide-image .avatar-image {
+	display: none;
+}
+
+.avatar-hide-initials .avatar-initials {
+	display: none;
+}
+
+
+
+#header {
+	box-shadow: 1px 1px 5px #000;
+	height: 95px;
+	padding: 0 20px;
+	color: #fff;
+}
+#header .logo {
+	text-align: center;
+	float: left;
+	margin: 20px;
+}
+#header .links {
+	margin-top: 15px;
+	float: right;
+	font-size: 14pt;
+
+}
+#header .links a {
+	color: #fff;
+	text-decoration: none;
+}
+.links .link {
+	margin: 0 40px;
+	display: inline-block;
+}
+.link .avatar {
+	display: inline-block;
+}
+.link .user-name {
+	display: inline-block;
+}
+.sidebar {
+	float: left;
+	color: #fff;
+	box-shadow: 1px 1px 4px #000;
+	width: 20%;
+	height: 100%;
+
+}
+.sidebar ul {
+	margin: 0;
+	padding: 0;
+}
+.sidebar ul li {
+	list-style: none;
+	padding: 10px;
+	font-size: 14pt;
+
+}
+.sidebar a {
+	color: #fff;
+}
+.sidebar a:hover {
+	text-decoration: none;
+}
+.sidebar a.active li {
+	background-color: #000;
+	border-left: 5px solid #e74c50;
+}
+.content {
+	width: 80%;
+	float: left;
+	box-shadow: 1px 1px 5px #000;
+
+}
+.content.about {
+	width: 100%;
+	float: none;
+	color: #fff;
+	text-align: center;
+	padding: 20px;
+	font-size: 16pt;
+}
+.about .inner-container {
+	width: 500px;
+	margin: 0 auto;
+}
+.day {
+	color: #fff;
+
+}
+.day h2 {
+	margin: 20px;
+	padding: 10px;
+	border-bottom: 1px solid #000
+}
+.post {
+	background-color:#343434;
+	min-height:200px;
+	color: #fff;
+	position: relative;
+	border-bottom: 1px solid #000;
+	margin-left: 5px;
+}
+.post a {
+	color: #e74c50;
+	font-weight: bold;
+}
+.post-title {
+	max-width: 800px;
+}
+.post-title .category {
+	padding: 2px 5px;
+	background-color: #000;
+	display: inline-block;
+	border-radius: 5px;
+	margin: 0 5px
+
+}
+.post-title a {
+	color: #fff;
+	text-decoration: none;
+}
+.video-thumbnail {
+	cursor: hand;
+	float: left;
+	width: 200px;
+	height: 150px;
+	margin: 20px;
+}
+.video-thumbnail img.play {
+	position: absolute;
+	left: 100px;
+	top: 70px;
+}
+.video-thumbnail img:not(.play) {
+	width: 100%;
+	height: 100%;
+}
+.author {
+	color: #e74c50;
+	margin-top: 25px;
+}
+.social-icons {
+	margin-top: 40px;
+}
+.social-icons img {
+	width: 30px;
+	height: 30px;
+	margin: 20px 5px;
+}
+.votes {
+	background-color: #fff;
+	color: #e74c50;
+	right: 50px;
+	top: 0;
+	padding: 5px 15px;
+	border-radius: 10px;
+	position: absolute;
+	text-align: center;
+	cursor: hand;
+}
+.votes.voted {
+	background-color: #e74c50;
+	color: #fff;
+}
+.comments {
+	font-size: 22pt;
+	right: 35px;
+	bottom: 40px;
+	position: absolute;
+}
+.comments i {
+	font-size: 30pt;
+}
+.comments a {
+	color: #fff;
+	text-decoration: none;
+}
+
+/* modal */
+.modal-header {
+	border-top: 5px solid #e74c50;
+	color: #fff;
+	background-color: #333;
+	text-align: center;
+}
+.modal-header h2 {
+	margin: 0;
+}
+.modal-body {
+	background-color: #f3f3f3;
+}
+.modal-body input[type='text'], .modal-body input[type='password'], .modal-body input[type='email'] {
+	border: 1px solid #ccc;
+	padding: 5px;
+	width: 70%;
+}
+.modal-body ul li {
+	list-style: none
+}
+.modal-body ul {
+	padding: 0;
+}
+.modal-body button {
+	font-size: 16pt;
+}
+button {
+	background-color: #e74c50;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	color: #fff;
+	border: 0;
+	padding: 10px 70px;
+}
+.dropdown-menu a {
+	color: #000 !important;
+}
+.modal-dialog, .modal-body {
+	width: 854px;
+}
+
+.comment-section {
+	padding: 20px;
+}
+.comment-section h4 {
+	color: #fff;
+}
+.comment-section textarea {
+	width: 100%;
+	background-color: #000;
+	color: #fff;
+	margin-bottom: 10px;
+}
+.comment {
+	color: #fff;
+}
+.comment a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}
+.comment .user-image {
+	float: left;
+	padding: 10px 0;
+}
+.comment .comment-info {
+	float: left;
+	padding: 10px;
+	width: 90%;
+	border-bottom: 1px solid #000;
+}
+.comment .body {
+	clear: both;
+}
+.comment .actions {
+	margin-top: 10px;
+}
+.comment-replies {
+	margin-left: 60px;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+.modal-backdrop {
+	height: 100%;
+}
+.modal-content {
+	background-color: #f3f3f3;
+}
+.modal-body.auth {
+	width: 750px;
+	margin: 0 auto;
+}
+.standard_login {
+	width: 400px;
+	float: left
+}
+.social_login {
+	float: right;
+	text-align: center;
+
+}
+.social_login img {
+	width: 300px;
+}
+
+.edit-profile {
+	color: #fff;
+	padding: 0 20px 10px;
+}
+.edit-profile label {
+	font-size: 14pt;
+	width: 200px;
+	font-weight: normal;
+}
+.edit-profile input {
+	margin: 15px 0;
+}
+
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}

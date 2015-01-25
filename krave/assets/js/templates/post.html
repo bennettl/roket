@@ -1,0 +1,53 @@
+<sidebar></sidebar>
+<div class="content ng-cloak">
+    <div class="day" ng-repeat="post in posts | groupBy: 'date_posted' | toArray:true | orderBy: '$key':true">
+        <h2>{{ post.$key | isTodayCheck | date: 'EEEE' }}
+            <small>{{ post.$key | date:'MMMM d' }}</small></h2>
+        <div ng-repeat="p in post | orderBy:'get_num_votes':true">
+            <div class="post">
+                <div class="video-thumbnail" ng-click="viewVideo(p.url)">
+                    <img src="/static/js/images/play.svg" class="play" />
+                    <img ng-src="{{ p.thumbnail }}" /><br />
+                    <a href="#" ng-click="editPost(p)" ng-show="p.author.id == user.id">Edit</a>
+                </div>
+                <div class="post-title">
+                    <h3><a href="#" ng-click="viewVideo(p.url)">{{ p.post_title }}</a></h3>
+                    <div class="categories" style="margin-bottom:10px;">
+                        <div ng-repeat="category in p.categories" class="category">
+                            <a href='/category/{{ category.id }}/{{ category.name }}'>{{ category.name }}</a>
+                        </div>
+                    </div>
+                </div>
+                    <div class="avatar avatar-circle" style="float:left;margin-right:10px;">
+                        <img class="avatar-image" src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&f=y" width="50" height="50">
+                    </div>
+                <div class="author">
+                    Uploaded by
+                    <a href="/profile/{{ p.author.id }}">{{ p.author.username }}</a>
+                </div>
+                <div class="social-icons">
+
+                    <a href="https://www.facebook.com/dialog/feed?app_id=1515697715348428&display=popup&caption=Check%20out%20this%20post%20on%20Roket!&link=http://roket.tv/comments/{{ p.id }}&redirect_uri=http://roket.tv" target="_blank"><img src="http://zacktanner.me/clients/krave/facebook.svg" /></a>
+                    <a class="twitter-share-button" href="https://twitter.com/share/http://roket.tv/comments/{{ p.id }}"><img src="http://zacktanner.me/clients/krave/twitter.svg" /></a>
+                    <script>
+                        window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+                    </script>
+
+                </div>
+                <div class="votes" ng-click="vote(p)" ng-class="{ 'voted': hasVoted(p) }">
+                    <span ng-hide="hasVoted(p)" style="margin-left: 3px;">&#x25B2;</span>
+                    <span ng-show="hasVoted(p)" style="margin-left: 3px;"><i class="fa fa-check"></i></span>
+                    <br />
+                    <div class="vote" ng-bind="p.get_num_votes">0</div>
+                </div>
+                <div class="comments">
+                    <a href="/comments/{{ p.id }}">
+                    <i class="fa fa-comment-o"></i>
+                    {{ p.get_num_replies }}
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
