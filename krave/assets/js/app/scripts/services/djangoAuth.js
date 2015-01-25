@@ -111,6 +111,7 @@ angular.module('angularDjangoRegistrationAuthApp')
                 if(!djangoAuth.use_session){
                     $http.defaults.headers.common.Authorization = 'Token ' + data.key;
                     $cookies.token = data.key;
+                    console.log($http.defaults.headers.common.Authorization);
                 }
                 djangoAuth.authenticated = true;
                 $rootScope.$broadcast("djangoAuth.logged_in", data);

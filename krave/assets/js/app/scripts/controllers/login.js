@@ -31,11 +31,13 @@ angular.module('angularDjangoRegistrationAuthApp')
       $scope.errors = [];
       Validate.form_validation(formData,$scope.errors);
       if(!formData.$invalid){
+          console.log($scope.model.username);
+          console.log($scope.model.password);
         djangoAuth.login($scope.model.username, $scope.model.password)
         .then(function(data){
         	// success case
 //        	$location.path("/");
-//            window.location.href= '/';
+            window.location.href= '/';
         },function(data){
         	// error case
         	$scope.errors = data;
