@@ -15,6 +15,7 @@ angular.module('angularDjangoRegistrationAuthApp')
         'authenticated': null,
         'authPromise': null,
         'request': function(args) {
+            console.log($cookies);
             // Let's retrieve the token from the cookie, if available
             if($cookies.token){
                 $http.defaults.headers.common.Authorization = 'Token ' + $cookies.token;
@@ -109,10 +110,6 @@ angular.module('angularDjangoRegistrationAuthApp')
                 if(!djangoAuth.use_session){
                     $http.defaults.headers.common.Authorization = 'Token ' + data.key;
                     $cookies.token = data.key;
-                    console.log('fired');
-                    console.log($http.defaults.headers.common.Authorization);
-                    console.log($cookies);
-                    console.log(data.key);
                 }
                 djangoAuth.authenticated = true;
                 $rootScope.$broadcast("djangoAuth.logged_in", data);
