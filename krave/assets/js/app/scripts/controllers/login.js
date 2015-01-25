@@ -34,8 +34,8 @@ angular.module('angularDjangoRegistrationAuthApp')
         djangoAuth.login($scope.model.username, $scope.model.password)
         .then(function(data){
         	// success case
-//        	$location.path("/");
-            window.location.href= '/';
+        	$location.path("/");
+//            window.location.href= '/';
         },function(data){
         	// error case
         	$scope.errors = data;
