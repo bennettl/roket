@@ -104,5 +104,5 @@ angular.module('angularDjangoRegistrationAuthApp', [
       });
   })
   .run(function(djangoAuth){
-    djangoAuth.initialize('//localhost/rest-auth', false);
+    djangoAuth.initialize('//54.191.169.225/rest-auth', false);
   });
