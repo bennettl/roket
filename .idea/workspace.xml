@@ -101,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/api/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9467213" vertical-offset="968" max-vertical-offset="1534">
-              <caret line="110" column="50" selection-start-line="110" selection-start-column="50" selection-end-line="110" selection-end-column="50" />
+            <state vertical-scroll-proportion="-4.4545455" vertical-offset="968" max-vertical-offset="1534">
+              <caret line="82" column="91" selection-start-line="82" selection-start-column="81" selection-end-line="82" selection-end-column="81" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -129,10 +129,8 @@
         <entry file="file://$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/logout.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="260">
-              <caret line="14" column="71" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding>
-                <marker date="1422171046000" expanded="true" signature="162:513" placeholder="//..." />
-              </folding>
+              <caret line="4" column="68" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -147,11 +145,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="login.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="663">
-              <caret line="24" column="60" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.24856597" vertical-offset="0" max-vertical-offset="663">
+              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -235,12 +233,12 @@
         <option value="$PROJECT_DIR$/krave/assets/js/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/krave/urls.py" />
         <option value="$PROJECT_DIR$/krave/assets/js/app/scripts/services/djangoAuth.js" />
-        <option value="$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/login.js" />
         <option value="$PROJECT_DIR$/krave/assets/js/script.js" />
         <option value="$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/logout.js" />
         <option value="$PROJECT_DIR$/krave/api/admin.py" />
         <option value="$PROJECT_DIR$/krave/assets/custom/style.css" />
         <option value="$PROJECT_DIR$/krave/api/templates/base.html" />
+        <option value="$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/login.js" />
       </list>
     </option>
   </component>
@@ -822,12 +820,12 @@
       <workItem from="1422050007752" duration="27000" />
       <workItem from="1422058358104" duration="2975000" />
       <workItem from="1422126586326" duration="15932000" />
-      <workItem from="1422157267985" duration="3851000" />
+      <workItem from="1422157267985" duration="4038000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94181000" />
+    <option name="totallyTimeSpent" value="94368000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-191" y="221" width="1440" height="873" extended-state="0" />
@@ -1241,29 +1239,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="663">
-          <caret line="24" column="60" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/krave/assets/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.6923075" vertical-offset="1750" max-vertical-offset="7839">
           <caret line="148" column="29" selection-start-line="148" selection-start-column="29" selection-end-line="148" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/logout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="260">
-          <caret line="14" column="71" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <marker date="1422171046000" expanded="true" signature="162:513" placeholder="//..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1293,13 +1273,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/krave/api/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9467213" vertical-offset="968" max-vertical-offset="1534">
-          <caret line="110" column="50" selection-start-line="110" selection-start-column="50" selection-end-line="110" selection-end-column="50" />
+        <state vertical-scroll-proportion="-4.4545455" vertical-offset="968" max-vertical-offset="1534">
+          <caret line="82" column="91" selection-start-line="82" selection-start-column="81" selection-end-line="82" selection-end-column="81" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/logout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="260">
+          <caret line="4" column="68" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24856597" vertical-offset="0" max-vertical-offset="663">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>

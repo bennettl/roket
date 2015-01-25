@@ -8,7 +8,7 @@ angular.module('angularDjangoRegistrationAuthApp')
         if (backend == 'facebook') {
             OAuth.popup('facebook', function(error, success) {
                 if (error) {
-
+                    console.log(error);
                 }
                 else {
                     var token = success.access_token;
