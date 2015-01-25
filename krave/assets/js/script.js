@@ -255,7 +255,9 @@
 
     app.controller('AppController', ['$scope', '$http','$modal', 'PostFactory', '$filter', 'Restangular', 'djangoAuth', '$routeParams', '$route',
         function($scope, $http, $modal, PostFactory, $filter, Restangular, djangoAuth, $routeParams, $route) {
-
+        djangoAuth.profile().then(function(data) {
+            $scope.user = data;
+        });
         $scope.now = $filter('date')(new Date(), 'MMM dd yyyy');
         if($routeParams.user_id) {
             PostFactory.getUser($routeParams.user_id).then(function(data){
