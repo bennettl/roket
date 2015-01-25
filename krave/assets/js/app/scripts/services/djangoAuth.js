@@ -120,6 +120,7 @@ angular.module('angularDjangoRegistrationAuthApp')
                 'method': "POST",
                 'url': "/logout/"
             }).then(function(data){
+                console.log('FIRED');
                 delete $http.defaults.headers.common.Authorization;
                 delete $cookies.token;
                 djangoAuth.authenticated = false;
