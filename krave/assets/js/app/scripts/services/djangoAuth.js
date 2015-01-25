@@ -40,7 +40,8 @@ angular.module('angularDjangoRegistrationAuthApp')
                 deferred.resolve(data, status);
             }))
             .error(angular.bind(this,function(data, status, headers, config) {
-                    console.log(data);
+                console.log(data);
+                console.log($cookies['csrftoken']);
                 console.log("error syncing with: " + url);
                 // Set request status
                 if(data){
