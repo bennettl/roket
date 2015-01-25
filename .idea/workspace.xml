@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54cea067-5474-45b1-a543-1b6857debf7c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/krave/api/admin.py" afterPath="$PROJECT_DIR$/krave/api/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/krave/assets/js/app/scripts/app.js" afterPath="$PROJECT_DIR$/krave/assets/js/app/scripts/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/krave/assets/js/app/scripts/services/djangoAuth.js" afterPath="$PROJECT_DIR$/krave/assets/js/app/scripts/services/djangoAuth.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/login.js" afterPath="$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/login.js" />
@@ -79,26 +80,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/krave/api/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.4791667" vertical-offset="167" max-vertical-offset="1534">
-              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".bower.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/krave/assets/angular/.bower.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.318182" vertical-offset="0" max-vertical-offset="286">
-              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/urls.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -119,14 +100,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logout.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="logout.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/logout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.124282986" vertical-offset="0" max-vertical-offset="523">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="11" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="260">
+              <caret line="14" column="71" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <marker date="1422171046000" expanded="true" signature="162:513" placeholder="//..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/krave/api/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.22456814" vertical-offset="0" max-vertical-offset="521">
+              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -209,7 +200,6 @@
         <option value="$PROJECT_DIR$/krave/assets/js/templates/p.html" />
         <option value="$PROJECT_DIR$/krave/assets/js/templates/sidebar.html" />
         <option value="$PROJECT_DIR$/krave/assets/angular-checkbox.js" />
-        <option value="$PROJECT_DIR$/krave/api/admin.py" />
         <option value="$PROJECT_DIR$/krave/assets/js/templates/new_post_modal.html" />
         <option value="$PROJECT_DIR$/krave/assets/js/templates/profile_posts.html" />
         <option value="$PROJECT_DIR$/krave/assets/js/templates/edit_profile.html" />
@@ -235,6 +225,7 @@
         <option value="$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/login.js" />
         <option value="$PROJECT_DIR$/krave/assets/js/script.js" />
         <option value="$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/logout.js" />
+        <option value="$PROJECT_DIR$/krave/api/admin.py" />
       </list>
     </option>
   </component>
@@ -251,8 +242,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-10" />
-    <option name="y" value="23" />
+    <option name="x" value="-191" />
+    <option name="y" value="221" />
     <option name="width" value="1440" />
     <option name="height" value="873" />
   </component>
@@ -816,15 +807,15 @@
       <workItem from="1422050007752" duration="27000" />
       <workItem from="1422058358104" duration="2975000" />
       <workItem from="1422126586326" duration="15932000" />
-      <workItem from="1422157267985" duration="3298000" />
+      <workItem from="1422157267985" duration="3462000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93628000" />
+    <option name="totallyTimeSpent" value="93792000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="23" width="1440" height="873" extended-state="0" />
+    <frame x="-191" y="221" width="1440" height="873" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -989,13 +980,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/krave/api/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.12" vertical-offset="0" max-vertical-offset="299">
-          <caret line="6" column="56" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/krave/assets/js/angular-checkbox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1365">
@@ -1044,13 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.909091" vertical-offset="0" max-vertical-offset="312">
           <caret line="10" column="59" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/krave/api/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.56" vertical-offset="0" max-vertical-offset="832">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1282,11 +1259,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/logout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.124282986" vertical-offset="0" max-vertical-offset="523">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="11" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="260">
+          <caret line="14" column="71" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <marker date="1422171046000" expanded="true" signature="162:513" placeholder="//..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/krave/api/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7309237" vertical-offset="0" max-vertical-offset="832">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/krave/api/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22456814" vertical-offset="0" max-vertical-offset="521">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import Post, Category, CategoryToPost
 
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', )
 
 class CategoryToPostInline(admin.TabularInline):
     model = CategoryToPost
@@ -14,4 +16,4 @@ class PostAdmin(admin.ModelAdmin):
         obj.save()
 
 admin.site.register(Post, PostAdmin)
-admin.site.register(Category)
+admin.site.register(Category, CategoryAdmin)
