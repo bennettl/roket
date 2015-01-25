@@ -105,6 +105,9 @@ input:disabled {
 	float: left;
 	margin: 20px;
 }
+#header .logo a {
+	text-decoration: none;
+}
 #header .links {
 	margin-top: 15px;
 	float: right;
