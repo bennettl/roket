@@ -127,20 +127,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logout.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="logout.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/logout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="273">
-              <caret line="5" column="55" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.32313576" vertical-offset="0" max-vertical-offset="523">
+              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="djangoAuth.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="djangoAuth.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/assets/js/app/scripts/services/djangoAuth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5150905" vertical-offset="303" max-vertical-offset="3055">
+            <state vertical-scroll-proportion="-9.846154" vertical-offset="303" max-vertical-offset="3055">
               <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
               <folding />
             </state>
@@ -228,9 +228,9 @@
         <option value="$PROJECT_DIR$/krave/assets/js/templates/about.html" />
         <option value="$PROJECT_DIR$/krave/api/templates/base.html" />
         <option value="$PROJECT_DIR$/krave/assets/js/app/scripts/app.js" />
-        <option value="$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/logout.js" />
         <option value="$PROJECT_DIR$/krave/urls.py" />
         <option value="$PROJECT_DIR$/krave/assets/js/app/scripts/services/djangoAuth.js" />
+        <option value="$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/logout.js" />
       </list>
     </option>
   </component>
@@ -812,12 +812,12 @@
       <workItem from="1422050007752" duration="27000" />
       <workItem from="1422058358104" duration="2975000" />
       <workItem from="1422126586326" duration="15932000" />
-      <workItem from="1422157267985" duration="2523000" />
+      <workItem from="1422157267985" duration="2568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92853000" />
+    <option name="totallyTimeSpent" value="92898000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-10" y="23" width="1440" height="873" extended-state="0" />
@@ -1266,18 +1266,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/logout.js">
+    <entry file="file://$PROJECT_DIR$/krave/assets/js/app/scripts/services/djangoAuth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="273">
-          <caret line="5" column="55" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+        <state vertical-scroll-proportion="-9.846154" vertical-offset="303" max-vertical-offset="3055">
+          <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/krave/assets/js/app/scripts/services/djangoAuth.js">
+    <entry file="file://$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/logout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5150905" vertical-offset="303" max-vertical-offset="3055">
-          <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.32313576" vertical-offset="0" max-vertical-offset="523">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding />
         </state>
       </provider>
