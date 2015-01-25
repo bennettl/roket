@@ -15,7 +15,6 @@ angular.module('angularDjangoRegistrationAuthApp')
         'authenticated': null,
         'authPromise': null,
         'request': function(args) {
-            console.log($cookies);
             // Let's retrieve the token from the cookie, if available
             if($cookies.token){
                 $http.defaults.headers.common.Authorization = 'Token ' + $cookies.token;
@@ -41,6 +40,7 @@ angular.module('angularDjangoRegistrationAuthApp')
                 deferred.resolve(data, status);
             }))
             .error(angular.bind(this,function(data, status, headers, config) {
+                    console.log(data);
                 console.log("error syncing with: " + url);
                 // Set request status
                 if(data){
