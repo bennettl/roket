@@ -87,7 +87,7 @@
             })
         };
         postFactory.getEmbedData = function(url){
-            return $http({method:"GET", url:'http://api.embed.ly/1/oembed?key=1f4c7a2056794e52b0124e733778f0f1&maxwidth=854&url='+url}).then(function(result){
+            return $http({method:"GET", url:'http://api.embed.ly/1/oembed?key=1f4c7a2056794e52b0124e733778f0f1&width=854&url='+url}).then(function(result){
                 return result.data;
             })
         };
