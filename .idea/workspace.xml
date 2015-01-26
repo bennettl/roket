@@ -74,21 +74,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="script.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="script.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/assets/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65495867" vertical-offset="6677" max-vertical-offset="7995">
+            <state vertical-scroll-proportion="-12.192307" vertical-offset="6677" max-vertical-offset="7995">
               <caret line="538" column="24" selection-start-line="538" selection-start-column="24" selection-end-line="538" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="comments.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="comments.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/krave/assets/js/templates/comments.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.727273" vertical-offset="388" max-vertical-offset="1027">
-              <caret line="48" column="165" selection-start-line="48" selection-start-column="165" selection-end-line="48" selection-end-column="165" />
+            <state vertical-scroll-proportion="0.48360655" vertical-offset="388" max-vertical-offset="1027">
+              <caret line="48" column="182" selection-start-line="48" selection-start-column="182" selection-end-line="48" selection-end-column="182" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -244,8 +244,8 @@
         <option value="$PROJECT_DIR$/krave/assets/js/templates/new_post_modal.html" />
         <option value="$PROJECT_DIR$/krave/assets/custom/style.css" />
         <option value="$PROJECT_DIR$/krave/assets/js/templates/post.html" />
-        <option value="$PROJECT_DIR$/krave/assets/js/templates/comments.html" />
         <option value="$PROJECT_DIR$/krave/assets/js/script.js" />
+        <option value="$PROJECT_DIR$/krave/assets/js/templates/comments.html" />
       </list>
     </option>
   </component>
@@ -827,12 +827,12 @@
       <workItem from="1422050007752" duration="27000" />
       <workItem from="1422058358104" duration="2975000" />
       <workItem from="1422126586326" duration="15932000" />
-      <workItem from="1422157267985" duration="6925000" />
+      <workItem from="1422157267985" duration="6986000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97255000" />
+    <option name="totallyTimeSpent" value="97316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-112" y="23" width="1440" height="873" extended-state="6" />
@@ -1286,16 +1286,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/krave/assets/js/templates/comments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.727273" vertical-offset="388" max-vertical-offset="1027">
-          <caret line="48" column="165" selection-start-line="48" selection-start-column="165" selection-end-line="48" selection-end-column="165" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/krave/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.16" vertical-offset="36" max-vertical-offset="611">
@@ -1306,9 +1296,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/krave/assets/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65495867" vertical-offset="6677" max-vertical-offset="7995">
+        <state vertical-scroll-proportion="-12.192307" vertical-offset="6677" max-vertical-offset="7995">
           <caret line="538" column="24" selection-start-line="538" selection-start-column="24" selection-end-line="538" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/krave/assets/js/templates/comments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48360655" vertical-offset="388" max-vertical-offset="1027">
+          <caret line="48" column="182" selection-start-line="48" selection-start-column="182" selection-end-line="48" selection-end-column="182" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
