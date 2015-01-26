@@ -555,10 +555,12 @@
                     post: $routeParams.post_id
 
                 };
-                base_comment.post(new_comment, "", {'X-CSRFToken': window.CSRF}, {'X-CSRFToken': window.CSRF}).then(function(result){
-                    $route.reload();
+                if($scope.comment) {
+                    base_comment.post(new_comment, "", {'X-CSRFToken': window.CSRF}, {'X-CSRFToken': window.CSRF}).then(function (result) {
+                        $route.reload();
 
-                })
+                    })
+                }
 
             };
             $scope.replyToComment = function(comment) {
