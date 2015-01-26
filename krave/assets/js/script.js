@@ -535,6 +535,12 @@
                 $scope.categories = data;
 
             });
+            $scope.deleteComment = function(comment) {
+                Restangular.setDefaultHeaders({'X-CSRFToken': window.CSRF}); //CSRF_TOKEN gathered elsewhere
+                Restangular.one('comment', comment).remove().then(function(){
+                    $route.reload();
+                })
+            };
 
 
 
