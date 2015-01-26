@@ -268,7 +268,7 @@
             $scope.deletePost = function(post) {
                 Restangular.setDefaultHeaders({'X-CSRFToken': window.CSRF}); //CSRF_TOKEN gathered elsewhere
                 Restangular.one('post', post.id).remove().then(function(){
-                    console.log('test');
+                    $route.reload();
                 })
             };
             $scope.editPost = function (post) {
@@ -550,11 +550,10 @@
 
                 };
                 base_comment.post(new_comment, "", {'X-CSRFToken': window.CSRF}, {'X-CSRFToken': window.CSRF}).then(function(result){
-                    $scope.post.comments.push({
-                        user: $scope.user,
-                        comment: $scope.comment
-                    })
+                    $route.reload();
+
                 })
+
             };
             $scope.replyToComment = function(comment) {
                 $scope.replyTo = comment.id;
