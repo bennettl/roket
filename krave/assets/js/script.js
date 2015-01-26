@@ -265,6 +265,12 @@
             })
 
         }
+            $scope.deletePost = function(post) {
+                Restangular.setDefaultHeaders({'X-CSRFToken': window.CSRF}); //CSRF_TOKEN gathered elsewhere
+                Restangular.one('post', post.id).remove().then(function(){
+                    console.log('test');
+                })
+            };
             $scope.editPost = function (post) {
             var modalInstance = $modal.open({
                 controller: ModalInstanceCtrl,
