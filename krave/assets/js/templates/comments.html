@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="comment-info">
-                <strong><a href="/profile/{{ comment.user.id }}">{{ comment.user.username }}</a></strong> <small><a href="#" ng-click="deleteComment(comment.id)">[Delete]</a></small> <span style="color:#666">{{ comment.date_posted | date: 'short' }}</span><br />
+                <strong><a href="/profile/{{ comment.user.id }}">{{ comment.user.username }}</a></strong> <small ng-show="comment.user.id == user.id"><a href="#" ng-click="deleteComment(comment.id)">[Delete]</a></small> <span style="color:#666">{{ comment.date_posted | date: 'short' }}</span><br />
                 {{ comment.comment }}
                 <div class="actions">
                     <a href="#" ng-click="replyToComment(comment)" ng-show="user">Reply</a>
