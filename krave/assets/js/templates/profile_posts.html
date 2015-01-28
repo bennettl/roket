@@ -10,7 +10,7 @@
             <div class="top clearfix">
                 <div class="post-title">
                     <h3><a href="#" ng-click="viewVideo(p.url)">{{ p.post_title }}</a></h3>
-                    <div class="categories" style="margin-bottom:10px;">
+                    <div class="categories" style="float: left">
                         <div ng-repeat="category in p.categories" class="category">
                             <a href='/category/{{ category.id }}/{{ category.name }}'>{{ category.name }}</a>
                         </div>
