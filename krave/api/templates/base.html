@@ -32,7 +32,6 @@
                     <div class="btn-group" dropdown is-open="status.isopen">
                         <a dropdown-toggle ng-disabled="disabled">
                             {% verbatim %}
-                            {{ user }}
                             <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !user.profile_image }" style="float:left;margin-right:10px;">
                                 <img class="avatar-image" ng-src="{{ user.profile_image }}" width="50" height="50">
                                 <span class="avatar-initials">{{ user.username | firstCharacter }}</span>
