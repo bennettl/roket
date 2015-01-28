@@ -209,7 +209,7 @@ input:disabled {
 }
 .post-title {
 	float: left;
-	max-width: 600px;
+	max-width: 550px;
 }
 .post-title .categories {
 	float: left;
