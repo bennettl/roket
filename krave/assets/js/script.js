@@ -82,7 +82,7 @@
             });
         };
         postFactory.getUrlData = function(url){
-            return $http({method:"GET", url:'http://api.embed.ly/1/extract?key=1f4c7a2056794e52b0124e733778f0f1&url='+url+'&maxwidth=500'}).then(function(result){
+            return $http({method:"GET", url:'http://api.embed.ly/1/oembed?key=1f4c7a2056794e52b0124e733778f0f1&url='+url+'&maxwidth=500'}).then(function(result){
                 return result.data;
             })
         };
@@ -434,7 +434,7 @@
                 angular.forEach($scope.posts, function (post) {
                     //Todo
                 PostFactory.getUrlData(post.url).then(function(result){
-                    post.thumbnail = result.images[0].url;
+                    post.thumbnail = result.thumbnail_url
                 })
                 });
             });
@@ -446,7 +446,7 @@
                 angular.forEach($scope.posts, function (post) {
                     //Todo
                     PostFactory.getUrlData(post.url).then(function(result){
-                        post.thumbnail = result.images[0].url;
+                        post.thumbnail = result.thumbnail_url
                     })
                 });
             });
@@ -458,7 +458,7 @@
                 angular.forEach($scope.posts, function (post) {
                     //Todo
                 PostFactory.getUrlData(post.url).then(function(result){
-                    post.thumbnail = result.images[0].url;
+                    post.thumbnail = result.thumbnail_url
                 })
                 });
 
@@ -502,7 +502,7 @@
                 $scope.post = data;
                 console.log($scope.post);
                 PostFactory.getUrlData($scope.post.url).then(function(result){
-                    $scope.post.thumbnail = result.images[0].url;
+                    $scope.post.thumbnail = result.thumbnail_url
 
 
 
