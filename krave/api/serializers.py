@@ -10,7 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'first_name', 'last_name', 'profile_image_url', )
+        fields = ('id', 'username', 'first_name', 'last_name', )
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -88,5 +88,5 @@ class CustomUserSerializer(serializers.ModelSerializer):
     posts = PostsSerializer(source="post_set.all", many=True)
     class Meta:
         model = User
-        fields = ('id', 'username', 'first_name', 'last_name', 'posts' )
+        fields = ('id', 'username', 'first_name', 'last_name', 'posts',  'profile_image_url', )
 
