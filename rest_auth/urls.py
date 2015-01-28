@@ -1,5 +1,4 @@
 from django.conf.urls import patterns, url
-from django.views.generic import TemplateView
 from rest_auth.views import (Login, Logout, UserDetails, PasswordChange,
                              PasswordReset, PasswordResetConfirm)
 

@@ -6,6 +6,8 @@ from api.views import CategoryViewSet, PostViewSet, PostsViewSet, VoteViewSet, C
 # from authentication.views import UserListCreateAPIView
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+from django.views.generic import TemplateView
+
 from rest_auth.views import (Login, Logout, UserDetails, PasswordChange,
                              PasswordReset, PasswordResetConfirm)
 admin.autodiscover()
@@ -25,7 +27,6 @@ router.register(r'user', UserViewSet)
 urlpatterns = patterns('',
     url(r'^api/v1/', include(router.urls)),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^accounts/', include('allauth.urls')),
     url(r'^$', 'krave.views.public', name='public'),
     (r'^rest-auth/', include('rest_auth.urls')),
     (r'^rest-auth/registration/', include('rest_auth.registration.urls')),
@@ -38,9 +39,17 @@ urlpatterns = patterns('',
     url(r'^editProfile', 'krave.views.public', name='public'),
     url(r'^profile', 'krave.views.public', name='public'),
     url(r'^about', 'krave.views.public', name='public'),
-    # url(r'post', UserListCreateAPIView.as_view()),
-    # url(r'^register', 'krave.views.public', name='public'),
-    # url(r'api/v1/auth/login/', 'rest_framework_jwt.views.obtain_jwt_token'),
-    # url(r'api/v1/users/', UserListCreateAPIView.as_view()),
+
+    url(r'^password-reset/$',
+        TemplateView.as_view(template_name="password_reset.html"),
+        name='password-reset'),
+    url(r'^password-reset/confirm/$',
+        TemplateView.as_view(template_name="password_reset_confirm.html"),
+        name='password-reset-confirm'),
+
+    # this url is used to generate email content
+    url(r'^password-reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        TemplateView.as_view(template_name="password_reset_confirm.html"),
+        name='password_reset_confirm'),
 
 )
