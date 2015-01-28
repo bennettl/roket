@@ -4,23 +4,6 @@ from allauth.socialaccount.models import SocialAccount
 import hashlib
 
 
-class UserMethods(User):
-    def profile_image_url(self):
-        fb_uid = SocialAccount.objects.filter(user_id=self.user.id, provider='facebook')
-
-        if len(fb_uid):
-            return "http://graph.facebook.com/{}/picture?width=40&height=40".format(fb_uid[0].uid)
-
-        return "http://www.gravatar.com/avatar/{}?s=40".format(hashlib.md5(self.user.email).hexdigest())
-
-    class Meta:
-        proxy = True
-
-    @property
-    def user(self):
-        return User.objects.get(id=self.user)
-
-
 class Category(models.Model):
     name = models.CharField(max_length=300, null=True, blank=True)
     ordering_index = models.IntegerField(default=1, null=True, blank=True)
