@@ -169,6 +169,7 @@ input:disabled {
 
 }
 .content.about {
+	box-shadow: none
 	width: 100%;
 	float: none;
 	color: #fff;
@@ -177,7 +178,7 @@ input:disabled {
 	font-size: 16pt;
 }
 .about .inner-container {
-	width: 500px;
+	width: 560px;
 	margin: 0 auto;
 }
 .day {
@@ -215,6 +216,7 @@ input:disabled {
 .post-title a {
 	color: #fff;
 	text-decoration: none;
+	font-weight: 100;
 }
 .video-thumbnail {
 	cursor: hand;
