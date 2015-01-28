@@ -257,6 +257,8 @@
         function($scope, $http, $modal, PostFactory, $filter, Restangular, djangoAuth, $routeParams, $route) {
         djangoAuth.profile().then(function(data) {
             $scope.user = data;
+            console.log('USER:');
+            console.log($scope.user);
         });
         $scope.now = $filter('date')(new Date(), 'MMM dd yyyy');
         if($routeParams.user_id) {
