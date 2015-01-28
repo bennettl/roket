@@ -10,7 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
     profile_image = serializers.SerializerMethodField()
     class Meta:
         model = User
-        fields = ('id', 'username', 'first_name', 'last_name', 'profile_image',  )
+        fields = ('id', 'username', 'first_name', 'last_name', 'profile_image', )
 
     def get_profile_image(self, obj):
         return obj.profile.profile_image_url()
@@ -87,9 +87,12 @@ class CategoryListSerializer(serializers.ModelSerializer):
 
 
 class CustomUserSerializer(serializers.ModelSerializer):
-
+    profile_image = serializers.SerializerMethodField()
     posts = PostsSerializer(source="post_set.all", many=True)
     class Meta:
         model = User
-        fields = ('id', 'username', 'first_name', 'last_name', 'posts' )
+        fields = ('id', 'username', 'first_name', 'last_name', 'posts', 'profile_image', )
+
+    def get_profile_image(self, obj):
+        return obj.profile.profile_image_url()
 
