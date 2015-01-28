@@ -37,6 +37,8 @@ angular.module('angularDjangoRegistrationAuthApp')
                 data: data
             })
             .success(angular.bind(this,function(data, status, headers, config) {
+                    console.log('test');
+                    console.log('data');
                 deferred.resolve(data, status);
             }))
             .error(angular.bind(this,function(data, status, headers, config) {
@@ -147,11 +149,6 @@ angular.module('angularDjangoRegistrationAuthApp')
             });
         },
         'profile': function(){
-            console.log('test');
-            console.log(this.request({
-                'method': "GET",
-                'url': "/user/"
-            }));
             return this.request({
                 'method': "GET",
                 'url': "/user/"
