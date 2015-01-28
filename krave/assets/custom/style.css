@@ -231,7 +231,7 @@ input:disabled {
 .video-thumbnail img.play {
 	position: absolute;
 	left: 100px;
-	top: 70px;
+	top: 50px;
 }
 .video-thumbnail img:not(.play) {
 	width: 100%;
