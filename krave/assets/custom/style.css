@@ -198,6 +198,9 @@ input:disabled {
 	border-bottom: 1px solid #000;
 	margin-left: 5px;
 }
+.post .top {
+	margin-top: 20px;
+}
 .post a {
 	color: #e74c50;
 	font-weight: bold;
@@ -223,7 +226,7 @@ input:disabled {
 	float: left;
 	width: 200px;
 	height: 150px;
-	margin: 20px;
+	margin: 0 20px;
 }
 .video-thumbnail img.play {
 	position: absolute;
