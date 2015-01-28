@@ -5,6 +5,12 @@ from rest_framework.decorators import detail_route
 
 from .models import Post, Category, Votes, Comments, Replies, UserProfile
 
+class UserProfileSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = UserProfile
+        fields = ('profile_image_url', )
+
 
 class UserSerializer(serializers.ModelSerializer):
     profile_image = UserProfileSerializer(source='user_profile')
@@ -93,13 +99,6 @@ class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'username', 'first_name', 'last_name', 'posts', 'profile_image', )
-
-class UserProfileSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = UserProfile
-        fields = ('profile_image_url', )
-
 
 
 
