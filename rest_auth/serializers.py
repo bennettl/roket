@@ -62,9 +62,14 @@ class UserDetailsSerializer(serializers.ModelSerializer):
     """
     User model w/o password
     """
+    profile_image = serializers.SerializerMethodField()
+
     class Meta:
         model = get_user_model()
-        fields = ('id', 'username', 'email', 'first_name', 'last_name')
+        fields = ('id', 'username', 'email', 'first_name', 'last_name', 'profile_image', )
+
+    def get_profile_image(self, obj):
+        return obj.profile.profile_image_url()
 
 
 class PasswordResetSerializer(serializers.Serializer):

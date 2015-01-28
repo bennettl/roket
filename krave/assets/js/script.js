@@ -132,8 +132,6 @@
     });
     app.controller('DropdownCtrl', function ($scope, $log, djangoAuth) {
         djangoAuth.profile().then(function (data) {
-            console.log('DROPDOWN USER:');
-            console.log(data);
             $scope.user = data;
 
         });
@@ -262,7 +260,6 @@
     app.controller('AppController', ['$scope', '$http','$modal', 'PostFactory', '$filter', 'Restangular', 'djangoAuth', '$routeParams', '$route',
         function($scope, $http, $modal, PostFactory, $filter, Restangular, djangoAuth, $routeParams, $route) {
         djangoAuth.profile().then(function(data) {
-            console.log('APP USER:');
             console.log(data);
             $scope.user = data;
 
