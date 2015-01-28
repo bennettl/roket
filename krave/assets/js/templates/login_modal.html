@@ -27,8 +27,8 @@
 
             <div class="alert alert-danger" ng-repeat="error in errors.username">{{error}}</div>
             <label>Password</label><br />
-            <input name="password" id="id_password" type="password" ng-model="model.password" placeholder="Password" required /><br /><br />
-            <!--<a href="#" ng-click="forgotPassword()" style="color:#e74c50">Forgot your password?</a><br /><br />-->
+            <input name="password" id="id_password" type="password" ng-model="model.password" placeholder="Password" required /><br />
+            <a href="#" ng-click="forgotPassword()" style="color:#e74c50">Forgot your password?</a><br /><br />
             <div class="alert alert-danger" ng-repeat="error in errors.password">{{error}}</div>
             <div class="alert alert-danger" ng-repeat="error in errors.non_field_errors">{{error}}</div>
             <div class="alert alert-danger" ng-if="error">{{error}}</div>
