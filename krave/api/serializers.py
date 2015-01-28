@@ -38,24 +38,25 @@ class VoteSerializer(serializers.ModelSerializer):
 
 
 class CommentsSerializer(serializers.ModelSerializer):
-    profile_image = serializers.SerializerMethodField()
+
     class Meta:
         model = Comments
         fields = ('user', 'comment', 'post',)
-
-    def get_profile_image(self, obj):
-        return obj.user.profile.profile_image_url()
 
 
 class ReplySerializer(serializers.ModelSerializer):
 
     author = serializers.SerializerMethodField()
+    profile_image = serializers.SerializerMethodField()
     class Meta:
         model = Replies
-        fields = ('id', 'user', 'date_posted', 'comment', 'parent', 'author' )
+        fields = ('id', 'user', 'date_posted', 'comment', 'parent', 'author', 'profile_image', )
 
     def get_author(self, obj):
         return obj.user.username
+    def get_profile_image(self, obj):
+        return obj.user.profile.profile_image_url()
+
 
 
 class CommentSerializer(serializers.ModelSerializer):

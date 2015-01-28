@@ -58,8 +58,9 @@
             </div>
             <div class="comment-replies clearfix" ng-repeat="reply in comment.replies">
                 <div class="user-image">
-                    <div class="avatar avatar-circle avatar-hide-initials">
-                        <img class="avatar-image" src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;f=y" width="50" height="50">
+                    <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !reply.profile_image }"style="float:left;margin-right:10px;">
+                        <img class="avatar-image" ng-src="{{ reply.profile_image }}" width="50" height="50">
+                        <span class="avatar-initials">{{ reply.author | firstCharacter }}</span>
                     </div>
                 </div>
                 <div class="comment-info reply">
