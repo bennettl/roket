@@ -200,6 +200,7 @@ input:disabled {
 }
 .post .top {
 	margin-top: 20px;
+	max-height: 90px;
 }
 .post a {
 	color: #e74c50;

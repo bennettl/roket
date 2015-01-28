@@ -11,7 +11,7 @@
                     <a href="#" ng-click="editPost(p)" ng-show="p.author.id == user.id">Edit</a>
                     <a href="#" ng-click="deletePost(p)" ng-show="p.author.id == user.id"> | Delete</a>
                 </div>
-                <div class="top">
+                <div class="top clearfix">
                     <div class="post-title">
                         <h3><a href="#" ng-click="viewVideo(p.url)">{{ p.post_title }}</a></h3>
                         <div class="categories" style="float:left;">
@@ -20,7 +20,7 @@
                             </div>
                         </div>
                     </div>
-                </div><br /><br />
+                </div>
                 <div class="post-meta">
                     <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !p.author.profile_image }"style="float:left;margin-right:10px;">
                         <img class="avatar-image" ng-src="{{ p.author.profile_image }}" width="50" height="50">
