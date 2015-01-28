@@ -5,7 +5,7 @@ from rest_auth.views import (Login, Logout, UserDetails, PasswordChange,
 
 urlpatterns = patterns('',
                        # URLs that do not require a session or valid token
-                       url(r'^password/reset/$', 'django.contrib.auth.views.password_reset_confirm',
+                       url(r'^password/reset/$', PasswordReset.as_view(),
                            name='rest_password_reset'),
                        url(r'^password/reset/confirm/$', PasswordResetConfirm.as_view(),
                            name='rest_password_reset_confirm'),
