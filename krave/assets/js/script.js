@@ -106,6 +106,11 @@
             }
         }
     });
+    app.filter('firstCharacter', function(){
+        return function(input){
+            return input.charAt(0);
+        }
+    });
     app.controller('AuthModalCtrl', function($scope, $modal){
         $scope.signIn = function(){
             $modal.open({
