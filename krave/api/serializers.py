@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from rest_framework.decorators import detail_route
 
 
-from .models import Post, Category, Votes, Comments, Replies
+from .models import Post, Category, Votes, Comments, Replies, UserProfile
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -85,8 +85,20 @@ class CategoryListSerializer(serializers.ModelSerializer):
 
 class CustomUserSerializer(serializers.ModelSerializer):
 
+
     posts = PostsSerializer(source="post_set.all", many=True)
+    profile_image = UserProfileSerializer(source='user_profile')
+
     class Meta:
         model = User
-        fields = ('id', 'username', 'first_name', 'last_name', 'posts',  'profile_image_url', )
+        fields = ('id', 'username', 'first_name', 'last_name', 'posts', 'profile_image', )
+
+class UserProfileSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = UserProfile
+        fields = ('profile_image_url', )
+
+
+
 

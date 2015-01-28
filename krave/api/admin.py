@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Category, CategoryToPost, UserProfile
+from .models import Post, Category, CategoryToPost
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', )
@@ -16,5 +16,4 @@ class PostAdmin(admin.ModelAdmin):
         obj.save()
 
 admin.site.register(Post, PostAdmin)
-admin.site.register(UserProfile, UserProfile)
 admin.site.register(Category, CategoryAdmin)
