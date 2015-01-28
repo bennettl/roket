@@ -147,7 +147,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 )
 REST_SESSION_LOGIN = False
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 SITE_ID = 1
 
 # A sample logging configuration. The only tangible logging

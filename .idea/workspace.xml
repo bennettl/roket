@@ -150,8 +150,8 @@
       <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/krave/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49072164" vertical-offset="2193" max-vertical-offset="2743">
-              <caret line="187" column="30" selection-start-line="187" selection-start-column="1" selection-end-line="187" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.33333334" vertical-offset="1784" max-vertical-offset="2743">
+              <caret line="149" column="47" selection-start-line="149" selection-start-column="47" selection-end-line="149" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -1027,12 +1027,12 @@
       <workItem from="1422058358104" duration="2975000" />
       <workItem from="1422126586326" duration="15932000" />
       <workItem from="1422157267985" duration="7088000" />
-      <workItem from="1422402843454" duration="8691000" />
+      <workItem from="1422402843454" duration="9108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106109000" />
+    <option name="totallyTimeSpent" value="106526000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -1527,8 +1527,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/krave/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49072164" vertical-offset="2193" max-vertical-offset="2743">
-          <caret line="187" column="30" selection-start-line="187" selection-start-column="1" selection-end-line="187" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="1784" max-vertical-offset="2743">
+          <caret line="149" column="47" selection-start-line="149" selection-start-column="47" selection-end-line="149" selection-end-column="47" />
           <folding />
         </state>
       </provider>
