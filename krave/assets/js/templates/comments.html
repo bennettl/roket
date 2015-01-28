@@ -9,7 +9,7 @@
             <h3><a href="#" ng-click="viewVideo(post.url)">{{ post.post_title }}</a></h3>
         </div>
         <div class="avatar avatar-circle avatar-hide-image" style="float:left;margin-right:10px;">
-            <img class="avatar-image" src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;f=y" width="50" height="50">
+            <img class="avatar-image" ng-src="{{ post.author.profile_image }}" width="50" height="50">
             <span class="avatar-initials">EG</span>
         </div>
         <div class="author">

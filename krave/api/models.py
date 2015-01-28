@@ -15,7 +15,8 @@ class UserProfile(models.Model):
         if len(fb_uid):
             return "http://graph.facebook.com/{}/picture?width=40&height=40".format(fb_uid[0].uid)
 
-        return "http://www.gravatar.com/avatar/{}?s=40".format(hashlib.md5(self.user.email).hexdigest())
+        # return "http://www.gravatar.com/avatar/{}?s=40".format(hashlib.md5(self.user.email).hexdigest())
+        return "http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&f=y"
 
     class Meta:
         db_table = 'user_profile'
