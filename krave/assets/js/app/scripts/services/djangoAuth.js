@@ -147,6 +147,11 @@ angular.module('angularDjangoRegistrationAuthApp')
             });
         },
         'profile': function(){
+            console.log('test');
+            console.log(this.request({
+                'method': "GET",
+                'url': "/user/"
+            }));
             return this.request({
                 'method': "GET",
                 'url': "/user/"
