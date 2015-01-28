@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="54cea067-5474-45b1-a543-1b6857debf7c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/krave/api/models.py" afterPath="$PROJECT_DIR$/krave/api/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/krave/api/serializers.py" afterPath="$PROJECT_DIR$/krave/api/serializers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="django-api-rest-and-angular.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/krave/api/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.5294118" vertical-offset="0" max-vertical-offset="845">
-              <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.32452276" vertical-offset="0" max-vertical-offset="1040">
+              <caret line="17" column="20" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -132,11 +132,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serializers.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="serializers.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/api/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5418502" vertical-offset="593" max-vertical-offset="1274">
-              <caret line="74" column="57" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.9019608" vertical-offset="593" max-vertical-offset="1274">
+              <caret line="57" column="27" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="15" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -809,12 +809,12 @@
       <workItem from="1422058358104" duration="2975000" />
       <workItem from="1422126586326" duration="15932000" />
       <workItem from="1422157267985" duration="7088000" />
-      <workItem from="1422402843454" duration="2509000" />
+      <workItem from="1422402843454" duration="2683000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99927000" />
+    <option name="totallyTimeSpent" value="100101000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -1271,22 +1271,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/krave/api/models.py">
+    <entry file="file://$PROJECT_DIR$/krave/api/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5294118" vertical-offset="0" max-vertical-offset="845">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        <state vertical-scroll-proportion="-2.9019608" vertical-offset="593" max-vertical-offset="1274">
+          <caret line="57" column="27" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="15" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/krave/api/serializers.py">
+    <entry file="file://$PROJECT_DIR$/krave/api/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5418502" vertical-offset="593" max-vertical-offset="1274">
-          <caret line="74" column="57" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.32452276" vertical-offset="0" max-vertical-offset="1040">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
