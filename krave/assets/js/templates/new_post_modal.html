@@ -6,7 +6,7 @@
     <input type="text" ng-model="newPost.url" ng-change="parseVideoUrl(newPost.url)" />
     <br /><br />
     <label>Title</label><br />
-    <input type="text" ng-model="newPost.title" />
+    <input type="text" maxlength="52" ng-model="newPost.title" />
     <br /><br />
     <div ng-hide="editing">
 
