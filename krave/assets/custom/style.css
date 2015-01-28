@@ -200,13 +200,22 @@ input:disabled {
 }
 .post .top {
 	margin-top: 20px;
+	height: 50px;
 }
 .post a {
 	color: #e74c50;
 	font-weight: bold;
 }
 .post-title {
+	float: left;
 	max-width: 600px;
+}
+.post-title .categories {
+	float: left;
+}
+.post-title h3 {
+	margin-top: 0;
+	float: left;
 }
 .post-title .category {
 	padding: 2px 5px;
