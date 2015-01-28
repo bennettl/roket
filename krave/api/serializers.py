@@ -7,10 +7,13 @@ from .models import Post, Category, Votes, Comments, Replies
 
 
 class UserSerializer(serializers.ModelSerializer):
-
+    profile_image = serializers.SerializerMethodField()
     class Meta:
         model = User
-        fields = ('id', 'username', 'first_name', 'last_name', )
+        fields = ('id', 'username', 'first_name', 'last_name',  )
+
+    def get_profile_image(self, obj):
+        return obj.profile.profile_image_url
 
 
 class CategorySerializer(serializers.ModelSerializer):
