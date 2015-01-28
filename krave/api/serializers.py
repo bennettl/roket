@@ -13,7 +13,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('id', 'username', 'first_name', 'last_name', 'profile_image' )
 
     def get_profile_image(self, obj):
-        return obj.profile_image_url()
+        return self.
 
 
 class CategorySerializer(serializers.ModelSerializer):

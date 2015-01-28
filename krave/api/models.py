@@ -16,6 +16,10 @@ class UserMethods(User):
     class Meta:
         proxy = True
 
+    @property
+    def user(self):
+        return User.objects.get(id=self.user)
+
 
 class Category(models.Model):
     name = models.CharField(max_length=300, null=True, blank=True)
