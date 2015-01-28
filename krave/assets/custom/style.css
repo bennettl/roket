@@ -404,6 +404,9 @@ button {
 .edit-profile input {
 	margin: 15px 0;
 }
+.post-meta .avatar {
+	margin-top: -15px;
+}
 
 .clearfix { display: inline-block; }
 /* start commented backslash hack \*/
