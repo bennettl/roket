@@ -18,16 +18,25 @@
                 <img class="avatar-image" ng-src="{{ post.author.profile_image }}" width="50" height="50">
                 <span class="avatar-initials">{{ post.author.username | firstCharacter }}</span>
             </div>
-        <div class="post-meta">
-            <div class="author">
-                Uploaded by
-                <a href="/profile/{{ post.author.id }}">{{ post.author.username }}</a>
+            <div class="post-meta">
+                <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !post.author.profile_image }"style="float:left;margin-right:10px;">
+                    <img class="avatar-image" ng-src="{{ post.author.profile_image }}" width="50" height="50">
+                    <span class="avatar-initials">{{ post.author.username | firstCharacter }}</span>
+                </div>
+                <div class="author">
+                    Uploaded by
+                    <a href="/profile/{{ post.author.id }}">{{ post.author.username }}</a>
+                </div>
             </div>
-        </div>
-        <div class="social-icons">
-            <a href="#"><img src="http://zacktanner.me/clients/krave/facebook.svg" /></a>
-            <a href="#"><img src="http://zacktanner.me/clients/krave/twitter.svg" /></a>
-        </div>
+            <div class="social-icons">
+
+                <a href="https://www.facebook.com/dialog/feed?app_id=1515697715348428&display=popup&caption=Check%20out%20this%20post%20on%20Roket!&link=http://roket.tv/comments/{{ p.id }}&redirect_uri=http://roket.tv" target="_blank"><img src="http://zacktanner.me/clients/krave/facebook.svg" /></a>
+                <a class="twitter-share-button" href="https://twitter.com/share/http://roket.tv/comments/{{ p.id }}"><img src="http://zacktanner.me/clients/krave/twitter.svg" /></a>
+                <script>
+                    window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+                </script>
+
+            </div>
         <div class="votes" ng-click="vote(post)" ng-class="{ 'voted': hasVoted(post) }">
             <span ng-hide="hasVoted(post)" style="margin-left: 3px;">&#x25B2;</span>
             <span ng-show="hasVoted(post)" style="margin-left: 3px;"><i class="fa fa-check"></i></span>
