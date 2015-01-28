@@ -87,7 +87,9 @@ input:disabled {
 .avatar-hide-image .avatar-image {
 	display: none;
 }
-
+.avatar-hide-image .avatar-initials {
+	display: block;
+}
 .avatar-hide-initials .avatar-initials {
 	display: none;
 }
