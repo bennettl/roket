@@ -26,7 +26,6 @@ class UserViewSet(viewsets.ModelViewSet):
         user.save()
         return HttpResponse(status=200)
 
-
 class PostViewSet(viewsets.ModelViewSet):
     """
     This viewset automatically provides `list` and `detail` actions.
