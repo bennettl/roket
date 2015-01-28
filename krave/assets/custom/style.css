@@ -203,7 +203,7 @@ input:disabled {
 	font-weight: bold;
 }
 .post-title {
-	max-width: 800px;
+	max-width: 600px;
 }
 .post-title .category {
 	padding: 2px 5px;
