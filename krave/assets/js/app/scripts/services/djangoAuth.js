@@ -38,7 +38,7 @@ angular.module('angularDjangoRegistrationAuthApp')
             })
             .success(angular.bind(this,function(data, status, headers, config) {
                     console.log('test');
-                    console.log('data');
+                    console.log(data);
                 deferred.resolve(data, status);
             }))
             .error(angular.bind(this,function(data, status, headers, config) {
