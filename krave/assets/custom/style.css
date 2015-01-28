@@ -169,7 +169,7 @@ input:disabled {
 
 }
 .content.about {
-	box-shadow: none
+	box-shadow: none;
 	width: 100%;
 	float: none;
 	color: #fff;
