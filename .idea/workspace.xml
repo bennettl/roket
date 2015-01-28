@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54cea067-5474-45b1-a543-1b6857debf7c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/krave/urls.py" afterPath="$PROJECT_DIR$/krave/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/krave/settings.py" afterPath="$PROJECT_DIR$/krave/settings.py" />
     </list>
     <ignored path="django-api-rest-and-angular.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -135,14 +135,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58232933" vertical-offset="243" max-vertical-offset="754">
-              <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+            <state vertical-scroll-proportion="-12.64" vertical-offset="256" max-vertical-offset="754">
+              <caret line="44" column="38" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/krave/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.49072164" vertical-offset="2193" max-vertical-offset="2743">
+              <caret line="187" column="30" selection-start-line="187" selection-start-column="1" selection-end-line="187" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -199,7 +209,6 @@
         <option value="$PROJECT_DIR$/rest_auth/views.py" />
         <option value="$PROJECT_DIR$/rest_auth/registration/views.py" />
         <option value="$PROJECT_DIR$/rest_auth/registration/urls.py" />
-        <option value="$PROJECT_DIR$/krave/settings.py" />
         <option value="$PROJECT_DIR$/krave/assets/js/templates/register_modal.html" />
         <option value="$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/register.js" />
         <option value="$PROJECT_DIR$/krave/assets/js/templates/about.html" />
@@ -221,6 +230,7 @@
         <option value="$PROJECT_DIR$/krave/assets/js/templates/login_modal.html" />
         <option value="$PROJECT_DIR$/rest_auth/urls.py" />
         <option value="$PROJECT_DIR$/krave/urls.py" />
+        <option value="$PROJECT_DIR$/krave/settings.py" />
       </list>
     </option>
   </component>
@@ -1017,12 +1027,12 @@
       <workItem from="1422058358104" duration="2975000" />
       <workItem from="1422126586326" duration="15932000" />
       <workItem from="1422157267985" duration="7088000" />
-      <workItem from="1422402843454" duration="8302000" />
+      <workItem from="1422402843454" duration="8691000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105720000" />
+    <option name="totallyTimeSpent" value="106109000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -1399,14 +1409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/krave/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.0" vertical-offset="1056" max-vertical-offset="2678">
-          <caret line="93" column="20" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/krave/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6" vertical-offset="0" max-vertical-offset="143">
@@ -1476,7 +1478,7 @@
         <state vertical-scroll-proportion="0.5219885" vertical-offset="0" max-vertical-offset="523">
           <caret line="21" column="43" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#0#51#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1515,11 +1517,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/krave/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58232933" vertical-offset="243" max-vertical-offset="754">
-          <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+        <state vertical-scroll-proportion="-12.64" vertical-offset="256" max-vertical-offset="754">
+          <caret line="44" column="38" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/krave/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49072164" vertical-offset="2193" max-vertical-offset="2743">
+          <caret line="187" column="30" selection-start-line="187" selection-start-column="1" selection-end-line="187" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

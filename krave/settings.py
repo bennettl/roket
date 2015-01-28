@@ -187,6 +187,11 @@ REST_FRAMEWORK = {
     )
 }
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'roketsmtp@gmail.com'
+EMAIL_HOST_PASSWORD = 'denox111'
+EMAIL_PORT = 587
 
 import datetime
 JWT_AUTH = {
