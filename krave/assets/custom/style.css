@@ -84,6 +84,10 @@ input:disabled {
 	border-radius: 50%;
 }
 
+.avatar-circle .avatar-initials {
+	display: none;
+}
+
 .avatar-hide-image .avatar-image {
 	display: none;
 }
