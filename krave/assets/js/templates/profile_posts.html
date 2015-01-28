@@ -15,8 +15,9 @@
                     </div>
                 </div>
             </div>
-            <div class="avatar avatar-circle" style="float:left;margin-right:10px;">
+            <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !p.author.profile_image }"style="float:left;margin-right:10px;">
                 <img class="avatar-image" ng-src="{{ p.author.profile_image }}" width="50" height="50">
+                <span class="avatar-initials">{{ p.author.username | firstCharacter }}</span>
             </div>
             <div class="author">
                 Uploaded by
