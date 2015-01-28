@@ -31,10 +31,12 @@
                     <!-- Single button -->
                     <div class="btn-group" dropdown is-open="status.isopen">
                         <a dropdown-toggle ng-disabled="disabled">
-                            <div class="avatar avatar-circle avatar-hide-initials">
-                                <img class="avatar-image" src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;f=y" width="50" height="50">
-                                <span class="avatar-initials">Z</span>
+                            {% verbatim %}
+                            <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !user.profile_image }" style="float:left;margin-right:10px;">
+                                <img class="avatar-image" ng-src="{{ user.profile_image }}" width="50" height="50">
+                                <span class="avatar-initials">{{ user.username | firstCharacter }}</span>
                             </div>
+                            {% endverbatim %}
                             <div class="user-name"><span class="caret"></span></div>
                         </a>
                         <ul class="dropdown-menu" role="menu">

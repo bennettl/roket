@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54cea067-5474-45b1-a543-1b6857debf7c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/krave/api/templates/base.html" afterPath="$PROJECT_DIR$/krave/api/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/krave/assets/custom/style.css" afterPath="$PROJECT_DIR$/krave/assets/custom/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="django-api-rest-and-angular.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/assets/custom/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43661973" vertical-offset="2422" max-vertical-offset="5642">
-              <caret line="203" column="21" selection-start-line="203" selection-start-column="21" selection-end-line="203" selection-end-column="21" />
+            <state vertical-scroll-proportion="-12.846154" vertical-offset="2422" max-vertical-offset="5655">
+              <caret line="212" column="21" selection-start-line="212" selection-start-column="1" selection-end-line="212" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -93,6 +95,18 @@
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/krave/api/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6352459" vertical-offset="132" max-vertical-offset="1560">
+              <caret line="34" column="117" selection-start-line="34" selection-start-column="117" selection-end-line="34" selection-end-column="117" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,24 +167,14 @@
       <file leaf-file-name="post.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/assets/js/templates/post.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.8333335" vertical-offset="54" max-vertical-offset="845">
-              <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+            <state vertical-scroll-proportion="-6.1875" vertical-offset="54" max-vertical-offset="845">
+              <caret line="27" column="29" selection-start-line="24" selection-start-column="19" selection-end-line="27" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/krave/assets/js/app/scripts/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="1482">
-              <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="34" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -223,7 +227,6 @@
         <option value="$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/logout.js" />
         <option value="$PROJECT_DIR$/krave/assets/js/app/scripts/controllers/login.js" />
         <option value="$PROJECT_DIR$/krave/assets/js/templates/new_post_modal.html" />
-        <option value="$PROJECT_DIR$/krave/api/templates/base.html" />
         <option value="$PROJECT_DIR$/krave/api/admin.py" />
         <option value="$PROJECT_DIR$/krave/api/views.py" />
         <option value="$PROJECT_DIR$/krave/api/models.py" />
@@ -239,6 +242,7 @@
         <option value="$PROJECT_DIR$/krave/assets/js/templates/about.html" />
         <option value="$PROJECT_DIR$/krave/assets/js/templates/post.html" />
         <option value="$PROJECT_DIR$/krave/assets/custom/style.css" />
+        <option value="$PROJECT_DIR$/krave/api/templates/base.html" />
       </list>
     </option>
   </component>
@@ -935,12 +939,12 @@
       <workItem from="1422058358104" duration="2975000" />
       <workItem from="1422126586326" duration="15932000" />
       <workItem from="1422157267985" duration="7088000" />
-      <workItem from="1422402843454" duration="11773000" />
+      <workItem from="1422402843454" duration="11930000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109191000" />
+    <option name="totallyTimeSpent" value="109348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -1164,14 +1168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="4891" max-vertical-offset="6253">
           <caret line="411" column="6" selection-start-line="411" selection-start-column="6" selection-end-line="411" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/krave/api/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.772727" vertical-offset="132" max-vertical-offset="1534">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1432,10 +1428,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/krave/assets/custom/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.846154" vertical-offset="2422" max-vertical-offset="5655">
+          <caret line="212" column="21" selection-start-line="212" selection-start-column="1" selection-end-line="212" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/krave/assets/js/templates/post.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.8333335" vertical-offset="54" max-vertical-offset="845">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        <state vertical-scroll-proportion="-6.1875" vertical-offset="54" max-vertical-offset="845">
+          <caret line="27" column="29" selection-start-line="24" selection-start-column="19" selection-end-line="27" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1445,11 +1449,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/krave/assets/custom/style.css">
+    <entry file="file://$PROJECT_DIR$/krave/api/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43661973" vertical-offset="2422" max-vertical-offset="5642">
-          <caret line="203" column="21" selection-start-line="203" selection-start-column="21" selection-end-line="203" selection-end-column="21" />
-          <folding />
+        <state vertical-scroll-proportion="0.6352459" vertical-offset="132" max-vertical-offset="1560">
+          <caret line="34" column="117" selection-start-line="34" selection-start-column="117" selection-end-line="34" selection-end-column="117" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

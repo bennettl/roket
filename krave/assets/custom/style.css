@@ -217,6 +217,7 @@ input:disabled {
 .post-title h3 {
 	margin-top: 0;
 	float: left;
+	font-size: 14pt;
 }
 .post-title .category {
 	padding: 2px 5px;
