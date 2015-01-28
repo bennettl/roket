@@ -132,27 +132,28 @@
     });
     app.controller('DropdownCtrl', function ($scope, $log, djangoAuth) {
         djangoAuth.profile().then(function (data) {
+            console.log('DROPDOWN USER:');
+            console.log(data);
             $scope.user = data;
 
-            $scope.status = {
-                isopen: false
-            };
-
-            $scope.toggled = function (open) {
-                $log.log('Dropdown is now: ', open);
-            };
-
-            $scope.toggleDropdown = function ($event) {
-                $event.preventDefault();
-                $event.stopPropagation();
-                $scope.status.isopen = !$scope.status.isopen;
-            };
         });
+        $scope.status = {
+            isopen: false
+        };
+
+        $scope.toggled = function (open) {
+            $log.log('Dropdown is now: ', open);
+        };
+
+        $scope.toggleDropdown = function ($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            $scope.status.isopen = !$scope.status.isopen;
+        };
     });
 
     app.controller('HeaderCtrl', function($scope, djangoAuth, $modal, PostFactory, Restangular) {
         djangoAuth.profile().then(function(data) {
-            console.log(data);
             $scope.user = data;
         });
         $scope.open = function () {
@@ -261,6 +262,8 @@
     app.controller('AppController', ['$scope', '$http','$modal', 'PostFactory', '$filter', 'Restangular', 'djangoAuth', '$routeParams', '$route',
         function($scope, $http, $modal, PostFactory, $filter, Restangular, djangoAuth, $routeParams, $route) {
         djangoAuth.profile().then(function(data) {
+            console.log('APP USER:');
+            console.log(data);
             $scope.user = data;
 
         });
