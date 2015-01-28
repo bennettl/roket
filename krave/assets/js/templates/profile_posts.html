@@ -7,21 +7,25 @@
                 <img src="/static/js/images/play.svg" class="play" />
                 <img ng-src="{{ p.thumbnail }}" /><br />
             </div>
-            <div class="post-title">
-                <h3><a href="#" ng-click="viewVideo(p.url)">{{ p.post_title }}</a></h3>
-                <div class="categories" style="margin-bottom:10px;">
-                    <div ng-repeat="category in p.categories" class="category">
-                        <a href='/category/{{ category.id }}/{{ category.name }}'>{{ category.name }}</a>
+            <div class="top clearfix">
+                <div class="post-title">
+                    <h3><a href="#" ng-click="viewVideo(p.url)">{{ p.post_title }}</a></h3>
+                    <div class="categories" style="margin-bottom:10px;">
+                        <div ng-repeat="category in p.categories" class="category">
+                            <a href='/category/{{ category.id }}/{{ category.name }}'>{{ category.name }}</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !p.author.profile_image }"style="float:left;margin-right:10px;">
-                <img class="avatar-image" ng-src="{{ p.author.profile_image }}" width="50" height="50">
-                <span class="avatar-initials">{{ p.author.username | firstCharacter }}</span>
-            </div>
-            <div class="author">
-                Uploaded by
-                <a href="/profile/{{ p.author.id }}">{{ p.author.username }}</a>
+            <div class="post-meta">
+                <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !p.author.profile_image }"style="float:left;margin-right:10px;">
+                    <img class="avatar-image" ng-src="{{ p.author.profile_image }}" width="50" height="50">
+                    <span class="avatar-initials">{{ p.author.username | firstCharacter }}</span>
+                </div>
+                <div class="author">
+                    Uploaded by
+                    <a href="/profile/{{ p.author.id }}">{{ p.author.username }}</a>
+                </div>
             </div>
             <div class="social-icons">
                 <a href="#"><img src="http://zacktanner.me/clients/krave/facebook.svg" /></a>

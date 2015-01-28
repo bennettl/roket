@@ -5,16 +5,19 @@
             <img src="/static/js/images/play.svg" class="play" />
             <img ng-src="{{ post.thumbnail }}" />
         </div>
-        <div class="post-title">
-            <h3><a href="#" ng-click="viewVideo(post.url)">{{ post.post_title }}</a></h3>
-        </div>
-        <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !post.author.profile_image }"style="float:left;margin-right:10px;">
-            <img class="avatar-image" ng-src="{{ post.author.profile_image }}" width="50" height="50">
-            <span class="avatar-initials">{{ post.author.username | firstCharacter }}</span>
-        </div>
-        <div class="author">
-            Uploaded by
-            <a href="/profile/{{ post.author.id }}">{{ post.author.username }}</a>
+        <div class="top clearfix">
+            <div class="post-title">
+                <h3><a href="#" ng-click="viewVideo(post.url)">{{ post.post_title }}</a></h3>
+            </div>
+            <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !post.author.profile_image }"style="float:left;margin-right:10px;">
+                <img class="avatar-image" ng-src="{{ post.author.profile_image }}" width="50" height="50">
+                <span class="avatar-initials">{{ post.author.username | firstCharacter }}</span>
+            </div>
+        <div class="post-meta">
+            <div class="author">
+                Uploaded by
+                <a href="/profile/{{ post.author.id }}">{{ post.author.username }}</a>
+            </div>
         </div>
         <div class="social-icons">
             <a href="#"><img src="http://zacktanner.me/clients/krave/facebook.svg" /></a>
