@@ -40,10 +40,10 @@ urlpatterns = patterns('',
     url(r'^profile', 'krave.views.public', name='public'),
     url(r'^about', 'krave.views.public', name='public'),
     url(r'^passwordReset', 'krave.views.public', name='public'),
-    url(r'^passwordResetConfirm', 'krave.views.public', name='public'),
+    # url(r'^passwordResetConfirm', 'krave.views.public', name='public'),
 
     # this url is used to generate email content
-    url(r'^password-reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+    url(r'^passwordResetConfirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         TemplateView.as_view(template_name="password_reset_confirm.html"),
         name='password_reset_confirm'),
 
