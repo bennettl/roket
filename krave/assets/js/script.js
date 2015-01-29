@@ -451,13 +451,14 @@
         else {
             PostFactory.getPosts().then(function (data) {
                 $scope.posts = data;
+                $scope.posts.pageSize = 10;
                 angular.forEach($scope.posts, function (post) {
                     PostFactory.getUrlData(post.url).then(function(result){
                         post.thumbnail = result.thumbnail_url
                     })
                 });
-                $scope.loadMore = function(post){
-                    post.pageSize += 5;
+                $scope.loadMore = function(){
+                    $scope.posts.pageSize += 10;
                 };
 //                $scope.loadMore = function(){
 //                    for(var i=$scope.currentValue;i<($scope.currentValue + 5);i++){
