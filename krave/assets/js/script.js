@@ -450,14 +450,20 @@
         }
         else {
             PostFactory.getPosts().then(function (data) {
-                console.log(data);
+                $scope.pagedPosts = [];
                 $scope.posts = data;
+
                 angular.forEach($scope.posts, function (post) {
-                    //Todo
-                PostFactory.getUrlData(post.url).then(function(result){
-                    post.thumbnail = result.thumbnail_url
-                })
+                    PostFactory.getUrlData(post.url).then(function(result){
+                        post.thumbnail = result.thumbnail_url
+                    })
                 });
+                $scope.loadMore = function(){
+                    for(var i=0;i<10;i++){
+                        $scope.pagedPosts.push($scope.posts[i]);
+                    }
+                };
+                $scope.loadMore();
 
 
             });
