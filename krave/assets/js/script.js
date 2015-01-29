@@ -452,16 +452,17 @@
             PostFactory.getPosts().then(function (data) {
                 $scope.pagedPosts = [];
                 $scope.posts = data;
-
+                $scope.currentValue = 0;
                 angular.forEach($scope.posts, function (post) {
                     PostFactory.getUrlData(post.url).then(function(result){
                         post.thumbnail = result.thumbnail_url
                     })
                 });
                 $scope.loadMore = function(){
-                    for(var i=0;i<5;i++){
+                    for(var i=$scope.currentValue;i<($scope.currentValue + 5);i++){
                         $scope.pagedPosts.push($scope.posts[i]);
                     }
+                    $scope.currentValue += 5;
                 };
                 $scope.loadMore();
 
