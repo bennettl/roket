@@ -459,9 +459,9 @@
                         post.thumbnail = result.thumbnail_url
                     })
                 });
-                $scope.loadMore = function(post){
-                    post.pageSize += 5;
-                    console.log(post);
+                $scope.loadMore = function(posts){
+                    posts.pageSize += 5;
+                    console.log(posts);
                 };
 //                $scope.loadMore = function(){
 //                    for(var i=$scope.currentValue;i<($scope.currentValue + 5);i++){
