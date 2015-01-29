@@ -455,9 +455,14 @@
                 $scope.currentValue = 0;
                 angular.forEach($scope.posts, function (post) {
                     PostFactory.getUrlData(post.url).then(function(result){
+                        post.pageSize = 5;
                         post.thumbnail = result.thumbnail_url
                     })
                 });
+                $scope.loadMore = function(post){
+                    post.pageSize += 5;
+                    console.log(post);
+                };
 //                $scope.loadMore = function(){
 //                    for(var i=$scope.currentValue;i<($scope.currentValue + 5);i++){
 //                        $scope.pagedPosts.push($scope.posts[i]);
