@@ -55,6 +55,6 @@
                 </div>
             </div>
         </div>
-        <button ng-click="loadMore(posts)">Load More</button>
+        <button ng-show="posts.length > 5" ng-click="loadMore(posts)">Load More</button>
     </div>
 </div>
