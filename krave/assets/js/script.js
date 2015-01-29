@@ -458,13 +458,13 @@
                         post.thumbnail = result.thumbnail_url
                     })
                 });
-                $scope.loadMore = function(){
-                    for(var i=$scope.currentValue;i<($scope.currentValue + 5);i++){
-                        $scope.pagedPosts.push($scope.posts[i]);
-                    }
-                    $scope.currentValue += 5;
-                };
-                $scope.loadMore();
+//                $scope.loadMore = function(){
+//                    for(var i=$scope.currentValue;i<($scope.currentValue + 5);i++){
+//                        $scope.pagedPosts.push($scope.posts[i]);
+//                    }
+//                    $scope.currentValue += 5;
+//                };
+//                $scope.loadMore();
 
 
             });
