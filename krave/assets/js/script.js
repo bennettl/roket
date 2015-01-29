@@ -459,7 +459,7 @@
                     })
                 });
                 $scope.loadMore = function(){
-                    for(var i=0;i<10;i++){
+                    for(var i=0;i<5;i++){
                         $scope.pagedPosts.push($scope.posts[i]);
                     }
                 };
