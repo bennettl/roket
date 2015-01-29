@@ -454,8 +454,8 @@
                 $scope.posts = data;
                 $scope.currentValue = 0;
                 angular.forEach($scope.posts, function (post) {
+                    post.pageSize = 5;
                     PostFactory.getUrlData(post.url).then(function(result){
-                        post.pageSize = 5;
                         post.thumbnail = result.thumbnail_url
                     })
                 });

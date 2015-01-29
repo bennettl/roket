@@ -3,7 +3,7 @@
     <div class="day" ng-repeat="post in posts | groupBy: 'date_posted' | toArray:true | orderBy: '$key':true">
         <h2>{{ post.$key | isTodayCheck | date: 'EEEE' }}
             <small>{{ post.$key | date:'MMMM d' }}</small></h2>
-        {{ post.pageSize }}
+        {{ post }}
         <div ng-repeat="p in post | orderBy:'get_num_votes':true | limitTo: post.pageSize">
             <div class="post">
                 <div class="video-thumbnail" ng-click="viewVideo(p.url)">
