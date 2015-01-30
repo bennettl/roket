@@ -18,11 +18,11 @@
             <div class="post-meta">
                 <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !post.author.profile_image }"style="float:left;margin-right:10px;">
                     <img class="avatar-image" ng-src="{{ post.author.profile_image }}" width="50" height="50">
-                    <span class="avatar-initials">{{ post.author.username | firstCharacter }}</span>
+                    <span class="avatar-initials">{{ post.author.display_name | firstCharacter }}</span>
                 </div>
                 <div class="author">
                     Uploaded by
-                    <a href="/profile/{{ post.author.id }}">{{ post.author.username }}</a>
+                    <a href="/profile/{{ post.author.id }}">{{ post.author.display_name }}</a>
                 </div>
             </div>
             <div class="social-icons">
@@ -57,11 +57,11 @@
             <div class="user-image">
                 <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !comment.user.profile_image }" style="float:left;margin-right:10px;">
                     <img class="avatar-image" ng-src="{{ comment.user.profile_image }}" width="50" height="50">
-                    <span class="avatar-initials">{{ comment.user.username | firstCharacter }}</span>
+                    <span class="avatar-initials">{{ comment.user.display_name | firstCharacter }}</span>
                 </div>
             </div>
             <div class="comment-info">
-                <strong><a href="/profile/{{ comment.user.id }}">{{ comment.user.username }}</a></strong> <small ng-show="comment.user.id == user.id"><a href="#" ng-click="deleteComment(comment.id)">[Delete]</a></small> <span style="color:#666">{{ comment.date_posted | date: 'short' }}</span><br />
+                <strong><a href="/profile/{{ comment.user.id }}">{{ comment.user.display_name }}</a></strong> <small ng-show="comment.user.id == user.id"><a href="#" ng-click="deleteComment(comment.id)">[Delete]</a></small> <span style="color:#666">{{ comment.date_posted | date: 'short' }}</span><br />
                 {{ comment.comment }}
                 <div class="actions">
                     <a href="#" ng-click="replyToComment(comment)" ng-show="user">Reply</a>
