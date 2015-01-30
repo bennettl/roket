@@ -23,7 +23,7 @@ class UserProfile(models.Model):
     class Meta:
         db_table = 'user_profile'
 
-User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
+User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u, display_name=u)[0])
 
 
 class Category(models.Model):
