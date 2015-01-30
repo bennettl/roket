@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="54cea067-5474-45b1-a543-1b6857debf7c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rest_auth/serializers.py" afterPath="$PROJECT_DIR$/rest_auth/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="django-api-rest-and-angular.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -293,8 +292,8 @@
       <file leaf-file-name="serializers.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rest_auth/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25" vertical-offset="701" max-vertical-offset="2405">
-              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.38771185" vertical-offset="714" max-vertical-offset="2457">
+              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="72" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -1007,12 +1006,12 @@
       <workItem from="1422058358104" duration="2975000" />
       <workItem from="1422126586326" duration="15932000" />
       <workItem from="1422157267985" duration="7088000" />
-      <workItem from="1422402843454" duration="21978000" />
+      <workItem from="1422402843454" duration="22014000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119396000" />
+    <option name="totallyTimeSpent" value="119432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="23" width="1440" height="873" extended-state="6" />
@@ -1675,8 +1674,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rest_auth/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25" vertical-offset="701" max-vertical-offset="2405">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.38771185" vertical-offset="714" max-vertical-offset="2457">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="72" selection-end-column="46" />
           <folding />
         </state>
       </provider>
