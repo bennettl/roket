@@ -8,17 +8,17 @@ from .models import Post, Category, Votes, Comments, Replies
 
 class UserSerializer(serializers.ModelSerializer):
     profile_image = serializers.SerializerMethodField()
-    # display_name = serializers.SerializerMethodField()
+    display_name = serializers.SerializerMethodField()
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'first_name', 'last_name', 'profile_image',  )
+        fields = ('id', 'username', 'first_name', 'last_name', 'profile_image', 'display_name', )
 
     def get_profile_image(self, obj):
         return obj.profile.profile_image_url()
-    #
-    # def get_display_name(self, obj):
-    #     return obj.profile.display_name
+
+    def get_display_name(self, obj):
+        return obj.profile.display_name
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -53,19 +53,19 @@ class ReplySerializer(serializers.ModelSerializer):
 
     author = serializers.SerializerMethodField()
     profile_image = serializers.SerializerMethodField()
-    # display_name = serializers.SerializerMethodField()
+    display_name = serializers.SerializerMethodField()
 
     class Meta:
         model = Replies
-        fields = ('id', 'user', 'date_posted', 'comment', 'parent', 'author', 'profile_image', )
+        fields = ('id', 'user', 'date_posted', 'comment', 'parent', 'author', 'profile_image', 'display_name', )
 
     def get_author(self, obj):
         return obj.user.username
     def get_profile_image(self, obj):
         return obj.user.profile.profile_image_url()
 
-    # def get_display_name(self, obj):
-    #     return obj.profile.display_name
+    def get_display_name(self, obj):
+        return obj.profile.display_name
 
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -102,14 +102,14 @@ class CategoryListSerializer(serializers.ModelSerializer):
 class CustomUserSerializer(serializers.ModelSerializer):
     profile_image = serializers.SerializerMethodField()
     posts = PostsSerializer(source="post_set.all", many=True)
-    # display_name = serializers.SerializerMethodField()
+    display_name = serializers.SerializerMethodField()
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'first_name', 'last_name', 'posts', 'profile_image', )
+        fields = ('id', 'username', 'first_name', 'last_name', 'posts', 'profile_image', 'display_name', )
 
     def get_profile_image(self, obj):
         return obj.profile.profile_image_url()
 
-    # def get_display_name(self, obj):
-    #     return obj.profile.display_name
+    def get_display_name(self, obj):
+        return obj.profile.display_name
