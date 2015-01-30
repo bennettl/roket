@@ -10,6 +10,9 @@ class UserProfile(models.Model):
     def __unicode__(self):
         return "{}'s profile".format(self.user.username)
 
+    def get_display_name(self):
+        return self.display_name
+
     def profile_image_url(self):
         fb_uid = SocialAccount.objects.filter(user_id=self.user.id, provider='facebook')
 

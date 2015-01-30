@@ -18,7 +18,7 @@ class UserSerializer(serializers.ModelSerializer):
         return obj.profile.profile_image_url()
 
     def get_display_name(self, obj):
-        return obj.profile.display_name
+        return obj.profile.get_display_name()
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -65,7 +65,7 @@ class ReplySerializer(serializers.ModelSerializer):
         return obj.user.profile.profile_image_url()
 
     def get_display_name(self, obj):
-        return obj.user.profile.display_name
+        return obj.user.profile.get_display_name()
 
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -112,4 +112,4 @@ class CustomUserSerializer(serializers.ModelSerializer):
         return obj.profile.profile_image_url()
 
     def get_display_name(self, obj):
-        return obj.profile.display_name
+        return obj.profile.get_display_name()
