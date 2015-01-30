@@ -15,10 +15,10 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('id', 'username', 'first_name', 'last_name', 'profile_image', 'display_name', )
 
     def get_profile_image(self, obj):
-        return obj.get_profile().profile_image_url()
+        return obj.profile.profile_image_url()
 
     def get_display_name(self, obj):
-        return obj.get_profile().get_display_name()
+        return obj.profile.get_display_name()
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -62,10 +62,10 @@ class ReplySerializer(serializers.ModelSerializer):
     def get_author(self, obj):
         return obj.user.username
     def get_profile_image(self, obj):
-        return obj.user.get_profile().profile_image_url()
+        return obj.user.profile.profile_image_url()
 
     def get_display_name(self, obj):
-        return obj.user.get_profile().get_display_name()
+        return obj.user.profile.get_display_name()
 
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -109,7 +109,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
         fields = ('id', 'username', 'first_name', 'last_name', 'posts', 'profile_image', 'display_name', )
 
     def get_profile_image(self, obj):
-        return obj.get_profile().profile_image_url()
+        return obj.profile.profile_image_url()
 
     def get_display_name(self, obj):
-        return obj.get_profile().get_display_name()
+        return obj.profile.get_display_name()

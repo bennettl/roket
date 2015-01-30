@@ -203,4 +203,3 @@ JWT_AUTH = {
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 AUTH_USER_MODEL = 'auth.User'
-AUTH_PROFILE_MODULE = 'krave.api.UserProfile'
