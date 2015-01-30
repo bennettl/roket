@@ -251,7 +251,7 @@
                         })
                 }
                 var base_user = Restangular.all('user/'+$scope.user.id+'/edit');
-                base_user.patch({email: $scope.user.email}, "", {'X-CSRFToken': window.CSRF}, {'X-CSRFToken': window.CSRF}).then(function(data){
+                base_user.patch({email: $scope.user.email, display_name: $scope.user.display_name}, "", {'X-CSRFToken': window.CSRF}, {'X-CSRFToken': window.CSRF}).then(function(data){
                     $scope.success = true;
                 });
             }

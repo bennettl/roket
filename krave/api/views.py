@@ -23,6 +23,7 @@ class UserViewSet(viewsets.ModelViewSet):
     def edit(self, request, pk=None):
         user = self.request.user
         user.email = request.data.get('email', '')
+        user.profile.display_name = request.data.get('display_name', '')
         user.save()
         return HttpResponse(status=200)
 
