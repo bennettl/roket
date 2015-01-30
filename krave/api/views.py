@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework import permissions
 from rest_framework.decorators import list_route, detail_route
-from .models import Post, Category, Votes, Comments, Replies, User, CategoryToPost
+from .models import Post, Category, Votes, Comments, Replies, User, CategoryToPost, UserProfile
 from .serializers import CategorySerializer, PostSerializer, PostsSerializer, VoteSerializer, CommentsSerializer,\
     CommentSerializer, ReplySerializer, CategoryListSerializer, CustomUserSerializer
 from django.http import HttpResponse
@@ -23,8 +23,9 @@ class UserViewSet(viewsets.ModelViewSet):
     def edit(self, request, pk=None):
         user = self.request.user
         user.email = request.data.get('email', '')
-        user.profile.display_name = request.data.get('display_name', '')
-        user.profile.save()
+        profile = UserProfile.objects.get(user=user)
+        profile.display_name = request.data.get('display_name', '')
+        profile.save()
         user.save()
         return HttpResponse(status=200)
 
