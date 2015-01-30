@@ -9,6 +9,7 @@ class CategoryToPostInline(admin.TabularInline):
     extra = 1
 
 class PostAdmin(admin.ModelAdmin):
+    list_display = ('post_title', )
     inlines = [CategoryToPostInline]
 
     def save_model(self, request, obj, form, change):
