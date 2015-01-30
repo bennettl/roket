@@ -5,7 +5,7 @@ from allauth.socialaccount.models import SocialAccount
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, related_name='profile')
-    display_name = models.CharField(max_length=300, null=True, blank=True)
+    # display_name = models.CharField(max_length=300, null=True, blank=True)
 
     def __unicode__(self):
         return "{}'s profile".format(self.user.username)
