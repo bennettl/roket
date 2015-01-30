@@ -65,7 +65,7 @@ class ReplySerializer(serializers.ModelSerializer):
         return obj.user.profile.profile_image_url()
 
     def get_display_name(self, obj):
-        return obj.profile.display_name
+        return obj.user.profile.display_name
 
 
 class CommentSerializer(serializers.ModelSerializer):
