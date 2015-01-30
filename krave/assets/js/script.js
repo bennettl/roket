@@ -240,6 +240,7 @@
     app.controller('EditProfileCtrl', ['$scope', '$http','$modal', 'PostFactory', '$filter', 'Restangular', 'djangoAuth', '$routeParams', function($scope, $http, $modal, PostFactory, $filter, Restangular, djangoAuth, $routeParams) {
         djangoAuth.profile().then(function(data){
             $scope.user = data;
+            console.log(data);
 
             $scope.editProfile = function(){
                 if($scope.user.old_password && $scope.user.password) {
