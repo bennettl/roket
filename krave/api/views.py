@@ -24,6 +24,7 @@ class UserViewSet(viewsets.ModelViewSet):
         user = self.request.user
         user.email = request.data.get('email', '')
         user.profile.display_name = request.data.get('display_name', '')
+        user.profile.save()
         user.save()
         return HttpResponse(status=200)
 
