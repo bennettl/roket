@@ -261,10 +261,48 @@
     app.controller('AppController', ['$scope', '$http','$modal', 'PostFactory', '$filter', 'Restangular', 'djangoAuth', '$routeParams', '$route',
         function($scope, $http, $modal, PostFactory, $filter, Restangular, djangoAuth, $routeParams, $route) {
         djangoAuth.profile().then(function(data) {
-            console.log(data);
             $scope.user = data;
+            if ($routeParams.category_id) {
+                PostFactory.getPostsByCategory($routeParams.category_id).then(function (data) {
+                    $scope.posts = data.posts;
 
+                    angular.forEach($scope.posts, function (post) {
+                        //Todo
+                        PostFactory.getUrlData(post.url).then(function (result) {
+                            post.thumbnail = result.thumbnail_url
+                        })
+                    });
+                });
+            }
+            else if ($routeParams.user_id) {
+                PostFactory.getPostsByUser($routeParams.user_id).then(function (data) {
+                    $scope.posts = data.posts;
+
+                    angular.forEach($scope.posts, function (post) {
+                        //Todo
+                        PostFactory.getUrlData(post.url).then(function (result) {
+                            post.thumbnail = result.thumbnail_url
+                        })
+                    });
+                });
+            }
+            else {
+                PostFactory.getPosts().then(function (data) {
+                    $scope.posts = data;
+                    $scope.posts.pageSize = 10;
+                    angular.forEach($scope.posts, function (post) {
+                        PostFactory.getUrlData(post.url).then(function (result) {
+                            post.thumbnail = result.thumbnail_url
+                        })
+                    });
+                    $scope.loadMore = function () {
+                        $scope.posts.pageSize += 10;
+                    };
+
+                });
+            }
         });
+
         $scope.now = $filter('date')(new Date(), 'MMM dd yyyy');
         if($routeParams.user_id) {
             PostFactory.getUser($routeParams.user_id).then(function(data){
@@ -425,53 +463,7 @@
                 $route.reload();
             });
         };
-        if($routeParams.category_id) {
-            PostFactory.getPostsByCategory($routeParams.category_id).then(function(data) {
-                $scope.posts = data.posts;
 
-                angular.forEach($scope.posts, function (post) {
-                    //Todo
-                PostFactory.getUrlData(post.url).then(function(result){
-                    post.thumbnail = result.thumbnail_url
-                })
-                });
-            });
-        }
-        else if($routeParams.user_id) {
-            PostFactory.getPostsByUser($routeParams.user_id).then(function(data) {
-                $scope.posts = data.posts;
-
-                angular.forEach($scope.posts, function (post) {
-                    //Todo
-                    PostFactory.getUrlData(post.url).then(function(result){
-                        post.thumbnail = result.thumbnail_url
-                    })
-                });
-            });
-        }
-        else {
-            PostFactory.getPosts().then(function (data) {
-                $scope.posts = data;
-                $scope.posts.pageSize = 10;
-                angular.forEach($scope.posts, function (post) {
-                    PostFactory.getUrlData(post.url).then(function(result){
-                        post.thumbnail = result.thumbnail_url
-                    })
-                });
-                $scope.loadMore = function(){
-                    $scope.posts.pageSize += 10;
-                };
-//                $scope.loadMore = function(){
-//                    for(var i=$scope.currentValue;i<($scope.currentValue + 5);i++){
-//                        $scope.pagedPosts.push($scope.posts[i]);
-//                    }
-//                    $scope.currentValue += 5;
-//                };
-//                $scope.loadMore();
-
-
-            });
-        }
 
     }]);
 
