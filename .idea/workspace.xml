@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54cea067-5474-45b1-a543-1b6857debf7c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/krave/assets/js/templates/comments.html" afterPath="$PROJECT_DIR$/krave/assets/js/templates/comments.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/krave/assets/js/templates/post.html" afterPath="$PROJECT_DIR$/krave/assets/js/templates/post.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/krave/assets/js/templates/profile_posts.html" afterPath="$PROJECT_DIR$/krave/assets/js/templates/profile_posts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="django-api-rest-and-angular.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,154 +69,24 @@
       <file leaf-file-name="script.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/assets/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.269231" vertical-offset="955" max-vertical-offset="2236">
-              <caret line="253" column="97" selection-start-line="253" selection-start-column="97" selection-end-line="253" selection-end-column="97" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3319" max-vertical-offset="8242">
+              <caret line="279" column="13" selection-start-line="279" selection-start-column="13" selection-end-line="279" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/krave/api/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.090909" vertical-offset="509" max-vertical-offset="1560">
+              <caret line="63" column="9" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding>
-                <element signature="e#302#1942#0" expanded="false" />
-                <element signature="e#484#1941#0" expanded="false" />
-                <element signature="e#540#632#0" expanded="false" />
-                <element signature="e#850#979#0" expanded="false" />
-                <element signature="e#1025#1162#0" expanded="false" />
-                <element signature="e#1227#1356#0" expanded="false" />
-                <element signature="e#1401#1539#0" expanded="false" />
-                <element signature="e#1573#1703#0" expanded="false" />
-                <element signature="e#1743#1882#0" expanded="false" />
-                <element signature="e#2007#3958#0" expanded="false" />
-                <element signature="e#2083#2217#0" expanded="false" />
-                <element signature="e#2154#2205#0" expanded="false" />
-                <element signature="e#2281#2432#0" expanded="false" />
-                <element signature="e#2369#2420#0" expanded="false" />
-                <element signature="e#2488#2631#0" expanded="false" />
-                <element signature="e#2568#2619#0" expanded="false" />
-                <element signature="e#2673#2830#0" expanded="false" />
-                <element signature="e#2767#2818#0" expanded="false" />
-                <element signature="e#2878#3017#0" expanded="false" />
-                <element signature="e#2954#3005#0" expanded="false" />
-                <element signature="e#3060#3194#0" expanded="false" />
-                <element signature="e#3131#3182#0" expanded="false" />
-                <element signature="e#3238#3376#0" expanded="false" />
-                <element signature="e#3313#3364#0" expanded="false" />
-                <element signature="e#3424#3648#0" expanded="false" />
-                <element signature="e#3586#3637#0" expanded="false" />
-                <element signature="e#3698#3916#0" expanded="false" />
-                <element signature="e#3854#3905#0" expanded="false" />
-                <element signature="e#4209#4256#0" expanded="false" />
-                <element signature="e#4262#4307#0" expanded="false" />
-                <element signature="e#4369#4470#0" expanded="false" />
-                <element signature="e#4401#4464#0" expanded="false" />
-                <element signature="e#4533#5104#0" expanded="false" />
-                <element signature="e#4569#4943#0" expanded="false" />
-                <element signature="e#4595#4931#0" expanded="false" />
-                <element signature="e#4706#4917#0" expanded="false" />
-                <element signature="e#4813#4899#0" expanded="false" />
-                <element signature="e#4978#5098#0" expanded="false" />
-                <element signature="e#5004#5086#0" expanded="false" />
-                <element signature="e#5178#5646#0" expanded="false" />
-                <element signature="e#5301#5338#0" expanded="false" />
-                <element signature="e#5382#5442#0" expanded="false" />
-                <element signature="e#5495#5639#0" expanded="false" />
-                <element signature="e#5797#5840#0" expanded="false" />
-                <element signature="e#6419#6531#0" expanded="false" />
-                <element signature="e#6875#6965#0" expanded="false" />
-                <element signature="e#7445#7639#0" expanded="false" />
-                <element signature="e#8052#8199#0" expanded="false" />
-                <element signature="e#8362#8459#0" expanded="false" />
-                <element signature="e#8846#8911#0" expanded="false" />
-                <element signature="e#9395#9723#0" expanded="false" />
-                <element signature="e#9630#9704#0" expanded="false" />
-                <element signature="e#9988#10050#0" expanded="false" />
-                <element signature="e#10395#10470#0" expanded="false" />
-                <element signature="e#10571#10726#0" expanded="false" />
-                <element signature="e#10646#10714#0" expanded="false" />
-                <element signature="e#10774#11029#0" expanded="false" />
-                <element signature="e#10958#11014#0" expanded="false" />
-                <element signature="e#11077#11566#0" expanded="false" />
-                <element signature="e#11123#11396#0" expanded="false" />
-                <element signature="e#11265#11381#0" expanded="false" />
-                <element signature="e#11303#11363#0" expanded="false" />
-                <element signature="e#11462#11525#0" expanded="false" />
-                <element signature="e#11539#11554#0" expanded="false" />
-                <element signature="e#11640#14826#0" expanded="false" />
-                <element signature="e#11695#14479#0" expanded="false" />
-                <element signature="e#11759#12022#0" expanded="false" />
-                <element signature="e#11798#11960#0" expanded="false" />
-                <element signature="e#12028#12214#0" expanded="false" />
-                <element signature="e#12067#12195#0" expanded="false" />
-                <element signature="e#12270#12741#0" expanded="false" />
-                <element signature="e#12452#12688#0" expanded="false" />
-                <element signature="e#12537#12627#0" expanded="false" />
-                <element signature="e#12794#13617#0" expanded="false" />
-                <element signature="e#12863#12964#0" expanded="false" />
-                <element signature="e#12970#13598#0" expanded="false" />
-                <element signature="e#13107#13364#0" expanded="false" />
-                <element signature="e#13494#13575#0" expanded="false" />
-                <element signature="e#13662#14465#0" expanded="false" />
-                <element signature="e#13731#13832#0" expanded="false" />
-                <element signature="e#13838#14447#0" expanded="false" />
-                <element signature="e#13955#14212#0" expanded="false" />
-                <element signature="e#14343#14424#0" expanded="false" />
-                <element signature="e#14543#14601#0" expanded="false" />
-                <element signature="e#14642#14707#0" expanded="false" />
-                <element signature="e#14750#14815#0" expanded="false" />
-                <element signature="e#14875#15059#0" expanded="false" />
-                <element signature="e#14940#15046#0" expanded="false" />
-                <element signature="e#14970#15030#0" expanded="false" />
-                <element signature="e#15103#15589#0" expanded="false" />
-                <element signature="e#15133#15528#0" expanded="false" />
-                <element signature="e#15233#15370#0" expanded="false" />
-                <element signature="e#15288#15352#0" expanded="false" />
-                <element signature="e#15403#15455#0" expanded="false" />
-                <element signature="e#15461#15514#0" expanded="false" />
-                <element signature="e#15534#15579#0" expanded="false" />
-                <element signature="e#15737#15820#0" expanded="false" />
-                <element signature="e#15943#15991#0" expanded="false" />
-                <element signature="e#16241#16436#0" expanded="false" />
-                <element signature="e#16340#16417#0" expanded="false" />
-                <element signature="e#16586#16917#0" expanded="false" />
-                <element signature="e#16694#16901#0" expanded="false" />
-                <element signature="e#16797#16882#0" expanded="false" />
-                <element signature="e#17842#18823#0" expanded="false" />
-                <element signature="e#18008#18822#0" expanded="false" />
-                <element signature="e#18029#18812#0" expanded="false" />
-                <element signature="e#18194#18798#0" expanded="false" />
-                <element signature="e#18252#18498#0" expanded="false" />
-                <element signature="e#18370#18438#0" expanded="false" />
-                <element signature="e#18568#18642#0" expanded="false" />
-                <element signature="e#18702#18779#0" expanded="false" />
-                <element signature="e#18867#23208#0" expanded="false" />
-                <element signature="e#19059#23207#0" expanded="false" />
-                <element signature="e#19114#19165#0" expanded="false" />
-                <element signature="e#19223#20749#0" expanded="false" />
-                <element signature="e#19380#20734#0" expanded="false" />
-                <element signature="e#19503#20181#0" expanded="false" />
-                <element signature="e#19545#20084#0" expanded="false" />
-                <element signature="e#19669#19854#0" expanded="false" />
-                <element signature="e#19736#19824#0" expanded="false" />
-                <element signature="e#19899#19975#0" expanded="false" />
-                <element signature="e#19981#20058#0" expanded="false" />
-                <element signature="e#20090#20159#0" expanded="false" />
-                <element signature="e#20234#20715#0" expanded="false" />
-                <element signature="e#20365#20484#0" expanded="false" />
-                <element signature="e#20619#20691#0" expanded="false" />
-                <element signature="e#20813#20871#0" expanded="false" />
-                <element signature="e#20927#21185#0" expanded="false" />
-                <element signature="e#21114#21170#0" expanded="false" />
-                <element signature="e#21239#21792#0" expanded="false" />
-                <element signature="e#21362#21516#0" expanded="false" />
-                <element signature="e#21553#21777#0" expanded="false" />
-                <element signature="e#21693#21758#0" expanded="false" />
-                <element signature="e#21848#21909#0" expanded="false" />
-                <element signature="e#21959#22125#0" expanded="false" />
-                <element signature="e#22007#22059#0" expanded="false" />
-                <element signature="e#22064#22111#0" expanded="false" />
-                <element signature="e#22178#22937#0" expanded="false" />
-                <element signature="e#22214#22923#0" expanded="false" />
-                <element signature="e#22313#22517#0" expanded="false" />
-                <element signature="e#22647#22903#0" expanded="false" />
-                <element signature="e#22694#22880#0" expanded="false" />
-                <element signature="e#22988#23196#0" expanded="false" />
-                <element signature="e#23057#23179#0" expanded="false" />
-                <element signature="e#23091#23159#0" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#a#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -226,21 +95,19 @@
       <file leaf-file-name="comments.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/assets/js/templates/comments.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.8333335" vertical-offset="756" max-vertical-offset="1235">
+            <state vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="1235">
               <caret line="76" column="67" selection-start-line="76" selection-start-column="67" selection-end-line="76" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile_posts.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="profile_posts.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/assets/js/templates/profile_posts.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44588745" vertical-offset="132" max-vertical-offset="715">
+            <state vertical-scroll-proportion="0.0" vertical-offset="338" max-vertical-offset="715">
               <caret line="26" column="66" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -248,11 +115,9 @@
       <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/api/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.32" vertical-offset="0" max-vertical-offset="338">
+            <state vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="338">
               <caret line="16" column="28" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -260,11 +125,9 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/api/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.72" vertical-offset="0" max-vertical-offset="1196">
-              <caret line="11" column="20" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="1196">
+              <caret line="36" column="45" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -272,29 +135,23 @@
       <file leaf-file-name="edit_profile.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/assets/js/templates/edit_profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.7272725" vertical-offset="0" max-vertical-offset="338">
+            <state vertical-scroll-proportion="0.0" vertical-offset="104" max-vertical-offset="338">
               <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serializers.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest_auth/serializers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.5882354" vertical-offset="714" max-vertical-offset="2457">
-              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="72" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="post.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="post.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/krave/assets/js/templates/post.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.4166665" vertical-offset="0" max-vertical-offset="871">
-              <caret line="20" column="69" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-              <folding />
+            <state vertical-scroll-proportion="0.28057554" vertical-offset="0" max-vertical-offset="1235">
+              <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -302,11 +159,9 @@
       <file leaf-file-name="serializers.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/api/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.647059" vertical-offset="532" max-vertical-offset="1573">
+            <state vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="1573">
               <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -314,11 +169,9 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/krave/api/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.372549" vertical-offset="0" max-vertical-offset="1885">
+            <state vertical-scroll-proportion="0.0" vertical-offset="325" max-vertical-offset="1885">
               <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -376,7 +229,6 @@
         <option value="$PROJECT_DIR$/krave/assets/js/templates/new_post_modal.html" />
         <option value="$PROJECT_DIR$/krave/assets/js/app/scripts/services/djangoAuth.js" />
         <option value="$PROJECT_DIR$/krave/api/admin.py" />
-        <option value="$PROJECT_DIR$/krave/api/templates/base.html" />
         <option value="$PROJECT_DIR$/krave/assets/js/templates/edit_profile.html" />
         <option value="$PROJECT_DIR$/krave/api/serializers.py" />
         <option value="$PROJECT_DIR$/krave/settings.py" />
@@ -384,9 +236,10 @@
         <option value="$PROJECT_DIR$/krave/assets/js/script.js" />
         <option value="$PROJECT_DIR$/krave/api/views.py" />
         <option value="$PROJECT_DIR$/krave/api/models.py" />
-        <option value="$PROJECT_DIR$/krave/assets/js/templates/post.html" />
         <option value="$PROJECT_DIR$/krave/assets/js/templates/comments.html" />
         <option value="$PROJECT_DIR$/krave/assets/js/templates/profile_posts.html" />
+        <option value="$PROJECT_DIR$/krave/api/templates/base.html" />
+        <option value="$PROJECT_DIR$/krave/assets/js/templates/post.html" />
       </list>
     </option>
   </component>
@@ -403,7 +256,6 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="9" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="873" />
@@ -456,6 +308,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -538,7 +391,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1018,15 +870,17 @@
       <workItem from="1422058358104" duration="2975000" />
       <workItem from="1422126586326" duration="15932000" />
       <workItem from="1422157267985" duration="7088000" />
-      <workItem from="1422402843454" duration="23529000" />
+      <workItem from="1422402843454" duration="24163000" />
+      <workItem from="1422654243461" duration="1582000" />
+      <workItem from="1422737614171" duration="471000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120947000" />
+    <option name="totallyTimeSpent" value="123634000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="23" width="1440" height="873" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="873" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1034,7 +888,6 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2650448" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1043,7 +896,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1054,6 +906,8 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2650448" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1122,7 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21696801" vertical-offset="0" max-vertical-offset="338832">
           <caret line="12" column="23" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1151,7 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1053">
           <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1159,7 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="832" max-vertical-offset="1209">
           <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1167,7 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50927836" vertical-offset="0" max-vertical-offset="485">
           <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1175,7 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
           <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1183,7 +1032,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="4891" max-vertical-offset="6253">
           <caret line="411" column="6" selection-start-line="411" selection-start-column="6" selection-end-line="411" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1191,7 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="394" max-vertical-offset="3679">
           <caret line="58" column="6" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1199,7 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.053424656" vertical-offset="0" max-vertical-offset="730">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1207,7 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="663">
           <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1215,7 +1060,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="953" max-vertical-offset="4680">
           <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1223,7 +1067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2110" max-vertical-offset="3796">
           <caret line="202" column="20" selection-start-line="202" selection-start-column="20" selection-end-line="202" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1231,7 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.84705883" vertical-offset="1713" max-vertical-offset="2223">
           <caret line="172" column="34" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1239,7 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6" vertical-offset="0" max-vertical-offset="143">
           <caret line="6" column="39" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1247,7 +1088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.025948104" vertical-offset="0" max-vertical-offset="501">
           <caret line="1" column="77" selection-start-line="1" selection-start-column="77" selection-end-line="1" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1255,7 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.8" vertical-offset="952" max-vertical-offset="2002">
           <caret line="107" column="30" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1263,7 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.36" vertical-offset="0" max-vertical-offset="468">
           <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1271,9 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5219885" vertical-offset="0" max-vertical-offset="523">
           <caret line="21" column="43" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#51#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1281,7 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="598">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1289,7 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="1482">
           <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1297,9 +1130,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4176707" vertical-offset="0" max-vertical-offset="498">
           <caret line="16" column="31" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1307,7 +1137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.7272725" vertical-offset="0" max-vertical-offset="182">
           <caret line="8" column="32" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1315,7 +1144,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43212238" vertical-offset="2660" max-vertical-offset="4862">
           <caret line="240" column="72" selection-start-line="240" selection-start-column="11" selection-end-line="240" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1323,7 +1151,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2397541" vertical-offset="0" max-vertical-offset="488">
           <caret line="9" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1331,7 +1158,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2397541" vertical-offset="0" max-vertical-offset="488">
           <caret line="9" column="24" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1339,7 +1165,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.346154" vertical-offset="2422" max-vertical-offset="5655">
           <caret line="211" column="18" selection-start-line="211" selection-start-column="18" selection-end-line="211" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1347,7 +1172,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.124045804" vertical-offset="0" max-vertical-offset="524">
           <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1355,7 +1179,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.9545455" vertical-offset="0" max-vertical-offset="260">
           <caret line="5" column="59" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1363,7 +1186,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.44" vertical-offset="48" max-vertical-offset="689">
           <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1371,7 +1193,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
           <caret line="24" column="33" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1379,7 +1200,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.3461537" vertical-offset="381" max-vertical-offset="3016">
           <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1387,7 +1207,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.227273" vertical-offset="0" max-vertical-offset="390">
           <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1395,9 +1214,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2197">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1405,18 +1221,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="732">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/krave/api/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2083333" vertical-offset="184" max-vertical-offset="1560">
-          <caret line="26" column="78" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#a#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1424,9 +1228,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="624">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1434,9 +1235,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="523">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1444,13 +1242,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.470588" vertical-offset="2271" max-vertical-offset="2730">
           <caret line="204" column="29" selection-start-line="204" selection-start-column="29" selection-end-line="204" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rest_auth/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5882354" vertical-offset="714" max-vertical-offset="2457">
+        <state vertical-scroll-proportion="0.0" vertical-offset="923" max-vertical-offset="2483">
           <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="72" selection-end-column="46" />
           <folding />
         </state>
@@ -1458,7 +1255,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/krave/assets/js/templates/edit_profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.7272725" vertical-offset="0" max-vertical-offset="338">
+        <state vertical-scroll-proportion="0.0" vertical-offset="104" max-vertical-offset="338">
           <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
           <folding />
         </state>
@@ -1466,209 +1263,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/krave/api/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.647059" vertical-offset="532" max-vertical-offset="1573">
+        <state vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="1573">
           <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/krave/api/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.32" vertical-offset="0" max-vertical-offset="338">
+        <state vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="338">
           <caret line="16" column="28" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/krave/assets/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.269231" vertical-offset="955" max-vertical-offset="2236">
-          <caret line="253" column="97" selection-start-line="253" selection-start-column="97" selection-end-line="253" selection-end-column="97" />
-          <folding>
-            <element signature="e#302#1942#0" expanded="false" />
-            <element signature="e#484#1941#0" expanded="false" />
-            <element signature="e#540#632#0" expanded="false" />
-            <element signature="e#850#979#0" expanded="false" />
-            <element signature="e#1025#1162#0" expanded="false" />
-            <element signature="e#1227#1356#0" expanded="false" />
-            <element signature="e#1401#1539#0" expanded="false" />
-            <element signature="e#1573#1703#0" expanded="false" />
-            <element signature="e#1743#1882#0" expanded="false" />
-            <element signature="e#2007#3958#0" expanded="false" />
-            <element signature="e#2083#2217#0" expanded="false" />
-            <element signature="e#2154#2205#0" expanded="false" />
-            <element signature="e#2281#2432#0" expanded="false" />
-            <element signature="e#2369#2420#0" expanded="false" />
-            <element signature="e#2488#2631#0" expanded="false" />
-            <element signature="e#2568#2619#0" expanded="false" />
-            <element signature="e#2673#2830#0" expanded="false" />
-            <element signature="e#2767#2818#0" expanded="false" />
-            <element signature="e#2878#3017#0" expanded="false" />
-            <element signature="e#2954#3005#0" expanded="false" />
-            <element signature="e#3060#3194#0" expanded="false" />
-            <element signature="e#3131#3182#0" expanded="false" />
-            <element signature="e#3238#3376#0" expanded="false" />
-            <element signature="e#3313#3364#0" expanded="false" />
-            <element signature="e#3424#3648#0" expanded="false" />
-            <element signature="e#3586#3637#0" expanded="false" />
-            <element signature="e#3698#3916#0" expanded="false" />
-            <element signature="e#3854#3905#0" expanded="false" />
-            <element signature="e#4209#4256#0" expanded="false" />
-            <element signature="e#4262#4307#0" expanded="false" />
-            <element signature="e#4369#4470#0" expanded="false" />
-            <element signature="e#4401#4464#0" expanded="false" />
-            <element signature="e#4533#5104#0" expanded="false" />
-            <element signature="e#4569#4943#0" expanded="false" />
-            <element signature="e#4595#4931#0" expanded="false" />
-            <element signature="e#4706#4917#0" expanded="false" />
-            <element signature="e#4813#4899#0" expanded="false" />
-            <element signature="e#4978#5098#0" expanded="false" />
-            <element signature="e#5004#5086#0" expanded="false" />
-            <element signature="e#5178#5646#0" expanded="false" />
-            <element signature="e#5301#5338#0" expanded="false" />
-            <element signature="e#5382#5442#0" expanded="false" />
-            <element signature="e#5495#5639#0" expanded="false" />
-            <element signature="e#5797#5840#0" expanded="false" />
-            <element signature="e#6419#6531#0" expanded="false" />
-            <element signature="e#6875#6965#0" expanded="false" />
-            <element signature="e#7445#7639#0" expanded="false" />
-            <element signature="e#8052#8199#0" expanded="false" />
-            <element signature="e#8362#8459#0" expanded="false" />
-            <element signature="e#8846#8911#0" expanded="false" />
-            <element signature="e#9395#9723#0" expanded="false" />
-            <element signature="e#9630#9704#0" expanded="false" />
-            <element signature="e#9988#10050#0" expanded="false" />
-            <element signature="e#10395#10470#0" expanded="false" />
-            <element signature="e#10571#10726#0" expanded="false" />
-            <element signature="e#10646#10714#0" expanded="false" />
-            <element signature="e#10774#11029#0" expanded="false" />
-            <element signature="e#10958#11014#0" expanded="false" />
-            <element signature="e#11077#11566#0" expanded="false" />
-            <element signature="e#11123#11396#0" expanded="false" />
-            <element signature="e#11265#11381#0" expanded="false" />
-            <element signature="e#11303#11363#0" expanded="false" />
-            <element signature="e#11462#11525#0" expanded="false" />
-            <element signature="e#11539#11554#0" expanded="false" />
-            <element signature="e#11640#14826#0" expanded="false" />
-            <element signature="e#11695#14479#0" expanded="false" />
-            <element signature="e#11759#12022#0" expanded="false" />
-            <element signature="e#11798#11960#0" expanded="false" />
-            <element signature="e#12028#12214#0" expanded="false" />
-            <element signature="e#12067#12195#0" expanded="false" />
-            <element signature="e#12270#12741#0" expanded="false" />
-            <element signature="e#12452#12688#0" expanded="false" />
-            <element signature="e#12537#12627#0" expanded="false" />
-            <element signature="e#12794#13617#0" expanded="false" />
-            <element signature="e#12863#12964#0" expanded="false" />
-            <element signature="e#12970#13598#0" expanded="false" />
-            <element signature="e#13107#13364#0" expanded="false" />
-            <element signature="e#13494#13575#0" expanded="false" />
-            <element signature="e#13662#14465#0" expanded="false" />
-            <element signature="e#13731#13832#0" expanded="false" />
-            <element signature="e#13838#14447#0" expanded="false" />
-            <element signature="e#13955#14212#0" expanded="false" />
-            <element signature="e#14343#14424#0" expanded="false" />
-            <element signature="e#14543#14601#0" expanded="false" />
-            <element signature="e#14642#14707#0" expanded="false" />
-            <element signature="e#14750#14815#0" expanded="false" />
-            <element signature="e#14875#15059#0" expanded="false" />
-            <element signature="e#14940#15046#0" expanded="false" />
-            <element signature="e#14970#15030#0" expanded="false" />
-            <element signature="e#15103#15589#0" expanded="false" />
-            <element signature="e#15133#15528#0" expanded="false" />
-            <element signature="e#15233#15370#0" expanded="false" />
-            <element signature="e#15288#15352#0" expanded="false" />
-            <element signature="e#15403#15455#0" expanded="false" />
-            <element signature="e#15461#15514#0" expanded="false" />
-            <element signature="e#15534#15579#0" expanded="false" />
-            <element signature="e#15737#15820#0" expanded="false" />
-            <element signature="e#15943#15991#0" expanded="false" />
-            <element signature="e#16241#16436#0" expanded="false" />
-            <element signature="e#16340#16417#0" expanded="false" />
-            <element signature="e#16586#16917#0" expanded="false" />
-            <element signature="e#16694#16901#0" expanded="false" />
-            <element signature="e#16797#16882#0" expanded="false" />
-            <element signature="e#17842#18823#0" expanded="false" />
-            <element signature="e#18008#18822#0" expanded="false" />
-            <element signature="e#18029#18812#0" expanded="false" />
-            <element signature="e#18194#18798#0" expanded="false" />
-            <element signature="e#18252#18498#0" expanded="false" />
-            <element signature="e#18370#18438#0" expanded="false" />
-            <element signature="e#18568#18642#0" expanded="false" />
-            <element signature="e#18702#18779#0" expanded="false" />
-            <element signature="e#18867#23208#0" expanded="false" />
-            <element signature="e#19059#23207#0" expanded="false" />
-            <element signature="e#19114#19165#0" expanded="false" />
-            <element signature="e#19223#20749#0" expanded="false" />
-            <element signature="e#19380#20734#0" expanded="false" />
-            <element signature="e#19503#20181#0" expanded="false" />
-            <element signature="e#19545#20084#0" expanded="false" />
-            <element signature="e#19669#19854#0" expanded="false" />
-            <element signature="e#19736#19824#0" expanded="false" />
-            <element signature="e#19899#19975#0" expanded="false" />
-            <element signature="e#19981#20058#0" expanded="false" />
-            <element signature="e#20090#20159#0" expanded="false" />
-            <element signature="e#20234#20715#0" expanded="false" />
-            <element signature="e#20365#20484#0" expanded="false" />
-            <element signature="e#20619#20691#0" expanded="false" />
-            <element signature="e#20813#20871#0" expanded="false" />
-            <element signature="e#20927#21185#0" expanded="false" />
-            <element signature="e#21114#21170#0" expanded="false" />
-            <element signature="e#21239#21792#0" expanded="false" />
-            <element signature="e#21362#21516#0" expanded="false" />
-            <element signature="e#21553#21777#0" expanded="false" />
-            <element signature="e#21693#21758#0" expanded="false" />
-            <element signature="e#21848#21909#0" expanded="false" />
-            <element signature="e#21959#22125#0" expanded="false" />
-            <element signature="e#22007#22059#0" expanded="false" />
-            <element signature="e#22064#22111#0" expanded="false" />
-            <element signature="e#22178#22937#0" expanded="false" />
-            <element signature="e#22214#22923#0" expanded="false" />
-            <element signature="e#22313#22517#0" expanded="false" />
-            <element signature="e#22647#22903#0" expanded="false" />
-            <element signature="e#22694#22880#0" expanded="false" />
-            <element signature="e#22988#23196#0" expanded="false" />
-            <element signature="e#23057#23179#0" expanded="false" />
-            <element signature="e#23091#23159#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/krave/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.372549" vertical-offset="0" max-vertical-offset="1885">
+        <state vertical-scroll-proportion="0.0" vertical-offset="325" max-vertical-offset="1885">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/krave/api/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.72" vertical-offset="0" max-vertical-offset="1196">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/krave/assets/js/templates/post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.4166665" vertical-offset="0" max-vertical-offset="871">
-          <caret line="20" column="69" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/krave/assets/js/templates/comments.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.8333335" vertical-offset="756" max-vertical-offset="1235">
+        <state vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="1235">
           <caret line="76" column="67" selection-start-line="76" selection-start-column="67" selection-end-line="76" selection-end-column="67" />
           <folding />
         </state>
@@ -1676,10 +1295,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/krave/assets/js/templates/profile_posts.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44588745" vertical-offset="132" max-vertical-offset="715">
+        <state vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="715">
           <caret line="26" column="66" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/krave/api/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="1196">
+          <caret line="36" column="45" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/krave/assets/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3319" max-vertical-offset="8242">
+          <caret line="279" column="13" selection-start-line="279" selection-start-column="13" selection-end-line="279" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/krave/api/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.090909" vertical-offset="509" max-vertical-offset="1560">
+          <caret line="63" column="9" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#a#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/krave/assets/js/templates/post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28057554" vertical-offset="0" max-vertical-offset="1235">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
