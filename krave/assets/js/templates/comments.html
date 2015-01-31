@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="comment-info reply">
-                    <strong><a href="/profile/{{ reply.user }}">{{ reply.author }}</a></strong> <span style="color:#666">{{ reply.date_posted | date: 'short' }}</span><br />
+                    <strong><a href="/profile/{{ reply.user }}">{{ reply.display_name }}</a></strong> <span style="color:#666">{{ reply.date_posted | date: 'short' }}</span><br />
                     {{ reply.comment }}
                 </div>
             </div>
