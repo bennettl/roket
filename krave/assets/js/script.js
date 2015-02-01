@@ -266,6 +266,9 @@
             $scope.user = data;
 
         });
+            $scope.hideNewsletter = function() {
+                $scope.newsletter = hidden;
+            }
         $scope.now = $filter('date')(new Date(), 'MMM dd yyyy');
         if($routeParams.user_id) {
             PostFactory.getUser($routeParams.user_id).then(function(data){
