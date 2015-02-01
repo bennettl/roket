@@ -267,7 +267,7 @@
 
         });
             $scope.hideNewsletter = function() {
-                $scope.newsletter = hidden;
+                $scope.newsletter = "hidden";
             }
         $scope.now = $filter('date')(new Date(), 'MMM dd yyyy');
         if($routeParams.user_id) {
