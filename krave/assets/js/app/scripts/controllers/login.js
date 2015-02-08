@@ -6,7 +6,7 @@ angular.module('angularDjangoRegistrationAuthApp')
     $scope.loginBK = function (backend) {
 
         if (backend == 'facebook') {
-            OAuth.popup('facebook', function(error, success) {
+            OAuth.popup('facebook', {authorize:{display:"popup"}}, function(error, success) {
                 if (error) {
                     console.log(error);
                 }
