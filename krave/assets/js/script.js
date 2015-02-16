@@ -523,7 +523,13 @@
                     $scope.post.thumbnail = result.thumbnail_url
 
 
-
+                    $scope.getAuthorDisplay = function(author) {
+                        if(author.display_name) {
+                            return author.display_name;
+                        } else {
+                            return author.username;
+                        }
+                    };
 
                     $scope.hasVoted = function(post){
                         if($scope.user) {
