@@ -137,6 +137,8 @@
         }
     });
     app.controller('CallBackCtrl', function(djangoAuth){
+        // oauth.io initilization
+        OAuth.initialize('BVSX3xZ03scpoQwpKi5eeap1o8o');
         OAuth.callback('facebook').done(function(error, success) {
             if (error) {
                 console.log(error);
