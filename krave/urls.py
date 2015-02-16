@@ -40,6 +40,8 @@ urlpatterns = patterns('',
     url(r'^profile', 'krave.views.public', name='public'),
     url(r'^about', 'krave.views.public', name='public'),
     url(r'^passwordReset', 'krave.views.public', name='public'),
+    url(r'^callback', 'krave.views.public', name='public'),
+
     # url(r'^passwordResetConfirm', 'krave.views.public', name='public'),
 
     # this url is used to generate email content
