@@ -137,16 +137,7 @@
         }
     });
     app.controller('CallBackCtrl', function(djangoAuth){
-        // oauth.io initilization
-        OAuth.initialize('BVSX3xZ03scpoQwpKi5eeap1o8o');
-        OAuth.callback('facebook').done(function(success) {
 
-            var token = success.access_token;
-            djangoAuth.socialLogin(token).then(function(){
-                window.location.href='/';
-            })
-
-        });
     });
     app.controller('DropdownCtrl', function ($scope, $log, djangoAuth) {
         djangoAuth.profile().then(function (data) {
