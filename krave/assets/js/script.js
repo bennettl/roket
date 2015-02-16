@@ -416,7 +416,13 @@
             }
         };
 
-
+        $scope.getAuthorDisplay = function(author) {
+            if(author.display_name) {
+                return author.display_name;
+            } else {
+                return author.author;
+            }
+        };
         $scope.vote = function(post) {
 
             var base_vote = Restangular.all('vote/'+post.id+'/handle_vote');
@@ -462,6 +468,7 @@
                         post.thumbnail = result.thumbnail_url
                     })
                 });
+
                 $scope.loadMore = function(){
                     $scope.posts.pageSize += 10;
                 };
