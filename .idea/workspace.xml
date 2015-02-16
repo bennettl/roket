@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="54cea067-5474-45b1-a543-1b6857debf7c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/krave/api/templates/base.html" afterPath="$PROJECT_DIR$/krave/api/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/krave/assets/js/script.js" afterPath="$PROJECT_DIR$/krave/assets/js/script.js" />
     </list>
     <ignored path="django-api-rest-and-angular.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -99,8 +98,8 @@
       <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/krave/api/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8643815" vertical-offset="889" max-vertical-offset="1690">
-              <caret line="113" column="27" selection-start-line="113" selection-start-column="27" selection-end-line="113" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.709389" vertical-offset="1071" max-vertical-offset="1742">
+              <caret line="119" column="11" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -863,12 +862,12 @@
       <workItem from="1423341240281" duration="17000" />
       <workItem from="1423379141903" duration="1296000" />
       <workItem from="1423423744434" duration="7000" />
-      <workItem from="1424070301297" duration="1284000" />
+      <workItem from="1424070301297" duration="1419000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129115000" />
+    <option name="totallyTimeSpent" value="129250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="23" width="1440" height="873" extended-state="6" />
@@ -1318,8 +1317,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/krave/api/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8643815" vertical-offset="889" max-vertical-offset="1690">
-          <caret line="113" column="27" selection-start-line="113" selection-start-column="27" selection-end-line="113" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.709389" vertical-offset="1071" max-vertical-offset="1742">
+          <caret line="119" column="11" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />

@@ -105,15 +105,19 @@
 </script>
 <div id="fb-root"></div>
 <script>
+
     // oauth.io initilization
     OAuth.initialize('BVSX3xZ03scpoQwpKi5eeap1o8o');
-    OAuth.callback('facebook').done(function(success) {
+    OAuth.callback('facebook')
+            .done(function(result) {
+                console.log('test');
+                //use result.access_token in your API request
+                //or use result.get|post|put|del|patch|me methods (see below)
+            })
+            .fail(function (err) {
+                //handle error with err
+            });
 
-        var token = success.access_token;
-       console.log(token);
-        console.log('yay');
-
-    });
     (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
