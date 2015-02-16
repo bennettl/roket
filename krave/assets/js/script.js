@@ -36,10 +36,6 @@
                     controller: 'AppController',
                     templateUrl: TEMPLATES_DIR + 'about.html'
                 }).
-                when('/callback', {
-                    controller: 'CallBackCtrl',
-                    templateUrl: TEMPLATES_DIR + 'post.html'
-                }).
                 when('/editProfile', {
                     controller: 'EditProfileCtrl',
                     templateUrl: TEMPLATES_DIR + 'edit_profile.html'
@@ -135,9 +131,6 @@
                 templateUrl: TEMPLATES_DIR + 'register_modal.html'
             });
         }
-    });
-    app.controller('CallBackCtrl', function(djangoAuth){
-
     });
     app.controller('DropdownCtrl', function ($scope, $log, djangoAuth) {
         djangoAuth.profile().then(function (data) {

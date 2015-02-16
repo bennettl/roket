@@ -6,19 +6,18 @@ angular.module('angularDjangoRegistrationAuthApp')
     $scope.loginBK = function (backend) {
 
         if (backend == 'facebook') {
-            OAuth.redirect('facebook', 'http://54.191.169.225/callback');
-//            OAuth.popup('facebook', {authorize:{display:"popup"}}, function(error, success) {
-//                if (error) {
-//                    console.log(error);
-//                }
-//                else {
-//                    var token = success.access_token;
-//                    djangoAuth.socialLogin(token).then(function(){
-//                        window.location.href='/';
-//                    })
-//
-//                }
-//            });
+            OAuth.popup('facebook', {authorize:{display:"popup"}}, function(error, success) {
+                if (error) {
+                    console.log(error);
+                }
+                else {
+                    var token = success.access_token;
+                    djangoAuth.socialLogin(token).then(function(){
+                        window.location.href='/';
+                    })
+
+                }
+            });
         }
 
     };

@@ -72,8 +72,8 @@
 <script src="{% static 'angular-route/angular-route.min.js' %}"></script>
 <script src="{% static 'angular-cookies/angular-cookies.min.js' %}"></script>
 <script src="{% static 'angular-sanitize/angular-sanitize.min.js' %}"></script>
-<script src="{% static "oauth-js/dist/oauth.min.js" %}"></script>
 <script src="{% static "js/script.js" %}"></script>
+<script src="{% static "oauth-js/dist/oauth.min.js" %}"></script>
 
 
 <script src="{% static "js/app/scripts/app.js" %} "></script>
@@ -104,21 +104,7 @@
 
 </script>
 <div id="fb-root"></div>
-<script>
-
-    // oauth.io initilization
-    OAuth.initialize('BVSX3xZ03scpoQwpKi5eeap1o8o');
-    OAuth.callback('facebook')
-            .done(function(result) {
-                console.log('test');
-                //use result.access_token in your API request
-                //or use result.get|post|put|del|patch|me methods (see below)
-            })
-            .fail(function (err) {
-                //handle error with err
-            });
-
-    (function(d, s, id) {
+<script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
