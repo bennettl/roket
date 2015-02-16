@@ -36,6 +36,10 @@
                     controller: 'AppController',
                     templateUrl: TEMPLATES_DIR + 'about.html'
                 }).
+                when('/callback', {
+                    controller: 'CallBackCtrl',
+                    templateUrl: TEMPLATES_DIR + 'post.html'
+                }).
                 when('/editProfile', {
                     controller: 'EditProfileCtrl',
                     templateUrl: TEMPLATES_DIR + 'edit_profile.html'
@@ -131,6 +135,20 @@
                 templateUrl: TEMPLATES_DIR + 'register_modal.html'
             });
         }
+    });
+    app.controller('CallBackCtrl', function(djangoAuth){
+        OAuth.callback('facebook').done(function(error, success) {
+            if (error) {
+                console.log(error);
+            }
+            else {
+                var token = success.access_token;
+                djangoAuth.socialLogin(token).then(function(){
+                    window.location.href='/';
+                })
+
+            }
+        });
     });
     app.controller('DropdownCtrl', function ($scope, $log, djangoAuth) {
         djangoAuth.profile().then(function (data) {
