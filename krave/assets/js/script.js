@@ -417,6 +417,8 @@
         };
 
         $scope.getAuthorDisplay = function(author) {
+            console.log("@@@");
+            console.log(author);
             if(author.display_name) {
                 return author.display_name;
             } else {
