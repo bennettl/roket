@@ -53,19 +53,19 @@ class ReplySerializer(serializers.ModelSerializer):
 
     author = serializers.SerializerMethodField()
     profile_image = serializers.SerializerMethodField()
-    display_name = serializers.SerializerMethodField()
 
     class Meta:
         model = Replies
-        fields = ('id', 'user', 'date_posted', 'comment', 'parent', 'author', 'profile_image', 'display_name', )
+        fields = ('id', 'user', 'date_posted', 'comment', 'parent', 'author', 'profile_image', )
 
     def get_author(self, obj):
-        return obj.user.username
+        if obj.user.profile.get_display_name():
+            return obj.user.profile.get_display_name()
+        else:
+            return obj.user.username
     def get_profile_image(self, obj):
         return obj.user.profile.profile_image_url()
 
-    def get_display_name(self, obj):
-        return obj.user.profile.get_display_name()
 
 
 class CommentSerializer(serializers.ModelSerializer):

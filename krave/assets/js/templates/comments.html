@@ -18,11 +18,11 @@
             <div class="post-meta">
                 <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !post.author.profile_image }"style="float:left;margin-right:10px;">
                     <img class="avatar-image" ng-src="{{ post.author.profile_image }}" width="50" height="50">
-                    <span class="avatar-initials">{{ post.author.display_name | firstCharacter }}</span>
+                    <span class="avatar-initials">{{ getAuthorDisplay(post.author) | firstCharacter }}</span>
                 </div>
                 <div class="author">
                     Uploaded by
-                    <a href="/profile/{{ post.author.id }}">{{ post.author.display_name }}</a>
+                    <a href="/profile/{{ post.author.id }}">{{ getAuthorDisplay(post.author) }}</a>
                 </div>
             </div>
             <div class="social-icons">
@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="comment-info reply">
-                    <strong><a href="/profile/{{ reply.user }}">{{ reply.display_name }}</a></strong> <span style="color:#666">{{ reply.date_posted | date: 'short' }}</span><br />
+                    <strong><a href="/profile/{{ reply.user }}">{{ reply.author }}</a></strong> <span style="color:#666">{{ reply.date_posted | date: 'short' }}</span><br />
                     {{ reply.comment }}
                 </div>
             </div>
