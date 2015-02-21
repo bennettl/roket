@@ -50,7 +50,7 @@
     <!--End mc_embed_signup-->
 
 
-    <div class="day" ng-repeat="day_of_week in posts">
+    <div class="day" ng-repeat="day_of_week in posts | limitTo: 7">
         <h2>{{ day_of_week.$key | isTodayCheck | date: 'EEEE' }}
             <small>{{ day_of_week.$key | date:'MMMM d' }}</small></h2>
         <div ng-repeat="p in day_of_week | orderBy:'get_num_votes':true | limitTo: day_of_week.pageSize">
