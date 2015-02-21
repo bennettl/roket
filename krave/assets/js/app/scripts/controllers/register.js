@@ -1,30 +1,43 @@
 'use strict';
 
 angular.module('angularDjangoRegistrationAuthApp')
-  .controller('RegisterCtrl', function ($scope, djangoAuth, Validate) {
+  .controller('RegisterCtrl', function ($scope, djangoAuth, Validate, Facebook) {
   	$scope.model = {'username':'','password':'','email':''};
   	$scope.complete = false;
     $scope.loginBK = function (backend) {
-
-        if (backend == 'facebook') {
-            OAuth.popup('facebook', function(error, success) {
-                if (error) {
-
-                }
-                else {
-                    var token = success.access_token;
-                    djangoAuth.socialLogin(token).then(function(){
-                        window.location.href='/';
-                    })
-
-                }
+        Facebook.login(function(response){
+            var token = response.authResponse.accessToken;
+            Facebook.api('/me', function(response) {
+                djangoAuth.socialLogin(token).then(function(){
+                    window.location.href='/';
+                })
             });
-        }
+
+        }, {scope: 'email'});
+
 
     };
+//    $scope.loginBK = function (backend) {
+//
+//        if (backend == 'facebook') {
+//            OAuth.popup('facebook', function(error, success) {
+//                if (error) {
+//
+//                }
+//                else {
+//                    var token = success.access_token;
+//                    djangoAuth.socialLogin(token).then(function(){
+//                        window.location.href='/';
+//                    })
+//
+//                }
+//            });
+//        }
+//
+//    };
 
     // oauth.io initilization
-    OAuth.initialize('BVSX3xZ03scpoQwpKi5eeap1o8o');
+//    OAuth.initialize('BVSX3xZ03scpoQwpKi5eeap1o8o');
 
     $scope.register = function(formData){
       $scope.errors = [];
