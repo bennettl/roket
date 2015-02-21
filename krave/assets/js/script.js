@@ -440,11 +440,19 @@
                 $scope.posts = data.posts;
 
                 angular.forEach($scope.posts, function (post) {
-                    //Todo
-                PostFactory.getUrlData(post.url).then(function(result){
-                    post.thumbnail = result.thumbnail_url
-                })
+                    PostFactory.getUrlData(post.url).then(function(result){
+                        post.thumbnail = result.thumbnail_url;
+                    })
                 });
+                $scope.posts = $filter('groupBy')($scope.posts, 'date_posted');
+                $scope.posts = $filter('toArray')($scope.posts, true);
+
+                angular.forEach($scope.posts, function(post) {
+                    post.pageSize = 5;
+                });
+                $scope.loadMore = function(posts){
+                    posts.pageSize += 5;
+                };
             });
         }
         else if($routeParams.user_id) {
