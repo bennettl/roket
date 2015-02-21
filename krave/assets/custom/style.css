@@ -22,6 +22,9 @@ input:disabled {
 	height: 50px;
 	width: 50px;
 }
+button:focus {
+	outline: 0;
+}
 
 .avatar .avatar-image,
 .avatar .avatar-initials {
