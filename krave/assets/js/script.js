@@ -82,11 +82,13 @@
             });
         };
         postFactory.getUrlData = function(url){
+            url = encodeURIComponent(url);
             return $http({method:"GET", url:'http://api.embed.ly/1/oembed?key=1f4c7a2056794e52b0124e733778f0f1&url='+url+'&maxwidth=500'}).then(function(result){
                 return result.data;
             })
         };
         postFactory.getEmbedData = function(url){
+            url = encodeURIComponent(url);
             return $http({method:"GET", url:'http://api.embed.ly/1/oembed?key=1f4c7a2056794e52b0124e733778f0f1&width=854&url='+url}).then(function(result){
                 return result.data;
             })
@@ -522,7 +524,6 @@
             });
             PostFactory.getPost().then(function (data) {
                 $scope.post = data;
-                console.log($scope.post);
                 PostFactory.getUrlData($scope.post.url).then(function(result){
                     $scope.post.thumbnail = result.thumbnail_url
 
