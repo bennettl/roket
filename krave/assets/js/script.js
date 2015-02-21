@@ -462,26 +462,24 @@
         else {
             PostFactory.getPosts().then(function (data) {
                 $scope.posts = data;
-                $scope.pageSize = 1;
-
-                $scope.posts_grouped = {};
-
-                angular.forEach($scope.posts, function(post) {
-                    $scope.posts_grouped[post.date_posted] = {
-                        posts: []
-                    };
-                });
-                angular.forEach($scope.posts, function (post, $index) {
-                    PostFactory.getUrlData(post.url).then(function (result) {
+                $scope.posts.pageSize = 10;
+                angular.forEach($scope.posts, function (post) {
+                    PostFactory.getUrlData(post.url).then(function(result){
                         post.thumbnail = result.thumbnail_url
-                    });
-                    $scope.posts_grouped[post.date_posted].posts.push(post);
-
+                    })
                 });
 
                 $scope.loadMore = function(){
-                    $scope.pageSize += 5;
+                    $scope.posts.pageSize += 10;
                 };
+//                $scope.loadMore = function(){
+//                    for(var i=$scope.currentValue;i<($scope.currentValue + 5);i++){
+//                        $scope.pagedPosts.push($scope.posts[i]);
+//                    }
+//                    $scope.currentValue += 5;
+//                };
+//                $scope.loadMore();
+
 
             });
         }
