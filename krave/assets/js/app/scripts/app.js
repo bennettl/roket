@@ -5,8 +5,10 @@ angular.module('angularDjangoRegistrationAuthApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+  'facebook',
 ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, FacebookProvider) {
+    FacebookProvider.init('1515697715348428');
     $routeProvider
       .when('/', {
         templateUrl: '/static/js/app/views/main.html',
