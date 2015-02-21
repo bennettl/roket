@@ -73,6 +73,10 @@ class CategoryListViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategoryListSerializer
 
+    def filter_queryset(self, queryset):
+        queryset = super(CategoryListViewSet, self).filter_queryset(queryset)
+        return queryset.order_by('-date_posted')
+
 
 class CategoryViewSet(viewsets.ModelViewSet):
     """
