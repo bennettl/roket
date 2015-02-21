@@ -50,10 +50,10 @@
     <!--End mc_embed_signup-->
 
 
-    <div class="day" ng-repeat="post in posts | groupBy: 'date_posted' | toArray:true | orderBy: '$key':true">
-        <h2>{{ post.$key | isTodayCheck | date: 'EEEE' }}
-            <small>{{ post.$key | date:'MMMM d' }}</small></h2>
-        <div ng-repeat="p in post | orderBy:'get_num_votes':true">
+    <div class="day" ng-repeat="day_of_week in posts">
+        <h2>{{ day_of_week.$key | isTodayCheck | date: 'EEEE' }}
+            <small>{{ day_of_week.$key | date:'MMMM d' }}</small></h2>
+        <div ng-repeat="p in day_of_week | orderBy:'get_num_votes':true | limitTo: day_of_week.pageSize">
             <div class="post">
                 <div class="video-thumbnail" ng-click="viewVideo(p.url)">
                     <img src="/static/js/images/play.svg" class="play" />
@@ -104,8 +104,8 @@
                 </div>
             </div>
         </div>
-        <!--<div style="text-align: center;margin-top:20px;">
-            <button ng-show="(posts.length > 5)" ng-click="loadMore()">Load More</button>
-        </div>-->
+        <div style="text-align: center;margin-top:20px;">
+            <button ng-click="loadMore(day_of_week)">Load More</button>
+        </div>
     </div>
 </div>
