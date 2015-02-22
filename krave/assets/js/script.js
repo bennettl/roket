@@ -464,6 +464,7 @@
 
                 angular.forEach($scope.posts, function (post) {
                     angular.forEach(post, function(p){
+                        post.sort(compare);
                         if(post.i < post.pageSize) {
                             PostFactory.getUrlData(p.url).then(function (result) {
                                 p.thumbnail = result.thumbnail_url;
@@ -504,6 +505,15 @@
         }
         else {
             PostFactory.getPosts().then(function (data) {
+                function compare(a,b) {
+                    if (a.get_num_votes > b.get_num_votes)
+                        return -1;
+                    if (a.get_num_votes < b.get_num_votes)
+                        return 1;
+                    return 0;
+                }
+
+
                 $scope.posts = data;
                 $scope.posts = $filter('groupBy')($scope.posts, 'date_posted');
                 $scope.posts = $filter('toArray')($scope.posts, true);
@@ -515,6 +525,7 @@
 
                 angular.forEach($scope.posts, function (post) {
                     angular.forEach(post, function(p){
+                        post.sort(compare);
                         if(post.i < post.pageSize) {
                             PostFactory.getUrlData(p.url).then(function (result) {
                                 p.thumbnail = result.thumbnail_url;
