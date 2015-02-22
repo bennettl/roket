@@ -278,7 +278,7 @@
                     $scope.profile_user = data.display_name;
                 }
                 else if(data.first_name) {
-                    $scope.profile_user = data.display_name;
+                    $scope.profile_user = data.first_name;
                 }
                 else {
                     $scope.profile_user = (data.username).charAt(0).toUpperCase() + (data.username).slice(1);
@@ -431,7 +431,7 @@
                 return author.display_name;
             }
             else if(author.first_name) {
-                return author.display_name;
+                return author.first_name;
             }
             else {
                 return (author.username).charAt(0).toUpperCase() + (author.username).slice(1);
@@ -545,7 +545,7 @@
                             return author.display_name;
                         }
                         else if(author.first_name) {
-                            return author.display_name;
+                            return author.first_name;
                         }
                         else {
                             return (author.username).charAt(0).toUpperCase() + (author.username).slice(1);
