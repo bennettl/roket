@@ -274,7 +274,11 @@
         $scope.now = $filter('date')(new Date(), 'MMM dd yyyy');
         if($routeParams.user_id) {
             PostFactory.getUser($routeParams.user_id).then(function(data){
-                $scope.profile_user = data.display_name;
+                if(data.display_name) {
+                    $scope.profile_user = data.display_name;
+                } else {
+                    $scope.profile_user = data.username;
+                }
             })
 
         }
