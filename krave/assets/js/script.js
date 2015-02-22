@@ -450,6 +450,15 @@
                 $route.reload();
             });
         };
+
+        function compare(a,b) {
+            if (a.get_num_votes > b.get_num_votes)
+                return -1;
+            if (a.get_num_votes < b.get_num_votes)
+                return 1;
+            return 0;
+        }
+
         if($routeParams.category_id) {
             PostFactory.getPostsByCategory($routeParams.category_id).then(function(data) {
                 $scope.posts = data.posts;
@@ -505,13 +514,6 @@
         }
         else {
             PostFactory.getPosts().then(function (data) {
-                function compare(a,b) {
-                    if (a.get_num_votes > b.get_num_votes)
-                        return -1;
-                    if (a.get_num_votes < b.get_num_votes)
-                        return 1;
-                    return 0;
-                }
 
 
                 $scope.posts = data;
