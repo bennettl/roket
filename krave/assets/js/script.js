@@ -472,8 +472,8 @@
                 });
 
                 angular.forEach($scope.posts, function (post) {
+                    post.sort(compare);
                     angular.forEach(post, function(p){
-                        post.sort(compare);
                         if(post.i < post.pageSize) {
                             PostFactory.getUrlData(p.url).then(function (result) {
                                 p.thumbnail = result.thumbnail_url;
@@ -526,9 +526,10 @@
                 });
 
                 angular.forEach($scope.posts, function (post) {
+                    post.sort(compare);
                     angular.forEach(post, function(p){
-                        post.sort(compare);
                         if(post.i < post.pageSize) {
+                            console.log(p);
                             PostFactory.getUrlData(p.url).then(function (result) {
                                 p.thumbnail = result.thumbnail_url;
                             })
