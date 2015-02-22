@@ -13,6 +13,7 @@
             // Restangular
             RestangularProvider.setBaseUrl('/api/v1');
             RestangularProvider.setRequestSuffix('/');
+            RestangularProvider.setDefaultHttpFields({cache: true});
 
             // Routing
             $routeProvider.
