@@ -187,7 +187,7 @@
 
                     if (url.indexOf('youtube.com') > -1 || url.indexOf('vimeo.com') > -1) {
 
-                        PostFactory.getUrlData(encodeURIComponent(original_url)).then(function (data) {
+                        PostFactory.getUrlData(original_url).then(function (data) {
                             $scope.newPost.title = data.title;
                         });
                         return true;
