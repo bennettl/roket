@@ -276,8 +276,12 @@
             PostFactory.getUser($routeParams.user_id).then(function(data){
                 if(data.display_name) {
                     $scope.profile_user = data.display_name;
-                } else {
-                    $scope.profile_user = data.username;
+                }
+                else if(data.first_name) {
+                    $scope.profile_user = data.display_name;
+                }
+                else {
+                    $scope.profile_user = (data.username).charAt(0).toUpperCase() + (data.username).slice(1);
                 }
             })
 
@@ -425,8 +429,12 @@
         $scope.getAuthorDisplay = function(author) {
             if(author.display_name) {
                 return author.display_name;
-            } else {
-                return author.username;
+            }
+            else if(author.first_name) {
+                return author.display_name;
+            }
+            else {
+                return (author.username).charAt(0).toUpperCase() + (author.username).slice(1);
             }
         };
         $scope.vote = function(post) {
@@ -535,8 +543,12 @@
                     $scope.getAuthorDisplay = function(author) {
                         if(author.display_name) {
                             return author.display_name;
-                        } else {
-                            return author.username;
+                        }
+                        else if(author.first_name) {
+                            return author.display_name;
+                        }
+                        else {
+                            return (author.username).charAt(0).toUpperCase() + (author.username).slice(1);
                         }
                     };
 
