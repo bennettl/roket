@@ -454,20 +454,40 @@
             PostFactory.getPostsByCategory($routeParams.category_id).then(function(data) {
                 $scope.posts = data.posts;
 
-                angular.forEach($scope.posts, function (post) {
-                    PostFactory.getUrlData(post.url).then(function(result){
-                        post.thumbnail = result.thumbnail_url;
-                    })
-                });
                 $scope.posts = $filter('groupBy')($scope.posts, 'date_posted');
                 $scope.posts = $filter('toArray')($scope.posts, true);
 
                 angular.forEach($scope.posts, function(post) {
                     post.pageSize = 5;
+                    post.i = 0;
                 });
+
+                angular.forEach($scope.posts, function (post) {
+                    angular.forEach(post, function(p){
+                        if(post.i < post.pageSize) {
+                            PostFactory.getUrlData(p.url).then(function (result) {
+                                p.thumbnail = result.thumbnail_url;
+                            })
+                        }
+                        post.i++;
+                    })
+
+                });
+
+                $scope.loadThumbnails = function(scope, pageSize) {
+                    angular.forEach(scope, function (post) {
+                        PostFactory.getUrlData(post.url).then(function (result) {
+                            post.thumbnail = result.thumbnail_url;
+                        })
+
+                    });
+
+                }
                 $scope.loadMore = function(posts){
-                    posts.pageSize += 5;
+
+                    $scope.loadThumbnails(posts, posts.pageSize+=5);
                 };
+
             });
         }
         else if($routeParams.user_id) {
@@ -485,19 +505,38 @@
         else {
             PostFactory.getPosts().then(function (data) {
                 $scope.posts = data;
-                angular.forEach($scope.posts, function (post) {
-                    PostFactory.getUrlData(post.url).then(function(result){
-                        post.thumbnail = result.thumbnail_url;
-                    })
-                });
                 $scope.posts = $filter('groupBy')($scope.posts, 'date_posted');
                 $scope.posts = $filter('toArray')($scope.posts, true);
 
                 angular.forEach($scope.posts, function(post) {
                     post.pageSize = 5;
+                    post.i = 0;
                 });
+
+                angular.forEach($scope.posts, function (post) {
+                    angular.forEach(post, function(p){
+                        if(post.i < post.pageSize) {
+                            PostFactory.getUrlData(p.url).then(function (result) {
+                                p.thumbnail = result.thumbnail_url;
+                            })
+                        }
+                        post.i++;
+                    })
+
+                });
+
+                $scope.loadThumbnails = function(scope, pageSize) {
+                    angular.forEach(scope, function (post) {
+                        PostFactory.getUrlData(post.url).then(function (result) {
+                            post.thumbnail = result.thumbnail_url;
+                        })
+
+                    });
+
+                }
                 $scope.loadMore = function(posts){
-                    posts.pageSize += 5;
+
+                    $scope.loadThumbnails(posts, posts.pageSize+=5);
                 };
 
             });
