@@ -133,8 +133,10 @@ INSTALLED_APPS = (
     'django_extensions',
     'krave.api',
     'embed_video',
+    # REST API
     'rest_framework',
     'rest_framework.authtoken',
+    # Endpoints for user registration and authentication
     'rest_auth',
     'allauth',
     'allauth.account',

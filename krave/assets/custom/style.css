@@ -98,13 +98,20 @@ input:disabled {
 	display: none;
 }
 
-
+.container-fluid{
+	padding-left: 0;
+	padding-right: 0;
+}
 
 #header {
 	box-shadow: 1px 1px 5px #000;
 	height: 95px;
 	padding: 0 20px;
-	color: #fff;
+	color: #272b2d;
+	background: #fff;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
 }
 #header .logo {
 	text-align: center;
@@ -116,12 +123,12 @@ input:disabled {
 }
 #header .links {
 	margin-top: 15px;
-	float: right;
+	float: left;
 	font-size: 14pt;
 
 }
 #header .links a {
-	color: #fff;
+	color: #272b2d;
 	text-decoration: none;
 }
 .links .link {
@@ -134,13 +141,20 @@ input:disabled {
 .link .user-name {
 	display: inline-block;
 }
+
+/*** SIDEBAR ***/
+
+.sidebarTitle{
+	color: #5D6364;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 40px 10px 16px 40px;
+}
 .sidebar {
-	float: left;
 	color: #fff;
 	box-shadow: 1px 1px 4px #000;
-	width: 20%;
 	height: 100%;
-
 }
 .sidebar ul {
 	margin: 0;
@@ -148,9 +162,8 @@ input:disabled {
 }
 .sidebar ul li {
 	list-style: none;
-	padding: 10px;
-	font-size: 14pt;
-
+	padding: 13px 40px;
+	font-size: 15px;
 }
 .sidebar a {
 	color: #fff;
@@ -162,11 +175,13 @@ input:disabled {
 	background-color: #000;
 	border-left: 5px solid #e74c50;
 }
-.content {
-	width: 80%;
-	float: left;
-	box-shadow: 1px 1px 5px #000;
+.categoryIcon{
+	width: 28px;
+	height: 28px;
+}
 
+.content {
+	box-shadow: 1px 1px 5px #000;
 }
 .content.about {
 	box-shadow: none;

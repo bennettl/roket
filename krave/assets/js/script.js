@@ -1,6 +1,6 @@
 (function() {
   var app;
-    app = angular.module('krave.app.static', ['checklist-model', 'ui.bootstrap', 'ngCookies', 'ngSanitize', 'ngRoute', 'restangular', 'angular.filter', 'LocalStorageModule', 'angularDjangoRegistrationAuthApp']);
+    app = angular.module('krave.app.static', ['checklist-model', 'ui.bootstrap', 'ngCookies', 'ngSanitize', 'ngRoute', 'restangular', 'angular.filter', 'LocalStorageModule', 'angularDjangoRegistrationAuthApp', 'slugifier']);
     var TEMPLATES_DIR = '/static/js/templates/';
 
     app.config(['$locationProvider', '$routeProvider', '$sceDelegateProvider', 'RestangularProvider',
