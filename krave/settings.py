@@ -21,9 +21,10 @@ DATABASES = {
     }
 }
 
+
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['54.191.169.225']
+ALLOWED_HOSTS = ['54.191.169.225', 'roket.tv']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -151,6 +152,12 @@ INSTALLED_APPS = (
 REST_SESSION_LOGIN = False
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 SITE_ID = 1
+
+SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
+SOCIALACCOUNT_EMAIL_REQUIRED = False
+SOCIALACCOUNT_QUERY_EMAIL = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_REQUIRED = 'none'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

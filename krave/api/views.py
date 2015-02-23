@@ -38,6 +38,7 @@ class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
+
     @detail_route(methods=['patch', 'post'])
     def new_post_to_category(self, request, pk=None):
         post = Post.objects.get(pk=request.data.get('post', ''))
@@ -58,6 +59,10 @@ class PostsViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostsSerializer
 
+    def filter_queryset(self, queryset):
+        queryset = super(PostsViewSet, self).filter_queryset(queryset)
+        return queryset.order_by('-date_posted')
+
 
 class CategoryListViewSet(viewsets.ModelViewSet):
     """
@@ -67,6 +72,10 @@ class CategoryListViewSet(viewsets.ModelViewSet):
 
     queryset = Category.objects.all()
     serializer_class = CategoryListSerializer
+
+    def filter_queryset(self, queryset):
+        queryset = super(CategoryListViewSet, self).filter_queryset(queryset)
+        return queryset.order_by('-date_posted')
 
 
 class CategoryViewSet(viewsets.ModelViewSet):

@@ -50,10 +50,10 @@
     <!--End mc_embed_signup-->
 
 
-    <div class="day" ng-repeat="post in posts | groupBy: 'date_posted' | toArray:true | orderBy: '$key':true">
-        <h2>{{ post.$key | isTodayCheck | date: 'EEEE' }}
-            <small>{{ post.$key | date:'MMMM d' }}</small></h2>
-        <div ng-repeat="p in post | orderBy:'get_num_votes':true">
+    <div class="day" ng-repeat="day_of_week in posts | limitTo: 7">
+        <h2>{{ day_of_week.$key | isTodayCheck | date: 'EEEE' }}
+            <small>{{ day_of_week.$key | date:'MMMM d' }}</small></h2>
+        <div ng-repeat="p in day_of_week | limitTo: day_of_week.pageSize">
             <div class="post">
                 <div class="video-thumbnail" ng-click="viewVideo(p.url)">
                     <img src="/static/js/images/play.svg" class="play" />
@@ -84,10 +84,8 @@
                 <div class="social-icons">
 
                     <a href="https://www.facebook.com/dialog/feed?app_id=1515697715348428&display=popup&caption=Check%20out%20this%20post%20on%20Roket!&link=http://roket.tv/comments/{{ p.id }}&redirect_uri=http://roket.tv" target="_blank"><img src="http://zacktanner.me/clients/krave/facebook.svg" /></a>
-                    <a class="twitter-share-button" href="https://twitter.com/share/http://roket.tv/comments/{{ p.id }}"><img src="http://zacktanner.me/clients/krave/twitter.svg" /></a>
-                    <script>
-                        window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-                    </script>
+                    <a class="twitter-share-button" href="https://twitter.com/share?url=http://roket.tv/comments/{{ p.id }}" target="_blank"><img src="http://zacktanner.me/clients/krave/twitter.svg" /></a>
+
 
                 </div>
                 <div class="votes" ng-click="vote(p)" ng-class="{ 'voted': hasVoted(p) }">
@@ -104,8 +102,8 @@
                 </div>
             </div>
         </div>
-        <!--<div style="text-align: center;margin-top:20px;">
-            <button ng-show="(posts.length > 5)" ng-click="loadMore()">Load More</button>
-        </div>-->
+        <div style="text-align: center;margin-top:20px;" ng-show="day_of_week.length > day_of_week.pageSize">
+            <button ng-click="loadMore(day_of_week)">Load More</button>
+        </div>
     </div>
 </div>

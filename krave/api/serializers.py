@@ -95,7 +95,7 @@ class CategoryListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Category
-        fields = ('id', 'name', 'posts', )
+        fields = ('id', 'name', 'posts', 'ordering_index', )
 
 
 

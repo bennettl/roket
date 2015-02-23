@@ -1,29 +1,19 @@
 'use strict';
 
 angular.module('angularDjangoRegistrationAuthApp')
-  .controller('LoginCtrl', function ($scope, $location, djangoAuth, Validate) {
+  .controller('LoginCtrl', function ($scope, $location, djangoAuth, Validate, Facebook) {
 
     $scope.loginBK = function (backend) {
+        Facebook.login(function(response){
+            var token = response.authResponse.accessToken;
+            djangoAuth.socialLogin(token).then(function(){
+                window.location.href='/';
+            })
+        }, {scope: 'email'});
 
-        if (backend == 'facebook') {
-            OAuth.popup('facebook', {authorize:{display:"popup"}}, function(error, success) {
-                if (error) {
-                    console.log(error);
-                }
-                else {
-                    var token = success.access_token;
-                    djangoAuth.socialLogin(token).then(function(){
-                        window.location.href='/';
-                    })
-
-                }
-            });
-        }
 
     };
 
-    // oauth.io initilization
-    OAuth.initialize('BVSX3xZ03scpoQwpKi5eeap1o8o');
 
     $scope.model = {'username':'','password':''};
   	$scope.complete = false;

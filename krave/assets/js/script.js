@@ -13,6 +13,7 @@
             // Restangular
             RestangularProvider.setBaseUrl('/api/v1');
             RestangularProvider.setRequestSuffix('/');
+            RestangularProvider.setDefaultHttpFields({cache: true});
 
             // Routing
             $routeProvider.
@@ -82,11 +83,13 @@
             });
         };
         postFactory.getUrlData = function(url){
+            url = encodeURIComponent(url);
             return $http({method:"GET", url:'http://api.embed.ly/1/oembed?key=1f4c7a2056794e52b0124e733778f0f1&url='+url+'&maxwidth=500'}).then(function(result){
                 return result.data;
             })
         };
         postFactory.getEmbedData = function(url){
+            url = encodeURIComponent(url);
             return $http({method:"GET", url:'http://api.embed.ly/1/oembed?key=1f4c7a2056794e52b0124e733778f0f1&width=854&url='+url}).then(function(result){
                 return result.data;
             })
@@ -185,7 +188,7 @@
 
                     if (url.indexOf('youtube.com') > -1 || url.indexOf('vimeo.com') > -1) {
 
-                        PostFactory.getUrlData(encodeURIComponent(original_url)).then(function (data) {
+                        PostFactory.getUrlData(original_url).then(function (data) {
                             $scope.newPost.title = data.title;
                         });
                         return true;
@@ -260,8 +263,8 @@
         });
     }]);
 
-    app.controller('AppController', ['$scope', '$http','$modal', 'PostFactory', '$filter', 'Restangular', 'djangoAuth', '$routeParams', '$route',
-        function($scope, $http, $modal, PostFactory, $filter, Restangular, djangoAuth, $routeParams, $route) {
+    app.controller('AppController', ['$scope', '$http','$modal', 'PostFactory', '$filter', 'Restangular', 'djangoAuth', '$routeParams', '$route', '$filter',
+        function($scope, $http, $modal, PostFactory, $filter, Restangular, djangoAuth, $routeParams, $route, $filter) {
         djangoAuth.profile().then(function(data) {
             $scope.user = data;
 
@@ -272,7 +275,15 @@
         $scope.now = $filter('date')(new Date(), 'MMM dd yyyy');
         if($routeParams.user_id) {
             PostFactory.getUser($routeParams.user_id).then(function(data){
-                $scope.profile_user = data.display_name;
+                if(data.display_name) {
+                    $scope.profile_user = data.display_name;
+                }
+                else if(data.first_name) {
+                    $scope.profile_user = data.first_name;
+                }
+                else {
+                    $scope.profile_user = (data.username).charAt(0).toUpperCase() + (data.username).slice(1);
+                }
             })
 
         }
@@ -419,8 +430,12 @@
         $scope.getAuthorDisplay = function(author) {
             if(author.display_name) {
                 return author.display_name;
-            } else {
-                return author.username;
+            }
+            else if(author.first_name) {
+                return author.first_name;
+            }
+            else {
+                return (author.username).charAt(0).toUpperCase() + (author.username).slice(1);
             }
         };
         $scope.vote = function(post) {
@@ -435,16 +450,54 @@
                 $route.reload();
             });
         };
+
+        function compare(a,b) {
+            if (a.get_num_votes > b.get_num_votes)
+                return -1;
+            if (a.get_num_votes < b.get_num_votes)
+                return 1;
+            return 0;
+        }
+
         if($routeParams.category_id) {
             PostFactory.getPostsByCategory($routeParams.category_id).then(function(data) {
                 $scope.posts = data.posts;
 
-                angular.forEach($scope.posts, function (post) {
-                    //Todo
-                PostFactory.getUrlData(post.url).then(function(result){
-                    post.thumbnail = result.thumbnail_url
-                })
+                $scope.posts = $filter('groupBy')($scope.posts, 'date_posted');
+                $scope.posts = $filter('toArray')($scope.posts, true);
+
+                angular.forEach($scope.posts, function(post) {
+                    post.pageSize = 5;
+                    post.i = 0;
                 });
+
+                angular.forEach($scope.posts, function (post) {
+                    post.sort(compare);
+                    angular.forEach(post, function(p){
+                        if(post.i < post.pageSize) {
+                            PostFactory.getUrlData(p.url).then(function (result) {
+                                p.thumbnail = result.thumbnail_url;
+                            })
+                        }
+                        post.i++;
+                    })
+
+                });
+
+                $scope.loadThumbnails = function(scope, pageSize) {
+                    angular.forEach(scope, function (post) {
+                        PostFactory.getUrlData(post.url).then(function (result) {
+                            post.thumbnail = result.thumbnail_url;
+                        })
+
+                    });
+
+                }
+                $scope.loadMore = function(posts){
+
+                    $scope.loadThumbnails(posts, posts.pageSize+=5);
+                };
+
             });
         }
         else if($routeParams.user_id) {
@@ -461,25 +514,44 @@
         }
         else {
             PostFactory.getPosts().then(function (data) {
+
+
                 $scope.posts = data;
-                $scope.posts.pageSize = 10;
-                angular.forEach($scope.posts, function (post) {
-                    PostFactory.getUrlData(post.url).then(function(result){
-                        post.thumbnail = result.thumbnail_url
-                    })
+                $scope.posts = $filter('groupBy')($scope.posts, 'date_posted');
+                $scope.posts = $filter('toArray')($scope.posts, true);
+
+                angular.forEach($scope.posts, function(post) {
+                    post.pageSize = 5;
+                    post.i = 0;
                 });
 
-                $scope.loadMore = function(){
-                    $scope.posts.pageSize += 10;
-                };
-//                $scope.loadMore = function(){
-//                    for(var i=$scope.currentValue;i<($scope.currentValue + 5);i++){
-//                        $scope.pagedPosts.push($scope.posts[i]);
-//                    }
-//                    $scope.currentValue += 5;
-//                };
-//                $scope.loadMore();
+                angular.forEach($scope.posts, function (post) {
+                    post.sort(compare);
+                    angular.forEach(post, function(p){
+                        if(post.i < post.pageSize) {
+                            console.log(p);
+                            PostFactory.getUrlData(p.url).then(function (result) {
+                                p.thumbnail = result.thumbnail_url;
+                            })
+                        }
+                        post.i++;
+                    })
 
+                });
+
+                $scope.loadThumbnails = function(scope, pageSize) {
+                    angular.forEach(scope, function (post) {
+                        PostFactory.getUrlData(post.url).then(function (result) {
+                            post.thumbnail = result.thumbnail_url;
+                        })
+
+                    });
+
+                }
+                $scope.loadMore = function(posts){
+
+                    $scope.loadThumbnails(posts, posts.pageSize+=5);
+                };
 
             });
         }
@@ -518,7 +590,6 @@
             });
             PostFactory.getPost().then(function (data) {
                 $scope.post = data;
-                console.log($scope.post);
                 PostFactory.getUrlData($scope.post.url).then(function(result){
                     $scope.post.thumbnail = result.thumbnail_url
 
@@ -526,8 +597,12 @@
                     $scope.getAuthorDisplay = function(author) {
                         if(author.display_name) {
                             return author.display_name;
-                        } else {
-                            return author.username;
+                        }
+                        else if(author.first_name) {
+                            return author.first_name;
+                        }
+                        else {
+                            return (author.username).charAt(0).toUpperCase() + (author.username).slice(1);
                         }
                     };
 
