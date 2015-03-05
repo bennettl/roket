@@ -1,5 +1,5 @@
 <div class='modal-header'>
-    <h2>Sign In</h2>
+    <div>Sign In</div>
 </div>
 <div ng-switch on="authSection">
     <div id="passwordReset_view" ng-controller="PasswordresetCtrl" ng-switch-when="forgotPassword" class="modal-body clearfix auth">
@@ -21,18 +21,15 @@
 
     <div class='modal-body clearfix auth' ng-controller="LoginCtrl" ng-switch-when="login">
         <form role="form" ng-submit="login(loginForm)" name="loginForm" novalidate class="standard_login">
-            <label>Username or Email</label><br />
-            <input name="username" id="id_username" type="text" ng-model="model.username" placeholder="Username" required />
-            <br /><br />
-
+            <input name="username" id="id_username" type="text" ng-model="model.username" placeholder="Username or email" class="form-control" required />
+            <br />
             <div class="alert alert-danger" ng-repeat="error in errors.username">{{error}}</div>
-            <label>Password</label><br />
-            <input name="password" id="id_password" type="password" ng-model="model.password" placeholder="Password" required /><br />
+            <input name="password" id="id_password" type="password" ng-model="model.password" placeholder="Password" class="form-control" required /><br />
             <a href="#" ng-click="forgotPassword()" style="color:#e74c50">Forgot your password?</a><br /><br />
             <div class="alert alert-danger" ng-repeat="error in errors.password">{{error}}</div>
             <div class="alert alert-danger" ng-repeat="error in errors.non_field_errors">{{error}}</div>
             <div class="alert alert-danger" ng-if="error">{{error}}</div>
-            <button type="submit">Sign In</button>
+            <button id="sign-in-button" type="submit">Sign In</button>
         </form>
         <div class="social_login">
             <h3>OR</h3>

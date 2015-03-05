@@ -1,5 +1,4 @@
-<sidebar></sidebar>
-<div class="content col-xs-10 ng-cloak">
+<div class="content ng-cloak col-xs-12 col-sm-10 col-sm-offset-2 col-xs-offset-0">
     <!-- Begin MailChimp Signup Form -->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
     <style type="text/css">
@@ -29,7 +28,7 @@
         /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
 		   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
     </style>
-    <div id="mc_embed_signup" ng-show="newsletter != 'hidden'">
+    <div id="mc_embed_signup" ng-show="newsletter != 'hidden'" class="hidden-xs">
         <form action="//Roket.us10.list-manage.com/subscribe/post?u=9ebf725cf6e3dec7b744bd582&amp;id=42b77098bf" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
             <div id="mc_embed_signup_scroll">
                 <p style="display: inline-block;font-weight:bold;">Get the best new video discoveries in your inbox daily!</p>
@@ -51,55 +50,62 @@
 
 
     <div class="day" ng-repeat="day_of_week in posts | limitTo: 7">
-        <h2>{{ day_of_week.$key | isTodayCheck | date: 'EEEE' }}
+        <h2 class="dayHeader">{{ day_of_week.$key | isTodayCheck | date: 'EEEE' }}
             <small>{{ day_of_week.$key | date:'MMMM d' }}</small></h2>
-        <div ng-repeat="p in day_of_week | limitTo: day_of_week.pageSize">
-            <div class="post">
-                <div class="video-thumbnail" ng-click="viewVideo(p.url)">
+        <div ng-repeat="p in day_of_week | limitTo: day_of_week.pageSize" class="postContainer">
+            <div class="post clearfix">
+                <div class="video-thumbnail">
                     <img src="/static/js/images/play.svg" class="play" />
-                    <img ng-src="{{ p.thumbnail }}" /><br />
-                    <a href="#" ng-click="editPost(p)" ng-show="p.author.id == user.id">Edit</a>
-                    <a href="#" ng-click="deletePost(p)" ng-show="p.author.id == user.id"> | Delete</a>
+                    <img ng-click="viewVideo(p.url)" ng-src="{{ p.thumbnail }}" class="thumb" /><br />
+                    <div class="edit-post-container">
+                        <a href="#" ng-click="editPost(p)" ng-show="p.author.id == user.id">Edit</a>
+                        <a href="#" ng-click="deletePost(p)" ng-show="p.author.id == user.id"> | Delete</a>
+                    </div>
                 </div>
-                <div class="top clearfix">
+                <div class="video-detail">
                     <div class="post-title">
                         <h3><a href="#" ng-click="viewVideo(p.url)">{{ p.post_title }}</a></h3>
-                        <div class="categories" style="float:left;">
+                        <div class="author">
+                            Uploaded by
+                            <a href="/profile/{{ p.author.id }}/{{ p.author.username }}">{{ getAuthorDisplay(p.author) }}</a>
+                        </div>
+                        <div class="categories">
                             <div ng-repeat="category in p.categories" class="category">
-                                <a href='/category/{{ category.id }}/{{ category.name }}'>{{ category.name }}</a>
+                                <a href='/category/{{ category.id }}/{{ category.slug }}'>{{ category.name }}</a>
                             </div>
                         </div>
+                    <!-- END POST TITLE -->
                     </div>
-                </div>
-                <div class="post-meta">
-                    <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !p.author.profile_image }"style="float:left;margin-right:10px;">
+                    <a href="/profile/{{ p.author.id }}/{{ p.author.username }}" class="avatar avatar-circle" ng-class="{'avatar-hide-image': !p.author.profile_image }">
                         <img class="avatar-image" ng-src="{{ p.author.profile_image }}" width="50" height="50">
                         <span class="avatar-initials">{{ getAuthorDisplay(p.author) | firstCharacter }}</span>
+                    </a>
+                    <!-- SOCIAL ICONS -->
+
+                    <a href="https://www.facebook.com/dialog/feed?app_id=1515697715348428&display=popup&link=http://roket.tv/posts/{{ p.id }}&redirect_uri=http://roket.tv" target="_blank" class="social-icon">
+                        <img src="http://zacktanner.me/clients/krave/facebook.svg" />
+                    </a>
+                    <a class="twitter-share-button social-icon" href="https://twitter.com/share?url=http://roket.tv/posts/{{ p.id }}" target="_blank">
+                        <img src="http://zacktanner.me/clients/krave/twitter.svg" />
+                    </a>
+                    <!-- END SOCIAL ICONS -->
+                    <div class="comments">
+                        <a href="/posts/{{ p.id }}">
+                        <i class="fa fa-comment-o"></i>
+                        {{ p.get_num_replies }}
+                        </a>
+                    <!-- END COMMENTS -->
                     </div>
-                    <div class="author">
-                        Uploaded by
-                        <a href="/profile/{{ p.author.id }}">{{ getAuthorDisplay(p.author) }}</a>
-                    </div>
+                <!-- END VIDEO DETAIL -->
                 </div>
-                <div class="social-icons">
-
-                    <a href="https://www.facebook.com/dialog/feed?app_id=1515697715348428&display=popup&caption=Check%20out%20this%20post%20on%20Roket!&link=http://roket.tv/comments/{{ p.id }}&redirect_uri=http://roket.tv" target="_blank"><img src="http://zacktanner.me/clients/krave/facebook.svg" /></a>
-                    <a class="twitter-share-button" href="https://twitter.com/share?url=http://roket.tv/comments/{{ p.id }}" target="_blank"><img src="http://zacktanner.me/clients/krave/twitter.svg" /></a>
-
-
-                </div>
+             
                 <div class="votes" ng-click="vote(p)" ng-class="{ 'voted': hasVoted(p) }">
                     <span ng-hide="hasVoted(p)" style="margin-left: 3px;">&#x25B2;</span>
                     <span ng-show="hasVoted(p)" style="margin-left: 3px;"><i class="fa fa-check"></i></span>
                     <br />
                     <div class="vote" ng-bind="p.get_num_votes">0</div>
                 </div>
-                <div class="comments">
-                    <a href="/comments/{{ p.id }}">
-                    <i class="fa fa-comment-o"></i>
-                    {{ p.get_num_replies }}
-                    </a>
-                </div>
+            <!-- END POST -->
             </div>
         </div>
         <div style="text-align: center;margin-top:20px;" ng-show="day_of_week.length > day_of_week.pageSize">

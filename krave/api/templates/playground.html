@@ -3,7 +3,7 @@
 <html>
 <body ng-app="example.app.playground">
 {% verbatim %}
-<div class="content" ng-controller="AppController">
+<div class="content col-xs-12 col-sm-10 col-sm-offset-2" ng-controller="AppController">
     <ol>
         <li ng-repeat="user in users">{{ user.username }} <button ng-click="deleteUser(user)">delete</button></li>
     </ol>

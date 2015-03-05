@@ -102,6 +102,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -144,6 +145,8 @@ INSTALLED_APPS = (
     'rest_auth.registration',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
+    # Toolbar
+    'debug_toolbar',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -212,3 +215,6 @@ JWT_AUTH = {
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 AUTH_USER_MODEL = 'auth.User'
+
+# Debug Toolbar
+DEBUG_TOOLBAR_PATCH_SETTINGS = False

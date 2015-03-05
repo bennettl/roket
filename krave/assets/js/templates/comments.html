@@ -1,49 +1,52 @@
-<sidebar></sidebar>
-<div class="content ng-cloak clearfix">
-    <div class="post">
+<div class="content content-comment ng-cloak col-xs-12 col-sm-10 col-sm-offset-2 clearfix">
+    <div class="post clearfix">
         <div class="video-thumbnail" ng-click="viewVideo(post.url)">
             <img src="/static/js/images/play.svg" class="play" />
-            <img ng-src="{{ post.thumbnail }}" />
+            <img ng-src="{{ post.thumbnail }}" class="thumb" />
         </div>
-        <div class="top clearfix">
+        <div class="video-detail">
             <div class="post-title">
                 <h3><a href="#" ng-click="viewVideo(post.url)">{{ post.post_title }}</a></h3>
-                <div class="categories" style="float:left;">
-                    <div ng-repeat="category in post.categories" class="category">
-                        <a href='/category/{{ category.id }}/{{ category.name }}'>{{ category.name }}</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-            <div class="post-meta">
-                <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !post.author.profile_image }"style="float:left;margin-right:10px;">
-                    <img class="avatar-image" ng-src="{{ post.author.profile_image }}" width="50" height="50">
-                    <span class="avatar-initials">{{ getAuthorDisplay(post.author) | firstCharacter }}</span>
-                </div>
                 <div class="author">
                     Uploaded by
                     <a href="/profile/{{ post.author.id }}">{{ getAuthorDisplay(post.author) }}</a>
                 </div>
+                <div class="categories">
+                    <div ng-repeat="category in post.categories" class="category">
+                        <a href='/category/{{ category.id }}/{{ category.slug }}'>{{ category.name }}</a>
+                    </div>
+                </div>
+            <!-- END POST TITLE -->
             </div>
-            <div class="social-icons">
-
-                <a href="https://www.facebook.com/dialog/feed?app_id=1515697715348428&display=popup&caption=Check%20out%20this%20post%20on%20Roket!&link=http://roket.tv/comments/{{ post.id }}&redirect_uri=http://roket.tv" target="_blank"><img src="http://zacktanner.me/clients/krave/facebook.svg" /></a>
-                <a class="twitter-share-button" href="https://twitter.com/share?url=http://roket.tv/comments/{{ post.id }}" target="_blank"><img src="http://zacktanner.me/clients/krave/twitter.svg" /></a>
-
+            <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !post.author.profile_image }"style="float:left;margin-right:10px;">
+                <img class="avatar-image" ng-src="{{ post.author.profile_image }}" width="50" height="50">
+                <span class="avatar-initials">{{ getAuthorDisplay(post.author) | firstCharacter }}</span>
             </div>
+            <!-- SOCIAL ICONS -->
+            <a href="https://www.facebook.com/dialog/feed?app_id=1515697715348428&display=popup&caption=Check%20out%20this%20post%20on%20Roket!&link=http://roket.tv/posts/{{ post.id }}&redirect_uri=http://roket.tv" target="_blank" class="social-icon">
+                <img src="http://zacktanner.me/clients/krave/facebook.svg" />
+            </a>
+            <a class="twitter-share-button social-icon" href="https://twitter.com/share?url=http://roket.tv/posts/{{ post.id }}" target="_blank">
+                <img src="http://zacktanner.me/clients/krave/twitter.svg" />
+            </a>
+            <!-- END SOCIAL ICONS -->
+            <!-- COMMENT -->
+            <div class="comments">
+                <a href="/posts/{{ post.id }}">
+                    <i class="fa fa-comment-o"></i>
+                    {{ post.get_num_replies }}
+                </a>
+            <!-- END COMMENTS -->
+            </div>
+        <!-- END VIDEO DETAIL -->
+        </div>
         <div class="votes" ng-click="vote(post)" ng-class="{ 'voted': hasVoted(post) }">
             <span ng-hide="hasVoted(post)" style="margin-left: 3px;">&#x25B2;</span>
             <span ng-show="hasVoted(post)" style="margin-left: 3px;"><i class="fa fa-check"></i></span>
             <br />
             <div class="vote" ng-bind="post.get_num_votes">0</div>
         </div>
-        <div class="comments">
-            <a href="/comments/{{ post.id }}">
-                <i class="fa fa-comment-o"></i>
-                {{ post.get_num_replies }}
-            </a>
-        </div>
-
+    <!-- END POST -->
     </div>
     <div class="comment-section" ng-cloak>
         <textarea ng-model="comment" ng-show="user"></textarea>
@@ -58,7 +61,7 @@
                 </div>
             </div>
             <div class="comment-info">
-                <strong><a href="/profile/{{ comment.user.id }}">{{ getAuthorDisplay(comment.user) }}</a></strong> <small ng-show="comment.user.id == user.id"><a href="#" ng-click="deleteComment(comment.id)">[Delete]</a></small> <span style="color:#666">{{ comment.date_posted | date: 'short' }}</span><br />
+                <strong><a class="author" href="/profile/{{ comment.user.id }}">{{ getAuthorDisplay(comment.user) }}</a></strong> <small ng-show="comment.user.id == user.id"><a href="#" ng-click="deleteComment(comment.id)">[Delete]</a></small> <span style="color:#666; margin-left: 10px;">{{ comment.date_posted | date: 'short' }}</span><br />
                 {{ comment.comment }}
                 <div class="actions">
                     <a href="#" ng-click="replyToComment(comment)" ng-show="user">Reply</a>
@@ -76,7 +79,7 @@
                     </div>
                 </div>
                 <div class="comment-info reply">
-                    <strong><a href="/profile/{{ reply.user }}">{{ reply.author }}</a></strong> <span style="color:#666">{{ reply.date_posted | date: 'short' }}</span><br />
+                    <strong><a href="/profile/{{ reply.user }}">{{ reply.author }}</a></strong> <span style="color:#666; margin-left: 10px;">{{ reply.date_posted | date: 'short' }}</span><br />
                     {{ reply.comment }}
                 </div>
             </div>

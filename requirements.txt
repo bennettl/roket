@@ -30,3 +30,4 @@ djangorestframework==3.0.3
 djangorestframework-jwt==1.1.1
 -e git://github.com/pythonforfacebook/facebook-sdk.git@47b19fa23ebf943f84d81f1961dc1b9a318af539#egg=facebook_sdk-master
 oauthlib==0.6.1
+django-debug-toolbar==1.2

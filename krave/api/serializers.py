@@ -5,8 +5,10 @@ from rest_framework.decorators import detail_route
 
 from .models import Post, Category, Votes, Comments, Replies
 
-
 class UserSerializer(serializers.ModelSerializer):
+    """
+        Serializer for User
+    """
     profile_image = serializers.SerializerMethodField()
     display_name = serializers.SerializerMethodField()
 
@@ -20,37 +22,45 @@ class UserSerializer(serializers.ModelSerializer):
     def get_display_name(self, obj):
         return obj.profile.get_display_name()
 
-
+#
 class CategorySerializer(serializers.ModelSerializer):
-
+    """
+        Serializer for Category
+    """
     class Meta:
         model = Category
-        fields = ('id', 'name', 'ordering_index', )
-
+        fields = ('id', 'name', 'ordering_index', 'slug', )
 
 class PostSerializer(serializers.ModelSerializer):
-
+    """
+        Serializer for Post
+    """
     class Meta:
         model = Post
-        fields = ('id', 'author', 'url', 'post_title', 'date_posted', )
+        fields = ('id', 'author', 'url', 'post_title', 'thumbnail', 'date_posted', )
 
 
 class VoteSerializer(serializers.ModelSerializer):
-
+    """
+        Serializer for Vote
+    """
     class Meta:
         model = Votes
         fields = ('id', 'user', 'post', )
 
-
 class CommentsSerializer(serializers.ModelSerializer):
-
+    """
+        Serializer for Comment
+    """
     class Meta:
         model = Comments
         fields = ('user', 'comment', 'post',)
 
 
 class ReplySerializer(serializers.ModelSerializer):
-
+    """
+        Serializer for Reply
+    """
     author = serializers.SerializerMethodField()
     profile_image = serializers.SerializerMethodField()
 
@@ -66,9 +76,10 @@ class ReplySerializer(serializers.ModelSerializer):
     def get_profile_image(self, obj):
         return obj.user.profile.profile_image_url()
 
-
-
 class CommentSerializer(serializers.ModelSerializer):
+    """
+        Serializer for Comment, which includes user and replies
+    """
     user = UserSerializer()
     replies = ReplySerializer(source="replies_set.all", many=True)
 
@@ -78,6 +89,9 @@ class CommentSerializer(serializers.ModelSerializer):
 
 
 class PostsSerializer(serializers.ModelSerializer):
+    """
+        Serializer for Post, which includes author, votes, comments, categories
+    """
     author = UserSerializer()
     votes = VoteSerializer(source='votes_set.all', many=True)
     comments = CommentSerializer(source='comments_set.all', many=True)
@@ -88,18 +102,21 @@ class PostsSerializer(serializers.ModelSerializer):
         fields = ('id', 'author', 'url', 'post_title', 'date_posted', 'get_num_votes', 'votes', 'comments',
                   'get_num_replies', 'categories', )
 
-
 class CategoryListSerializer(serializers.ModelSerializer):
-
+    """
+        Serializer for Category, which includes Post
+    """
     posts = PostsSerializer(source="post_set.all", many=True)
 
     class Meta:
         model = Category
-        fields = ('id', 'name', 'posts', 'ordering_index', )
-
+        fields = ('id', 'name', 'posts', 'ordering_index', 'slug', )
 
 
 class CustomUserSerializer(serializers.ModelSerializer):
+    """
+        Serializer for User, which includes profile imag, posts, and display name
+    """
     profile_image = serializers.SerializerMethodField()
     posts = PostsSerializer(source="post_set.all", many=True)
     display_name = serializers.SerializerMethodField()

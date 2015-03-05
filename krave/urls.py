@@ -7,10 +7,13 @@ from api.views import CategoryViewSet, PostViewSet, PostsViewSet, VoteViewSet, C
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 from django.views.generic import TemplateView
+import debug_toolbar
 
 from rest_auth.views import (Login, Logout, UserDetails, PasswordChange,
                              PasswordReset, PasswordResetConfirm)
 admin.autodiscover()
+
+# Routes for /api/v1
 router = DefaultRouter()
 router.register(r'categories', CategoryViewSet)
 router.register(r'post', PostViewSet)
@@ -30,17 +33,27 @@ urlpatterns = patterns('',
     url(r'^$', 'krave.views.public', name='public'),
     (r'^rest-auth/', include('rest_auth.urls')),
     (r'^rest-auth/registration/', include('rest_auth.registration.urls')),
+    # User
     url(r'^login', 'krave.views.public', name='public'),
     url(r'^logout', 'krave.views.public', name='public'),
     url(r'^register', 'krave.views.public', name='public'),
     url(r'^userProfile', 'krave.views.public', name='public'),
-    url(r'^comments', 'krave.views.public', name='public'),
-    url(r'^category', 'krave.views.public', name='public'),
     url(r'^editProfile', 'krave.views.public', name='public'),
     url(r'^profile', 'krave.views.public', name='public'),
+    # Posts
+    url(r'^posts$', 'krave.views.public', name='public'),
+    url(r'^posts/(?P<pk>\d+)', 'krave.views.postDetail', name='post-detail'),
+    url(r'^comments$', 'krave.views.public', name='public'),
+    url(r'^category', 'krave.views.public', name='public'),
+    # Misc pages
     url(r'^about', 'krave.views.public', name='public'),
+    url(r'^terms', 'krave.views.public', name='public'),
+    url(r'^privacy', 'krave.views.public', name='public'),
+    url(r'^faq', 'krave.views.public', name='public'),
     url(r'^passwordReset', 'krave.views.public', name='public'),
     url(r'^callback', 'krave.views.public', name='public'),
+    url(r'^__debug__/', include(debug_toolbar.urls)),
+
 
     # url(r'^passwordResetConfirm', 'krave.views.public', name='public'),
 

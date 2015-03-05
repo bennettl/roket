@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from rest_framework import permissions
+from rest_framework import status
 from rest_framework.decorators import list_route, detail_route
 from .models import Post, Category, Votes, Comments, Replies, User, CategoryToPost, UserProfile
 from .serializers import CategorySerializer, PostSerializer, PostsSerializer, VoteSerializer, CommentsSerializer,\
@@ -7,6 +8,7 @@ from .serializers import CategorySerializer, PostSerializer, PostsSerializer, Vo
 from django.http import HttpResponse
 from rest_framework.response import Response
 from mixins.api import viewsets as test
+from pprint import pprint
 
 
 
@@ -47,7 +49,7 @@ class PostViewSet(viewsets.ModelViewSet):
             post=post,
             category=category
         )
-        return HttpResponse(status=200)
+        return HttpResponse(status=status.HTTP_200_OK)
 
 
 class PostsViewSet(viewsets.ModelViewSet):
@@ -61,7 +63,19 @@ class PostsViewSet(viewsets.ModelViewSet):
 
     def filter_queryset(self, queryset):
         queryset = super(PostsViewSet, self).filter_queryset(queryset)
-        return queryset.order_by('-date_posted')
+       # pprint (vars(self.request))
+
+        # If pk kwargs is found, that mean we're in a detail page, show all posts
+        try:
+            pk = self.kwargs['pk']
+            return queryset.order_by('-date_posted')
+
+        # Else, we're in list sets, show only posts which are active
+        except KeyError:
+            return queryset.filter(active=True).order_by('-date_posted')
+
+
+
 
 
 class CategoryListViewSet(viewsets.ModelViewSet):
@@ -99,14 +113,23 @@ class VoteViewSet(viewsets.ModelViewSet):
 
     @detail_route(methods=['post','patch'])
     def handle_vote(self, request, pk=None):
+        """
+        Processes the vote, creates a vote when one doesn't exist, and removes it when it does exit
+        """
         post = Post.objects.get(pk=pk)
         vote = Votes.objects.filter(post=post, user=self.request.user)
+
+        # If the Post - Vote connection exists, delete vote
         if vote.count() == 1:
             vote.delete()
-            return HttpResponse(status=200)
+            status_code = status.HTTP_200_OK
+        # Else, the Post - Vote connection doesn't exist, create the vote
         else:
             Votes.objects.create(post=post, user=self.request.user)
-            return HttpResponse(status=201)
+            status_code = status.HTTP_201_CREATED
+
+        # Returns the serialized Post data, and status code
+        return Response(PostsSerializer(post).data, status=status_code)
 
     @detail_route(methods=['delete'])
     def delete_vote(self, request, pk=None):

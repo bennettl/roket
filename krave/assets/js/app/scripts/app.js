@@ -106,6 +106,7 @@ angular.module('angularDjangoRegistrationAuthApp', [
       });
   })
   .run(function(djangoAuth){
-    djangoAuth.initialize('//roket.tv/rest-auth', false);
-//        djangoAuth.initialize('//localhost/rest-auth', false);
+      // djangoAuth.initialize('//roket.tv/rest-auth', false);
+      // djangoAuth.initialize('//127.0.0.1:8000/rest-auth', false);
+       djangoAuth.initialize(window.location.origin + '/rest-auth', false);
     });

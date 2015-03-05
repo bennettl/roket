@@ -1,14 +1,17 @@
-<div class="sidebar col-xs-2" controller="sideBarCtrl">
+<div ng-if="visible" class="sidebar col-sm-2 hidden-xs">
     <div class="sidebarTitle">Categories</div>
     <ul>
-        <a href="/" ng-class="{ 'active': isActive('home') }"><li>Home</li></a>
-<<<<<<< HEAD
-        <a href="/category/{{ category.id }}/{{ category.name }}" ng-class="{ 'active': isActive(category.id) }" ng-repeat="category in categories">
-            <img class="categoryIcon" src="static/js/images/sidebar/{{ category.name }}.png" />
-            <li>{{ category.name }}</li>
-        </a>
-=======
-        <a href="/category/{{ category.id }}/{{ category.name }}" ng-class="{ 'active': isActive(category.id) }" ng-repeat="category in categories | orderBy: 'ordering_index':false"><li>{{ category.name }}</li></a>
->>>>>>> ed78ac655736e92bf029e80d4f3188d852af93d9
+        <li>
+        <a href="/" ng-class="{ 'active': isActive('home') }">
+            <img class="categoryIcon" src="static/js/images/sidebar/home.png" />
+            Home
+            </a>
+        </li>
+
+        <li ng-repeat="category in categories | orderBy: 'ordering_index':false">
+            <a href="/category/{{ category.id }}/{{ category.slug }}" ng-class="{ 'active': isActive(category.id) }">
+                <img class="categoryIcon" ng-src="static/js/images/sidebar/{{ category.name }}.png" />{{ category.name }}
+            </a>
+        </li>
     </ul>
 </div>

@@ -1,19 +1,26 @@
 (function() {
-  var app;
-    app = angular.module('krave.app.static', ['checklist-model', 'ui.bootstrap', 'ngCookies', 'ngSanitize', 'ngRoute', 'restangular', 'angular.filter', 'LocalStorageModule', 'angularDjangoRegistrationAuthApp', 'slugifier']);
-    var TEMPLATES_DIR = '/static/js/templates/';
 
-    app.config(['$locationProvider', '$routeProvider', '$sceDelegateProvider', 'RestangularProvider',
-        function($locationProvider, $routeProvider, $sceDelegateProvider, RestangularProvider) {
+    /**** MODULE ****/
+    var app;
+    app = angular.module('roket.app.static', ['checklist-model', 'ngAnimate', 'ui.bootstrap', 'ngCookies', 'ngSanitize', 'ngRoute', 'restangular', 'angular.filter', 'LocalStorageModule', 'angularDjangoRegistrationAuthApp', 'slugifier', 'angulartics', 'angulartics.google.analytics']);
+    var TEMPLATES_DIR = '/static/js/templates/';
+    
+    /**** CONFIGURATION ****/
+    app.config(['$locationProvider', '$routeProvider', '$sceDelegateProvider', 'RestangularProvider', '$analyticsProvider',
+        function($locationProvider, $routeProvider, $sceDelegateProvider, RestangularProvider, $analyticsProvider) {
+           
             $sceDelegateProvider.resourceUrlWhitelist([
                 // Allow same origin resource loads.
                 'self'
-
             ]);
             // Restangular
             RestangularProvider.setBaseUrl('/api/v1');
             RestangularProvider.setRequestSuffix('/');
             RestangularProvider.setDefaultHttpFields({cache: true});
+
+            // Google Analytics
+            $analyticsProvider.firstPageview(true); /* Records pages that don't use $state or $route */
+            $analyticsProvider.withAutoBase(true);  /* Records full path */
 
             // Routing
             $routeProvider.
@@ -21,7 +28,7 @@
                     controller: 'AppController',
                     templateUrl: TEMPLATES_DIR + 'post.html'
                 }).
-                when('/comments/:post_id', {
+                when('/posts/:post_id', {
                     controller: 'CommentController',
                     templateUrl: TEMPLATES_DIR + 'comments.html'
                 }).
@@ -29,29 +36,48 @@
                     controller: 'AppController',
                     templateUrl: TEMPLATES_DIR + 'post.html'
                 }).
-                when('/profile/:user_id', {
+                when('/profile/:user_id/:user_name', {
                     controller: 'AppController',
                     templateUrl: TEMPLATES_DIR + 'profile_posts.html'
                 }).
                 when('/about', {
-                    controller: 'AppController',
+                    templateUrl: TEMPLATES_DIR + 'about.html'
+                }).
+                when('/terms', {
+                    templateUrl: TEMPLATES_DIR + 'about.html'
+                }).
+                when('/privacy', {
+                    templateUrl: TEMPLATES_DIR + 'about.html'
+                }).
+                when('/faq', {
                     templateUrl: TEMPLATES_DIR + 'about.html'
                 }).
                 when('/editProfile', {
                     controller: 'EditProfileCtrl',
                     templateUrl: TEMPLATES_DIR + 'edit_profile.html'
                 });
+                //    when('/comments/:post_id', {
+                //     controller: 'CommentController',
+                //     templateUrl: TEMPLATES_DIR + 'comments.html'
+                // }).
             $locationProvider.html5Mode(true);
         }]);
+
+
+
+    /**** SERVICES ****/
 
     app.factory('PostFactory', function($http, $routeParams) {
         var postFactory = {};
 
+        // Returns a list of posts
         postFactory.getPosts = function(id){
             return $http.get('/api/v1/posts/').then(function(result) {
                 return result.data;
             });
         };
+
+        // Returns a list of posts by category
         postFactory.getPostsByCategory = function(category_id){
             return $http.get('/api/v1/category/' + category_id).then(function(result) {
                 return result.data;
@@ -90,14 +116,17 @@
         };
         postFactory.getEmbedData = function(url){
             url = encodeURIComponent(url);
-            return $http({method:"GET", url:'http://api.embed.ly/1/oembed?key=1f4c7a2056794e52b0124e733778f0f1&width=854&url='+url}).then(function(result){
+            return $http({method:"GET", url:'http://api.embed.ly/1/oembed?autoplay=true&key=1f4c7a2056794e52b0124e733778f0f1&width=854&url='+url}).then(function(result){
                 return result.data;
             })
         };
-
      
         return postFactory;
     });
+
+
+    /**** FILTERS ****/
+
     app.filter('isTodayCheck', function(){
         return function(input){
             var today = new Date();
@@ -107,15 +136,52 @@
             } else {
                 return input;
             }
-        }
+        };
     });
+    
     app.filter('firstCharacter', function(){
         return function(input){
             if(input) {
                 return (input.charAt(0)).toUpperCase();
             }
-        }
+        };
     });
+
+    /**** CONTROLLERS ****/
+
+    // Controller shows and hides alert messages
+    app.controller('AlertCtrl', ['$scope', '$timeout', function($scope, $timeout){
+        
+        // Initially hide alert
+        $scope.alert = false;
+        $scope.status = "success";
+        $scope.alertMessage = "";
+
+        // Listen for DisplayAlertEvent
+        $scope.$on('DisplayAlertEvent', function(event, status, message){
+            
+            // Show the alert
+            $scope.show(status, message);
+
+            // Hide the alert after 10 seconds
+            $timeout(function(){
+                $scope.hide();
+            }, 10000);
+        });
+        
+        // Show the alert
+        $scope.show = function(status, message){
+            $scope.status       = status;
+            $scope.alertMessage = message;
+            $scope.alert        = true;
+        };
+
+        // Hide the alert
+        $scope.hide = function(){
+            $scope.alert = false;
+        };
+    }]);
+
     app.controller('AuthModalCtrl', function($scope, $modal){
         $scope.signIn = function(){
             $modal.open({
@@ -136,10 +202,12 @@
         }
     });
     app.controller('DropdownCtrl', function ($scope, $log, djangoAuth) {
+        
+        // Load the user
         djangoAuth.profile().then(function (data) {
             $scope.user = data;
-
         });
+
         $scope.status = {
             isopen: false
         };
@@ -156,13 +224,21 @@
     });
 
     app.controller('HeaderCtrl', function($scope, djangoAuth, $modal, PostFactory, Restangular) {
+        
+        // Load user
         djangoAuth.profile().then(function(data) {
             $scope.user = data;
         });
+        
+        // Load categories
+        PostFactory.getCategories().then(function(data) {
+            $scope.categories = data;
+        });
+
         $scope.open = function () {
 
             var modalInstance = $modal.open({
-                controller: ModalInstanceCtrl,
+                controller: NewPostModalCtrl,
                 templateUrl: TEMPLATES_DIR + 'new_post_modal.html'
 
             });
@@ -172,7 +248,14 @@
             }, function () {
             });
         };
-        var ModalInstanceCtrl = function ($scope, $modalInstance) {
+        
+        var PostSubmissionCtrl = function ($scope, $modalInstance) {
+            $scope.ok = function () {
+                $modalInstance.dismiss('cancel');
+            };
+        };
+
+        var NewPostModalCtrl = function ($rootScope, $scope, $modalInstance) {
             djangoAuth.profile().then(function(data) {
                 $scope.user = data;
 
@@ -186,10 +269,12 @@
                     var original_url = url;
                     url = url.toLowerCase();
 
+                    // Only parse if the video is from youtube or vimeo
                     if (url.indexOf('youtube.com') > -1 || url.indexOf('vimeo.com') > -1) {
 
                         PostFactory.getUrlData(original_url).then(function (data) {
                             $scope.newPost.title = data.title;
+                            $scope.newPost.thumbnail = data.thumbnail_url;
                         });
                         return true;
                     }
@@ -197,17 +282,23 @@
 
                 };
                 $scope.submitNewPost = function () {
+                    
                     if (!$scope.parseVideoUrl($scope.newPost.url)) {
-                        alert("Please enter a valid YouTube or Vimeo link.");
+
+                        // Display an alert
+                        $rootScope.$broadcast('DisplayAlertEvent', 'error', 'Please enter a valid YouTube or Vimeo link.');
+
                     } else {
                         //post
                         var base_post = Restangular.all('post');
                         var new_post = {
                             url: $scope.newPost.url,
+                            thumbnail: $scope.newPost.thumbnail,
                             post_title: $scope.newPost.title,
                             author: $scope.user.id
 
                         };
+
                         base_post.post(new_post, "", {'X-CSRFToken': window.CSRF}, {'X-CSRFToken': window.CSRF}).then(function(newPost){
                             angular.forEach($scope.newPost.category, function(category) {
                                 var category_assignment = Restangular.all('post/' + newPost.id +'/new_post_to_category');
@@ -215,8 +306,24 @@
                                     category: category.id,
                                     post: newPost.id
                                 };
+
+                                // When post is sucessful, hide the modal instance
                                 category_assignment.post(new_category_assignment, '', {'X-CSRFToken': window.CSRF}, {'X-CSRFToken': window.CSRF}).then(function(){
-                                    window.location.href='/';
+                                    
+                                    // Hide post modal modal
+                                    $scope.ok();
+
+                                    // show post submission modal
+                                    $modal.open({
+                                        controller: PostSubmissionCtrl,
+                                        templateUrl: '/static/js/templates/post_submission_modal.html',
+                                    });
+
+
+                                    // Sent DisplayAlertEvent to view controller
+                                    // $rootScope.$broadcast('DisplayAlertEvent', 'success' ,'Thank you for submitting…');
+
+                                    //window.location.href='/';
                                 })
 
                             });
@@ -242,10 +349,10 @@
 
 
     });
+
     app.controller('EditProfileCtrl', ['$scope', '$http','$modal', 'PostFactory', '$filter', 'Restangular', 'djangoAuth', '$routeParams', function($scope, $http, $modal, PostFactory, $filter, Restangular, djangoAuth, $routeParams) {
         djangoAuth.profile().then(function(data){
             $scope.user = data;
-            console.log(data);
 
             $scope.editProfile = function(){
                 if($scope.user.old_password && $scope.user.password) {
@@ -263,37 +370,47 @@
         });
     }]);
 
-    app.controller('AppController', ['$scope', '$http','$modal', 'PostFactory', '$filter', 'Restangular', 'djangoAuth', '$routeParams', '$route', '$filter',
-        function($scope, $http, $modal, PostFactory, $filter, Restangular, djangoAuth, $routeParams, $route, $filter) {
+    app.controller('AppController', ['$rootScope', '$scope', '$http','$modal', 'PostFactory', '$filter', 'Restangular', 'djangoAuth', '$routeParams', '$route', '$filter',
+        function($rootScope, $scope, $http, $modal, PostFactory, $filter, Restangular, djangoAuth, $routeParams, $route, $filter) {
+        
+        // Tell sidebar to show itself
+        $rootScope.$broadcast('ShowSideBar');
+
         djangoAuth.profile().then(function(data) {
             $scope.user = data;
 
         });
-            $scope.hideNewsletter = function() {
-                $scope.newsletter = "hidden";
-            }
+
+        $scope.hideNewsletter = function() {
+            $scope.newsletter = "hidden";
+        };
+        
         $scope.now = $filter('date')(new Date(), 'MMM dd yyyy');
-        if($routeParams.user_id) {
+        
+        // If $routeParams contain user id, we're seeing a user
+        if ($routeParams.user_id) {
+            
             PostFactory.getUser($routeParams.user_id).then(function(data){
-                if(data.display_name) {
+            
+                if (data.display_name) {
                     $scope.profile_user = data.display_name;
-                }
-                else if(data.first_name) {
+                } else if (data.first_name) {
                     $scope.profile_user = data.first_name;
-                }
-                else {
+                } else {
                     $scope.profile_user = (data.username).charAt(0).toUpperCase() + (data.username).slice(1);
                 }
-            })
-
+                document.title = "Roket | " + $scope.profile_user;
+            });
         }
-            $scope.deletePost = function(post) {
-                Restangular.setDefaultHeaders({'X-CSRFToken': window.CSRF}); //CSRF_TOKEN gathered elsewhere
-                Restangular.one('post', post.id).remove().then(function(){
-                    $route.reload();
-                })
-            };
-            $scope.editPost = function (post) {
+
+        $scope.deletePost = function(post) {
+            Restangular.setDefaultHeaders({'X-CSRFToken': window.CSRF}); //CSRF_TOKEN gathered elsewhere
+            Restangular.one('post', post.id).remove().then(function(){
+                $route.reload();
+            });
+        };
+
+        $scope.editPost = function (post) {
             var modalInstance = $modal.open({
                 controller: ModalInstanceCtrl,
                 templateUrl: TEMPLATES_DIR + 'new_post_modal.html',
@@ -310,6 +427,7 @@
             }, function () {
             });
         };
+
         var ModalInstanceCtrl = function ($scope, $modalInstance, post) {
             djangoAuth.profile().then(function(data) {
 
@@ -358,6 +476,8 @@
                         };
                         base_post.post(new_post, "", {'X-CSRFToken': window.CSRF}, {'X-CSRFToken': window.CSRF}).then(function(){
                             window.location.href='/';
+
+
                         })
                     }
 
@@ -383,7 +503,6 @@
 
             PostFactory.getCategories().then(function(data) {
                 $scope.categories = data;
-
             });
 
 
@@ -396,58 +515,51 @@
             };
         };
 
-
-
         $scope.viewVideo = function (video) {
             PostFactory.getEmbedData(video).then(function(data){
                 $modal.open({
-                    template: data.html
+                    template: data.html,
+                    size: 'lg'
 
                 });
             });
-
         };
 
 
+        // Determine if a user vote relationship exists
         $scope.hasVoted = function(post){
+            var hasVoted = false;
             if($scope.user) {
-                var hasVoted = false;
                 angular.forEach(post.votes, function (vote) {
                     if (vote.user == $scope.user.id) {
                         hasVoted = true;
                     }
                 });
-                if (hasVoted) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } else {
-                return false;
             }
+            return hasVoted;
         };
 
         $scope.getAuthorDisplay = function(author) {
-            if(author.display_name) {
+            
+            if (author.display_name) {
                 return author.display_name;
-            }
-            else if(author.first_name) {
+            } else if (author.first_name) {
                 return author.first_name;
-            }
-            else {
+            } else {
                 return (author.username).charAt(0).toUpperCase() + (author.username).slice(1);
             }
         };
+
+        // When the user clicks the upvote button
         $scope.vote = function(post) {
 
-            var base_vote = Restangular.all('vote/'+post.id+'/handle_vote');
-            var new_vote = {
-                user: $scope.user.id,
-                post: post.id
-            };
+            var vote    = Restangular.all('vote/'+post.id+'/handle_vote');
+            var params  = { user: $scope.user.id, post: post.id };
 
-            base_vote.post(new_vote, "", {'X-CSRFToken': window.CSRF}, {'X-CSRFToken': window.CSRF}).then(function(data){
-                $route.reload();
+            // Creates a post to handle_vote, then update the current post with the information recieved from updatedPost that was returned
+            vote.post(params, "", {'X-CSRFToken': window.CSRF}, {'X-CSRFToken': window.CSRF}).then(function(updatedPost){
+                post.get_num_votes  = updatedPost.get_num_votes;
+                post.votes          = updatedPost.votes;
             });
         };
 
@@ -459,8 +571,12 @@
             return 0;
         }
 
-        if($routeParams.category_id) {
+        // If $routeParams has category_id, we're in a category section
+        if ($routeParams.category_id) {
             PostFactory.getPostsByCategory($routeParams.category_id).then(function(data) {
+                
+                document.title = "Roket | " + data.name;
+
                 $scope.posts = data.posts;
 
                 $scope.posts = $filter('groupBy')($scope.posts, 'date_posted');
@@ -499,20 +615,21 @@
                 };
 
             });
-        }
-        else if($routeParams.user_id) {
+        } else if ($routeParams.user_id) {
             PostFactory.getPostsByUser($routeParams.user_id).then(function(data) {
                 $scope.posts = data.posts;
 
                 angular.forEach($scope.posts, function (post) {
                     //Todo
                     PostFactory.getUrlData(post.url).then(function(result){
-                        post.thumbnail = result.thumbnail_url
+                        post.thumbnail = result.thumbnail_url;
                     })
                 });
             });
-        }
-        else {
+        } else {
+
+            document.title = "Roket";
+
             PostFactory.getPosts().then(function (data) {
 
 
@@ -529,27 +646,24 @@
                     post.sort(compare);
                     angular.forEach(post, function(p){
                         if(post.i < post.pageSize) {
-                            console.log(p);
+                            //console.log(p);
                             PostFactory.getUrlData(p.url).then(function (result) {
                                 p.thumbnail = result.thumbnail_url;
                             })
                         }
                         post.i++;
-                    })
-
+                    });
                 });
 
                 $scope.loadThumbnails = function(scope, pageSize) {
                     angular.forEach(scope, function (post) {
                         PostFactory.getUrlData(post.url).then(function (result) {
                             post.thumbnail = result.thumbnail_url;
-                        })
-
+                        });
                     });
+                };
 
-                }
                 $scope.loadMore = function(posts){
-
                     $scope.loadThumbnails(posts, posts.pageSize+=5);
                 };
 
@@ -562,34 +676,56 @@
         function($scope,$http,PostFactory,Restangular,djangoAuth,$routeParams,$modal) {
             return {
                 restrict: 'E',
+                replace: true,
                 templateUrl: TEMPLATES_DIR + 'sidebar.html',
                 controller: function($scope, PostFactory, $routeParams){
+                    
+                    // Initially sidebar is hidden
+                    $scope.visible = false;
+
+                    // On 'HideSideBar' event, hide the side bar
+                    $scope.$on('HideSideBar', function(){
+                        $scope.visible = false;
+
+                    });
+
+                     // On 'ShowSideBar' event, show the side bar
+                    $scope.$on('ShowSideBar', function(){
+                        $scope.visible = true;
+                    });
 
                     $scope.isActive = function(section){
-                        if($routeParams.category_id == section || (section == 'home' && !$routeParams.category_id)) {
+                        if($routeParams.category_id == section || (section == 'home' && !$routeParams.category_id && window.location.pathname == '/')) {
                             return true;
                         }
                         return false;
                     };
+
                     PostFactory.getCategories().then(function(data) {
                         $scope.categories = data;
 
                     });
+
                     $scope.setActive = function(section) {
                         $scope.active_link = section;
-                    }
-
+                    };
                 }
-            }
+            };
         }]);
 
     app.controller('CommentController', ['$scope', '$http', 'PostFactory', 'Restangular', 'djangoAuth', '$routeParams', '$modal', '$route',
-        function($scope,$http,PostFactory,Restangular,djangoAuth,$routeParams,$modal,$route){
+        function($scope, $http, PostFactory, Restangular, djangoAuth, $routeParams, $modal, $route){
+            
             djangoAuth.profile().then(function(data) {
                 $scope.user = data;
             });
+
             PostFactory.getPost().then(function (data) {
+                
                 $scope.post = data;
+
+                document.title = "Roket | " + $scope.post.post_title;
+
                 PostFactory.getUrlData($scope.post.url).then(function(result){
                     $scope.post.thumbnail = result.thumbnail_url
 
@@ -698,8 +834,8 @@
                             user: $scope.user.id,
                             author: $scope.user.username,
                             comment: comment.reply
-                        })
-                    })
+                        });
+                    });
 
                 }
             };
@@ -714,6 +850,7 @@
 
             };
         }]);
+
 
 
 

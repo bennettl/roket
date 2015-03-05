@@ -1,109 +1,180 @@
 {% load staticfiles %}
 {% load socialaccount %}
 
-<html ng-app="krave.app.static">
+<html ng-app="roket.app.static">
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="{% static "custom/style.css" %}">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500italic,400italic,500' rel='stylesheet' type='text/css'>
-<base href="/">
+    <title>{{ meta.title }}</title>
+    <meta name="description" content="{{ meta.description }}" ></meta>
+    <meta name="keywords" content="roket, tv, entertainment, best, videos, inspiring, motiviation, funny" ></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+
+    <link id="canonicalLink" rel="canonical" href="{{ meta.url }}" />
+    <base href="/">
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static "custom/style.css" %}">
+    <link rel="shortcut icon" href="{% static "js/images/favicon.ico" %}"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500italic,400italic,500' rel='stylesheet' type='text/css'>
+    <!-- FACEBOOK METADATA -->
+    <meta property="og:title" content="{{ meta.title }}" />
+    <meta property="og:description" content="{{ meta.description }}" />
+    <meta property="og:url" content="{{ meta.url }}" />
+    <meta property="og:image" content="{{ meta.thumbnail }}" />  
+    <meta property="og:type" content="roket:photo" /> 
+    <link rel="image_src" type="image/jpeg" href="{{ meta.thumbnail }}" />
+    <!-- TWITTER METADATA -->
+    <meta name="twitter:card" content="photo" /> 
+    <meta name="twitter:site" content="@rokettv"/>
+    <meta name="twitter:creator" content="@rokettv"/>
+    <meta name="twitter:url" content="{{ meta.url }}"/>
+    <meta name="twitter:title" content="{{ meta.title }}"/>
+    <meta name="twitter:description" content="{{ meta.description }}"/>
+    <meta name="twitter:image" content="{{ meta.thumbnail }}"/> 
 </head>
 <body>
 <div class="container-fluid" ng-cloak>
-    <div id="header" ng-controller="HeaderCtrl">
-        <div class="logo">
-            <a href="/">
+    <!-- HEADER -->
+    <nav ng-controller="HeaderCtrl" id="header" class="navbar navbar-default navbar-fixed-top">
+       <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" 
+             data-target="#example-navbar-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+          </button>
+          <a id="logo" class="navbar-brand" href="/">
                 <img src="/static/js/images/logo.png" alt="Roket">
-            </a><br />
-            <div style="text-align: right;margin-top:-5px;margin-right:4px;">Videos Worth Watching</div>
+                <div id="logoSubtitle">Videos Worth Watching</div>
+            </a>
+        </a>
+       </div>
+       {% verbatim %}
+       <div class="collapse navbar-collapse" id="example-navbar-collapse">
+          <ul ng-controller="AuthModalCtrl" class="nav navbar-nav">
+            <li class="link hidden-xs"><a href="/about" target="_self">About</a></li>
+            <li ng-if="!user.id" class="link"><a href="#" ng-click="signIn()">Sign In</a></li>
+            <li ng-if="!user.id" class="link"><a href="#" ng-click="signUp()">Sign Up</a></li>
+            <li class="dropdown-header visible-xs">Categories</li>
+            <li ng-repeat="category in categories | orderBy: 'ordering_index':false" class="link visible-xs">
+                <a href="/category/{{ category.id }}/{{ category.slug }}">{{ category.name }}</a>
+            </li>
+            <li class="dropdown-header visible-xs">Account</li>
+            <li class="link visible-xs"><a href="/profile/{{ user.id }}">Profile</a></li>
+            <li class="link visible-xs"><a href="/editProfile">Edit Account</a></li>
+            <li class="link visible-xs"><a href="/logout">Sign Out</a></li>
+            <li class="dropdown-header visible-xs">Misc</li>
+            <li class="link visible-xs"><a href="/about" target="_self">About</a></li>
+          </ul>
         </div>
-        <div class="links">
-            <div class="link">
-                <a href="/about" target="_self">About</a>
+       {% endverbatim %}
+        <div id="userHeader" ng-show="user.id" class="hidden-xs">
+            <div class="link" style="margin: 0 0 0 20px;">
+                <a href="#" ng-click="open()"><button id="postBtn">Post Video</button></a>
             </div>
-            <div ng-show="user.id" style="display:inline-block;">
-                <div class="link">
-                    <a href="#" ng-click="open()"><button style="padding:10px;">Post Video</button></a>
-                </div>
-
-                <div class="link" ng-controller="DropdownCtrl">
-                    <!-- Single button -->
-                    <div class="btn-group" dropdown is-open="status.isopen">
-                        <a dropdown-toggle ng-disabled="disabled">
-                            {% verbatim %}
-                            <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !user.profile_image }" style="float:left;margin-right:10px;">
-                                <img class="avatar-image" ng-src="{{ user.profile_image }}" width="50" height="50">
-                                <span class="avatar-initials">{{ user.username | firstCharacter }}</span>
-                            </div>
-                            {% endverbatim %}
-                            <div class="user-name"><span class="caret"></span></div>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            {% verbatim %}
-                            <li><a href="/profile/{{ user.id }}">Profile</a></li>
-                            <li><a href="/editProfile">Edit Account</a></li>
-                            <li><a href="/logout">Sign Out</a></li>
-                            {% endverbatim %}
-                        </ul>
-                    </div>
-
+            <div id="user-dropdown" class="link" ng-controller="DropdownCtrl">
+                <!-- Single button -->
+                <div class="btn-group" dropdown is-open="status.isopen">
+                    <a dropdown-toggle ng-disabled="disabled">
+                        {% verbatim %}
+                        <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !user.profile_image }" style="float:left;margin-right:10px;">
+                            <img class="avatar-image" ng-src="{{ user.profile_image }}" width="50" height="50">
+                            <span class="avatar-initials">{{ user.username | firstCharacter }}</span>
+                        </div>
+                        {% endverbatim %}
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        {% verbatim %}
+                        <li><a href="/profile/{{ user.id }}/{{ user.username }}">Profile</a></li>
+                        <li><a href="/editProfile">Edit Account</a></li>
+                        <li><a href="/logout">Sign Out</a></li>
+                        {% endverbatim %}
+                    </ul>
                 </div>
             </div>
-            <div ng-hide="user.id" style="display:inline-block;margin-top:10px;" ng-controller="AuthModalCtrl">
-                <div class="link">
-                    <a href="#" ng-click="signIn()">Sign In</a>
-                </div>
-                <div class="link">
-                    <a href="#" ng-click="signUp()">Sign Up</a>
-                </div>
-            </div>
-
+        <!-- END USERHEADER -->
         </div>
-    </div>
-
-    <ng-view></ng-view>
+    <!-- END HEADER -->
+    </nav>
+    <!-- SIDEBAR -->
+    <sidebar></sidebar>
+    <!-- CONTENT-->
+    <ng-view id="ng-view" class="clearfix" style="padding-top: 78px; z-index: 2; position: relative; background: #343434"></ng-view>
 </div>
-</body>
-<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="{% static "underscore/underscore.js" %}"></script>
-<script src="{% static "angular/angular.js" %}"></script>
-<script src="{% static "restangular/dist/restangular.min.js" %}"></script>
-<script src="{% static "angular-resource/angular-resource.js" %}"></script>
-<script src="{% static 'angular-route/angular-route.min.js' %}"></script>
-<script src="{% static 'angular-cookies/angular-cookies.min.js' %}"></script>
-<script src="{% static 'angular-sanitize/angular-sanitize.min.js' %}"></script>
-<script src="{% static "js/script.js" %}"></script>
 
+{% verbatim %}
+    <div id="mainAlert" class="alert" ng-class="{ 'alert-success': status == 'success', 'alert-danger': status == 'error' }" ng-controller="AlertCtrl" ng-show="alert">{{ alertMessage }}</div>
+{% endverbatim %}
 
-<script src="{% static "js/app/scripts/app.js" %} "></script>
-<script src="{% static "js/app/scripts/controllers/main.js" %} "></script>
-<script src="{% static "js/app/scripts/controllers/register.js" %} "></script>
-<script src="{% static "js/app/scripts/controllers/passwordreset.js" %} "></script>
-<script src="{% static "js/app/scripts/controllers/passwordresetconfirm.js" %} "></script>
-<script src="{% static "js/app/scripts/controllers/login.js" %} "></script>
-<script src="{% static "js/app/scripts/controllers/verifyemail.js" %} "></script>
-<script src="{% static "js/app/scripts/controllers/logout.js" %} "></script>
-<script src="{% static "js/app/scripts/controllers/userprofile.js" %} "></script>
-<script src="{% static "js/app/scripts/controllers/passwordchange.js" %} "></script>
-<script src="{% static "js/app/scripts/services/djangoAuth.js" %} "></script>
-<script src="{% static "js/app/scripts/services/validate.js" %} "></script>
-<script src="{% static "js/app/scripts/controllers/master.js" %} "></script>
-<script src="{% static "js/app/scripts/controllers/restricted.js" %} "></script>
-<script src="{% static "js/app/scripts/controllers/authrequired.js" %} "></script>
-<script src="{% static "js/angular-checkbox.js" %} "></script>
-<script src="{% static "js/angular-slugify.js" %} "></script>
+<div id="footer">
+    <div class="col-xs-6 col-sm-4">
+        <ul id="footerSocial" class="clearfix">
+            <li><a href="//facebook.com/pages/Roket/389062827942895" target="_blank"><img src="{% static 'js/images/footer/facebook.png' %}" /></a></li>
+            <li><a href="//twitter.com/rokettv" target="_blank"><img src="{% static 'js/images/footer/twitter.png' %}" /></a></li>
+        </ul>
+    </div>
+    <div id="footerCopyright" class="col-xs-6 col-sm-4">
+        <img id="footer-logo" src="{% static 'js/images/footer/logo.png' %}"/> 
+        <span>Roket 2015 &copy;</span>
+    </div>
+    <div class="col-sm-4">
+        <ul id="footerLinks" class="clearfix hidden-xs">
+            <li><a href="#">Blog</a></li>
+            <li><a href="/terms" target="_self">Terms</a></li>
+            <li><a href="/privacy" target="_self">Privacy</a></li>
+            <li><a href="/faq" target="_self">FAQ</a></li>
+        </ul>
+    </div>
+</div>
 
-<script src="{% static "angular-bootstrap/ui-bootstrap-tpls.min.js" %}"></script>
-<script src="{% static "angular-local-storage/dist/angular-local-storage.min.js" %}"></script>
-<script src="{% static "angular-filter/dist/angular-filter.min.js" %}"></script>
-<script src="{% static "angular-moment/angular-moment.min.js" %}"></script>
-<script src="{% static "angular-facebook/lib/angular-facebook.js" %}"></script>
 <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60259110-1', 'auto');
+  // ga('send', 'pageview');
+</script>
+</body>
+<script type="text/javascript" src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{% static "underscore/underscore.js" %}"></script>
+<script type="text/javascript" src="{% static "angular/angular.js" %}"></script>
+<script type="text/javascript" src="{% static "restangular/dist/restangular.min.js" %}"></script>
+<script type="text/javascript" src="{% static "angular-resource/angular-resource.js" %}"></script>
+<script type="text/javascript" src="{% static 'angular-route/angular-route.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'angular-cookies/angular-cookies.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'angular-sanitize/angular-sanitize.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'angulartics/dist/angulartics.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'angulartics/dist/angulartics-ga.min.js' %}"></script>
+<script type="text/javascript" src="https://code.angularjs.org/1.3.13/angular-animate.min.js"></script>
+<script type="text/javascript" src="{% static "js/script.js" %}"></script>
+<script type="text/javascript" src="{% static "js/app/scripts/app.js" %} "></script>
+<script type="text/javascript" src="{% static "js/app/scripts/controllers/main.js" %} "></script>
+<script type="text/javascript" src="{% static "js/app/scripts/controllers/register.js" %} "></script>
+<script type="text/javascript" src="{% static "js/app/scripts/controllers/passwordreset.js" %} "></script>
+<script type="text/javascript" src="{% static "js/app/scripts/controllers/passwordresetconfirm.js" %} "></script>
+<script type="text/javascript" src="{% static "js/app/scripts/controllers/login.js" %} "></script>
+<script type="text/javascript" src="{% static "js/app/scripts/controllers/verifyemail.js" %} "></script>
+<script type="text/javascript" src="{% static "js/app/scripts/controllers/logout.js" %} "></script>
+<script type="text/javascript" src="{% static "js/app/scripts/controllers/userprofile.js" %} "></script>
+<script type="text/javascript" src="{% static "js/app/scripts/controllers/passwordchange.js" %} "></script>
+<script type="text/javascript" src="{% static "js/app/scripts/services/djangoAuth.js" %} "></script>
+<script type="text/javascript" src="{% static "js/app/scripts/services/validate.js" %} "></script>
+<script type="text/javascript" src="{% static "js/app/scripts/controllers/master.js" %} "></script>
+<script type="text/javascript" src="{% static "js/app/scripts/controllers/restricted.js" %} "></script>
+<script type="text/javascript" src="{% static "js/app/scripts/controllers/authrequired.js" %} "></script>
+<script type="text/javascript" src="{% static "js/angular-checkbox.js" %} "></script>
+<script type="text/javascript" src="{% static "js/angular-slugify.js" %} "></script>
+<script type="text/javascript" src="{% static "angular-bootstrap/ui-bootstrap-tpls.min.js" %}"></script>
+<script type="text/javascript" src="{% static "angular-local-storage/dist/angular-local-storage.min.js" %}"></script>
+<script type="text/javascript" src="{% static "angular-filter/dist/angular-filter.min.js" %}"></script>
+<script type="text/javascript" src="{% static "angular-moment/angular-moment.min.js" %}"></script>
+<script type="text/javascript" src="{% static "angular-facebook/lib/angular-facebook.js" %}"></script>
+<script type="text/javascript">
+    // Sets the CSRF token
     window.CSRF = '{{ csrf_token }}';
-
-
-
 </script>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -113,5 +184,4 @@
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1515697715348428&version=v2.0";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-</body>
 </html>

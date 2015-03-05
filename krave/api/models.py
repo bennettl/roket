@@ -32,20 +32,26 @@ User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
 class Category(models.Model):
     name = models.CharField(max_length=300, null=True, blank=True)
     ordering_index = models.IntegerField(default=1, null=True, blank=True)
+    slug = models.CharField(max_length=100)
 
 
 class Post(models.Model):
+    # Database fields
     author = models.ForeignKey(User, null=True, blank=True)
     post_title = models.CharField(max_length=300, null=True, blank=True)
+    thumbnail = models.CharField(max_length=300, null=True, blank=True)
     date_posted = models.DateField(db_index=True, auto_now_add=True, null=True, blank=True, verbose_name='Date Posted')
     url = models.CharField(max_length=300, null=True, blank=True)
     categories = models.ManyToManyField(Category, blank=True, null=True, through='CategoryToPost')
-    active = models.BooleanField(default=True, db_index=True)
+    active = models.BooleanField(default=False, db_index=True)
+    vote_boost = models.IntegerField(default=0)
 
+    # Return number of votes
     def get_num_votes(self):
         votes = self.votes_set.filter(post=self)
-        return votes.count()
+        return self.vote_boost + votes.count()
 
+    # Return number of replies
     def get_num_replies(self):
         total = 0
 

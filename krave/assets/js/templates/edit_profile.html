@@ -1,20 +1,32 @@
-<sidebar></sidebar>
-<div class="content ng-cloak">
+<div class="content col-xs-12- col-sm-10 col-sm-offset-2 ng-cloak">
     <h1>Edit Your Account</h1>
     <div class="edit-profile">
-        <div ng-show="success">Your profile has been updated!</div>
-        <label>Username</label>
-        <input type="text" disabled ng-model="user.username" /><br />
-        <label>Display Name</label>
-        <input type="text" ng-model="user.display_name" /><br />
-        <label>Email</label>
-        <input type="text" ng-model="user.email" /> <br />
+            <div class="alert alert-success" ng-show="success">Your profile has been updated!</div>
+        <div class="row">
+            <label class="col-xs-12 col-sm-2">Username</label>
+            <input type="text" disabled ng-model="user.username" class="col-xs-12 col-sm-4 edit-profile"/><br />
+        </div>
+        <div class="row">
+            <label class="col-xs-12 col-sm-2">Display Name</label>
+            <input type="text" ng-model="user.display_name" class="col-xs-12 col-sm-4 edit-profile"/><br />
+        </div>
+        <div class="row">
+            <label class="col-xs-12 col-sm-2">Email</label>
+            <input type="text" ng-model="user.email" class="col-xs-12 col-sm-4 edit-profile"/> <br />
+        </div>
 
-        <h2>Change password</h2>
-        <label>Old password</label>
-        <input type="password" ng-model="user.old_password" /><br />
-        <label>New password</label>
-        <input type="password" ng-model="user.password" /><br /><br />
+        <div class="row">
+            <h2>Change password</h2>
+        </div>
+        <div class="row">
+            <label class="col-xs-12 col-sm-2">Old password</label>
+            <input type="password" ng-model="user.old_password" class="col-xs-12 col-sm-4 edit-profile"/><br />
+        </div>
+        <div class="row">
+            <label class="col-xs-12 col-sm-2">New password</label>
+            <input type="password" ng-model="user.password" class="col-xs-12 col-sm-4 edit-profile"/><br /><br />
+        </div>
+        
 
         <button ng-click="editProfile()">Update</button>
     </div>
