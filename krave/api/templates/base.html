@@ -59,10 +59,11 @@
             <li ng-repeat="category in categories | orderBy: 'ordering_index':false" class="link visible-xs">
                 <a href="/category/{{ category.id }}/{{ category.slug }}">{{ category.name }}</a>
             </li>
-            <li class="dropdown-header visible-xs">Account</li>
-            <li class="link visible-xs"><a href="/profile/{{ user.id }}">Profile</a></li>
-            <li class="link visible-xs"><a href="/editProfile">Edit Account</a></li>
-            <li class="link visible-xs"><a href="/logout">Sign Out</a></li>
+
+            <li ng-if="user" class="dropdown-header visible-xs">Account</li>
+            <li ng-if="user" class="link visible-xs"><a href="/profile/{{ user.id }}">Profile</a></li>
+            <li ng-if="user" class="link visible-xs"><a href="/editProfile">Edit Account</a></li>
+            <li ng-if="user" class="link visible-xs"><a href="/logout">Sign Out</a></li>
             <li class="dropdown-header visible-xs">Misc</li>
             <li class="link visible-xs"><a href="/about" target="_self">About</a></li>
           </ul>

@@ -9,15 +9,6 @@
             <div class="video-detail">
                 <div class="post-title">
                     <h3><a href="#" ng-click="viewVideo(p.url)">{{ p.post_title }}</a></h3>
-                    <div class="author">
-                        Uploaded by
-                        <a href="/profile/{{ p.author.id }}/{{ p.author.username }}">{{ getAuthorDisplay(p.author) }}</a>
-                    </div>
-                    <div class="categories">
-                        <div ng-repeat="category in p.categories" class="category">
-                            <a href='/category/{{ category.id }}/{{ category.slug }}'>{{ category.name }}</a>
-                        </div>
-                    </div>
                 <!-- END POST TITLE -->
                 </div>
             <a href="/profile/{{ p.author.id }}/{{ p.author.username }}" class="avatar avatar-circle" ng-class="{'avatar-hide-image': !p.author.profile_image }">
@@ -31,14 +22,17 @@
                 <a href="https://twitter.com/share?url=http://roket.tv/posts/{{ p.id }}" target="_blank" class="social-icon">
                     <img src="http://zacktanner.me/clients/krave/twitter.svg" />
                 </a>
-                <!-- END SOCIAL ICONS -->
                 <!-- COMMENT -->
                 <div class="comments">
                     <a href="/posts/{{ p.id }}">
-                        <i class="fa fa-comment-o"></i>
+                        <img src="/static/js/images/comment.png" />
                         {{ p.get_num_replies }}
                     </a>
-                <!-- END COMMENT -->
+                </div>
+                <div class="categories">
+                    <div ng-repeat="category in p.categories" class="category">
+                        <a href='/category/{{ category.id }}/{{ category.slug }}'>{{ category.name }}</a>
+                    </div>
                 </div>
             <!-- END VIDEO DETAIL -->
             </div>

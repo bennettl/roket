@@ -1,5 +1,5 @@
 body {
-	background-color: #343434;
+	background-color: #0f1316;
 	font-family: 'Roboto', sans-serif;
 	padding-bottom: 80px;
 }
@@ -31,10 +31,10 @@ input:disabled {
 }
 
 .avatar {
-	height: 50px;
-	width: 50px;
-	float:left;
-	margin-right:6px;
+	height: 40px;
+	width: 40px;
+	float: left;
+	margin: 6px 6px;
 }
 
 button:focus {
@@ -54,8 +54,8 @@ button:focus {
 	background-size: 100% 100%;
 	background-color: #aaa;
 	color: #fff;
-	font-size: 25px;
-	line-height: 50px;
+	font-size: 22px;
+	line-height: 43px;
 	font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
 	text-align: center;
 }
@@ -302,8 +302,7 @@ button:focus {
 .content {
 	min-height: 540px;
 	border-left: 1px solid #282828;
-	-webkit-transition: all 5.2s ease-in-out;
-	transition: all 5.2s ease-in-out;
+	background: #0f1316;
 }
 
 #ng-view.ng-enter{
@@ -355,12 +354,12 @@ button:focus {
 	font-size: 21px;
 }
 .post {
-	background-color:#343434;
-	min-height:200px;
+	background-color:#0f1316;
+	min-height: 180px;
 	color: #fff;
 	position: relative;
 	margin-left: 5px;
-	padding: 0 0 30px;
+	padding: 0;
 }
 .postContainer{
 	border-bottom: 1px solid #000;
@@ -383,23 +382,23 @@ button:focus {
 .post-title {
 	margin-bottom: 13px;
 }
-.video-detail{
-	float: left;
-	min-width: 230px;
-	max-width: 560px;
-}
 
 .post-title h3 {
 	margin-top: 0;
 	font-size: 14pt;
 }
-.post-title .category {
+.post .category {
 	padding: 7px 12px;
 	background-color: #696969;
 	display: inline-block;
 	border-radius: 5px;
-	margin: 0 14px 0 0;
+	margin: 13px 14px 0 0;
 	font-size: 12px;
+	color: #fff;
+
+}
+.post .category a{
+	color: #fff;
 }
 
 .post-title a {
@@ -453,7 +452,7 @@ button:focus {
 	background-color: #fff;
 	color: #e74c50;
 	right: 50px;
-	top: 0;
+	top: 60px;
 	padding: 5px 15px;
 	border-radius: 10px;
 	position: absolute;
@@ -472,6 +471,12 @@ button:focus {
 .comments a{
 	text-decoration: none;
 	color: #fff;	
+	font-weight: 300;
+	font-family: "Helvetica Neue";
+}
+.comments img{
+	width: 29px;
+	margin: -5px 8px 0 0;
 }
 
 /* modal */
@@ -719,6 +724,14 @@ button:hover{
 	padding-left: 136px;
 }
 @media (max-width: 768px) { 
+	.video-detail{
+		float: left;
+		min-width: 230px;
+		max-width: 560px;
+	}
+	.votes{
+		top: 0;
+	}
 	#footerCopyright{
 		padding-left: 0;
 	}

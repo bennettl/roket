@@ -7,15 +7,6 @@
         <div class="video-detail">
             <div class="post-title">
                 <h3><a href="#" ng-click="viewVideo(post.url)">{{ post.post_title }}</a></h3>
-                <div class="author">
-                    Uploaded by
-                    <a href="/profile/{{ post.author.id }}">{{ getAuthorDisplay(post.author) }}</a>
-                </div>
-                <div class="categories">
-                    <div ng-repeat="category in post.categories" class="category">
-                        <a href='/category/{{ category.id }}/{{ category.slug }}'>{{ category.name }}</a>
-                    </div>
-                </div>
             <!-- END POST TITLE -->
             </div>
             <div class="avatar avatar-circle" ng-class="{'avatar-hide-image': !post.author.profile_image }"style="float:left;margin-right:10px;">
@@ -33,10 +24,15 @@
             <!-- COMMENT -->
             <div class="comments">
                 <a href="/posts/{{ post.id }}">
-                    <i class="fa fa-comment-o"></i>
+                    <img src="/static/js/images/comment.png" />
                     {{ post.get_num_replies }}
                 </a>
             <!-- END COMMENTS -->
+            </div>
+            <div class="categories">
+                <div ng-repeat="category in post.categories" class="category">
+                    <a href='/category/{{ category.id }}/{{ category.slug }}'>{{ category.name }}</a>
+                </div>
             </div>
         <!-- END VIDEO DETAIL -->
         </div>
